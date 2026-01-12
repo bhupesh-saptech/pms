@@ -1,0 +1,70 @@
+<?php
+
+namespace App\Controllers;
+
+use App\Controllers\BaseController;
+use CodeIgniter\HTTP\ResponseInterface;
+
+use App\Models\UsersModel;
+
+class UsersController extends BaseController {
+    public $UsersModel;
+    public function __construct() {
+        helper('form');
+        $this->UsersModel = new UsersModel;
+    }
+    public function index() {
+        $data['users'] = $this->UsersModel->findAll();
+        return view('users/list',$data);
+    }
+    public function create() {
+        $data['mode'] = 'create';
+        if ($this->request->is('post')) {
+            $form = [
+                'user_id' => $this->request->getPost('user_id'),
+                'mail_id' => $this->request->getPost('mail_id'),
+                'user_nm' => $this->request->getPost('user_nm'),
+                'cell_no' => $this->request->getPost('cell_no'),
+            ];
+            if($this->UsersModel->insert($form,false)) {
+                return redirect()->to('/users')->with('message',"Data Inserted Succefully");
+            } else {
+                $data['errors'] = $this->UsersModel->errors();
+                return view('users/form', $data);
+            }
+        } else {
+            return view('users/form',$data);
+        }   
+    }
+     public function edit($id) {
+        $data['mode'] = 'edit';
+        $data['user'] = $this->UsersModel->find($id);
+        if ($this->request->is('post')) {
+            $form = [
+                'user_id' => $this->request->getPost('user_id'),
+                'mail_id' => $this->request->getPost('mail_id'),
+                'user_nm' => $this->request->getPost('user_nm'),
+                'cell_no' => $this->request->getPost('cell_no'),
+            ];
+            if($this->UsersModel->update($form,false)) {
+                $data['errors'] = $this->UsersModel->errors();
+                return view('users/form', $data);
+            } else {
+                return redirect()->to('/users')->with('message',"Data Inserted Succefully046A613ACB1191");
+            }
+        }
+        return view('users/form',$data);
+    }
+    public function view($id) {
+        $data['mode'] = 'view';
+        $data['user'] = $this->UsersModel->find($id);
+        return view('users/form',$data);
+    }
+    public function delete($id) {
+        $data['mode'] = 'delete';
+        $data['user'] = $this->UsersModel->find($id);
+        $data['validation'] = $this->validator;
+        return view('users/form',$data);
+    }
+   
+}
