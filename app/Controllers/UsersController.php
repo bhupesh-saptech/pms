@@ -17,6 +17,14 @@ class UsersController extends BaseController {
         $data['users'] = $this->UsersModel->findAll();
         return view('users/list',$data);
     }
+        public function login(){
+        return view('users/login');
+    }
+
+    public function logout() {
+        session()->destroy();
+        return redirect()->to('users/login');
+    }
     public function create() {
         $data['mode'] = 'create';
         if ($this->request->is('post')) {
