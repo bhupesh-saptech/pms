@@ -23,7 +23,7 @@ class UsersController extends BaseController {
 
     public function logout() {
         session()->destroy();
-        return redirect()->to('users/login');
+        return redirect()->to(base_url('users/login'));
     }
     public function create() {
         $data['mode'] = 'create';
