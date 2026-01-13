@@ -66,7 +66,7 @@ class ProjectsModel extends Model
 
         $qry = $db->query($sql);
         
-        return $qry->getResultObject();
+        return $qry->getRowObject();
 
     }
 }

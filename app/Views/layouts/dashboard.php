@@ -10,7 +10,7 @@
                 <div class="small-box text-bg-primary">
                   <div class="inner">
                     <h3><?= $dash->cnt_clients; ?></h3>
-                    <p>New Orders</p>
+                    <p>Clients</p>
                   </div>
                   <svg
                     class="small-box-icon"
