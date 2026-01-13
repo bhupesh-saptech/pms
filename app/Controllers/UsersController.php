@@ -56,6 +56,7 @@ class UsersController extends BaseController {
                 'mail_id' => $this->request->getPost('mail_id'),
                 'user_nm' => $this->request->getPost('user_nm'),
                 'cell_no' => $this->request->getPost('cell_no'),
+                'pass_wd' => password_hash($this->request->getPost('pass_wd'), PASSWORD_DEFAULT)
             ];
             if($this->UsersModel->insert($form,false)) {
                 return redirect()->to('/users')->with('message',"Data Inserted Succefully");
