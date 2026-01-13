@@ -39,7 +39,7 @@ class UsersController extends BaseController {
                 'user_email'=> $user->mail_id,
                 'isLoggedIn'=> true
             ]);
-            return redirect()->to('/dashboard');
+            return redirect()->to('/projects');
         } else {
             return view('users/login');
         }
