@@ -25,7 +25,7 @@ class UsersController extends BaseController {
             $user = $this->UsersModel->where('mail_id', $mail_id)
                                      ->where('is_active', 1)
                                      ->first();
-            if (!$user || !password_verify($pass_wd, $user['pass_wd'])) {
+            if (!$user || !password_verify($pass_wd, $user->pass_wd)) {
                 return redirect()->back()
                     ->with('error', 'Invalid Email or Password');
             }
@@ -82,7 +82,7 @@ class UsersController extends BaseController {
                 $data['errors'] = $this->UsersModel->errors();
                 return view('users/form', $data);
             } else {
-                return redirect()->to('/users')->with('message',"Data Inserted Succefully046A613ACB1191");
+                return redirect()->to('/users')->with('message',"Data Inserted Succefully");
             }
         }
         return view('users/form',$data);
