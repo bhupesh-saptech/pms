@@ -9,7 +9,7 @@
                 <!--begin::Small Box Widget 1-->
                 <div class="small-box text-bg-primary">
                   <div class="inner">
-                    <h3>200</h3>
+                    <h3><?= $dash->cnt_clients; ?></h3>
                     <p>New Orders</p>
                   </div>
                   <svg

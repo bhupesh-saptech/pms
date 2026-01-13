@@ -19,7 +19,7 @@ class ProjectsController extends BaseController {
     }
     public function index() {
         $data['projects'] = $this->ProjectsModel->read_data();
-        $data['dboard']   = $this->ProjectsModel->dashboard();
+        $data['dash']   = $this->ProjectsModel->dashboard();
         return view('projects/list',$data);
     }
     public function create() {

@@ -58,9 +58,12 @@ class ProjectsModel extends Model
     }
     public function dashboard() {
         $db  = \Config\Database::connect(); 
-        $sql = "select 'clients' as param,count(*) as count1 from clients
-                union
-                select 'projects' as param,count(*) as count1 from projects";
+       $sql = "SELECT
+                (SELECT count(*) FROM clients)    AS cnt_clients,
+                (SELECT count(*) FROM projects)   AS cnt_projects,
+                (SELECT COUNT(*) FROM agents)     AS cnt_agents,
+                (SELECT COUNT(*) FROM issues)     AS cnt_issues";
+                
         $qry = $db->query($sql);
         
         return $qry->getResultObject();
