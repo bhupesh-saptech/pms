@@ -20,7 +20,9 @@ class ProjectsController extends BaseController {
     public function index() {
         $data['projects'] = $this->ProjectsModel->read_data();
         $data['dash']   = $this->ProjectsModel->dashboard();
-        return view('projects/list',$data);
+        echo "<pre>";
+        print_r($data['dash']);
+        // return view('projects/list',$data);
     }
     public function create() {
         $data['mode'] = 'create';
