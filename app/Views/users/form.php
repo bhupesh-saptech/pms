@@ -3,7 +3,7 @@
 <div class="col-sm-2">
 </div>
 <div class="col-sm-8">
-    <form method="post" action="users/save" id="form">
+    <form method="post"  id="form">
         <div class="form-group">
             <label class="form-label">User ID</label>
             <input class="form-control" type="text" name="user_id" value="<?= set_value('user_id', isset($user->user_id) ? $user->user_id : '') ?>" autocomplete="off">
