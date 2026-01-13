@@ -14,6 +14,7 @@ class UsersModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [ "user_id",
                                     "mail_id",
+                                    "pass_wd",
                                     "user_nm",
                                     "cell_no"
                                   ];
