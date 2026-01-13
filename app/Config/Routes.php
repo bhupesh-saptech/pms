@@ -47,6 +47,7 @@ $routes->get("/tasks/delete/(:num)","TasksController::delete/$1");
 
 $routes->get("/users","UsersController::index");
 $routes->get("/users/login","UsersController::login");
+$routes->post("/users/login","UsersController::login");
 $routes->get("/users/logout","UsersController::logout");
 $routes->get("/users/create","UsersController::create");
 $routes->get("/users/edit/(:num)","UsersController::edit/$1");

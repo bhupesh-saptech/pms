@@ -17,8 +17,31 @@ class UsersController extends BaseController {
         $data['users'] = $this->UsersModel->findAll();
         return view('users/list',$data);
     }
-        public function login(){
-        return view('users/login');
+    public function login(){
+        $session = session();
+        if ($this->request->is('post')) {
+            $mail_id = $this->request->getPost('mail_id');
+            $pass_wd = $this->request->getPost('pass_wd');
+            $user = $this->UsersModel->where('email', $mail_id)
+                                     ->where('is_active', 1)
+                                     ->first();
+            if (!$user || !password_verify($pass_wd, $user['pass_wd'])) {
+                return redirect()->back()
+                    ->with('error', 'Invalid Email or Password');
+            }
+
+            $session->set([
+                'user_id'   => $user['id'],
+                'user_name' => $user['name'],
+                'user_email'=> $user['email'],
+                'isLoggedIn'=> true
+            ]);
+            return redirect()->to('/dashboard');
+        } else {
+            return view('users/login');
+        }
+
+        
     }
 
     public function logout() {
