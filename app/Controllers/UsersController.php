@@ -34,9 +34,9 @@ class UsersController extends BaseController {
             // }
 
             $session->set([
-                'user_id'   => $user['id'],
-                'user_name' => $user['name'],
-                'user_email'=> $user['email'],
+                'user_id'   => $user['user_id'],
+                'user_name' => $user['name_nm'],
+                'user_email'=> $user['mail_id'],
                 'isLoggedIn'=> true
             ]);
             return redirect()->to('/dashboard');
