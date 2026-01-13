@@ -9,7 +9,7 @@
                 <!--begin::Small Box Widget 1-->
                 <div class="small-box text-bg-primary">
                   <div class="inner">
-                    <h3>150</h3>
+                    <h3><?= $dboard->count1; ?></h3>
                     <p>New Orders</p>
                   </div>
                   <svg
