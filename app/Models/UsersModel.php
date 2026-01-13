@@ -16,7 +16,9 @@ class UsersModel extends Model
                                     "mail_id",
                                     "pass_wd",
                                     "user_nm",
-                                    "cell_no"
+                                    "cell_no",
+                                    "is_active",
+                                    "is_verified",
                                   ];
 
     protected bool $allowEmptyInserts = false;

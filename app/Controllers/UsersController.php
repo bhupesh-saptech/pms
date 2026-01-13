@@ -25,13 +25,10 @@ class UsersController extends BaseController {
             $user = $this->UsersModel->where('mail_id', $mail_id)
                                      ->where('is_active', 1)
                                      ->first();
-            if( $user) {
-                echo "error in user !!";
+            if (!$user || !password_verify($pass_wd, $user['pass_wd'])) {
+                return redirect()->back()
+                    ->with('error', 'Invalid Email or Password');
             }
-            // if (!$user || !password_verify($pass_wd, $user['pass_wd'])) {
-            //     return redirect()->back()
-            //         ->with('error', 'Invalid Email or Password');
-            // }
 
             $session->set([
                 'user_id'   => $user->user_id,
@@ -57,7 +54,9 @@ class UsersController extends BaseController {
                 'mail_id' => $this->request->getPost('mail_id'),
                 'user_nm' => $this->request->getPost('user_nm'),
                 'cell_no' => $this->request->getPost('cell_no'),
-                'pass_wd' => password_hash($this->request->getPost('pass_wd'), PASSWORD_DEFAULT)
+                'pass_wd' => password_hash($this->request->getPost('pass_wd'), PASSWORD_DEFAULT),
+                'is_active' => true,
+                'is_verified'=> true
             ];
             if($this->UsersModel->insert($form,false)) {
                 return redirect()->to('/users')->with('message',"Data Inserted Succefully");
