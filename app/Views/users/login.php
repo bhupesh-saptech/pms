@@ -36,13 +36,13 @@
 
                         <div class="mb-3">
                             <label>Email</label>
-                            <input type="email" name="email" class="form-control"
+                            <input type="email" name="mail_id" class="form-control"
                                    value="<?= old('email') ?>">
                         </div>
 
                         <div class="mb-3">
                             <label>Password</label>
-                            <input type="password" name="password" class="form-control">
+                            <input type="password" name="pass_wd" class="form-control">
                         </div>
 
                         <button class="btn btn-primary w-100">Login</button>
