@@ -25,6 +25,9 @@ class UsersController extends BaseController {
             $user = $this->UsersModel->where('mail_id', $mail_id)
                                      ->where('is_active', 1)
                                      ->first();
+            if( !$user) {
+                echo "error in user !!";
+            }
             if (!$user || !password_verify($pass_wd, $user['pass_wd'])) {
                 return redirect()->back()
                     ->with('error', 'Invalid Email or Password');
