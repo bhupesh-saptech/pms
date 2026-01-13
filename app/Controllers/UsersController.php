@@ -22,7 +22,7 @@ class UsersController extends BaseController {
         if ($this->request->is('post')) {
             $mail_id = $this->request->getPost('mail_id');
             $pass_wd = $this->request->getPost('pass_wd');
-            $user = $this->UsersModel->where('email', $mail_id)
+            $user = $this->UsersModel->where('mail_id', $mail_id)
                                      ->where('is_active', 1)
                                      ->first();
             if (!$user || !password_verify($pass_wd, $user['pass_wd'])) {
@@ -40,8 +40,6 @@ class UsersController extends BaseController {
         } else {
             return view('users/login');
         }
-
-        
     }
 
     public function logout() {
