@@ -31,7 +31,7 @@
                         </div>
                     <?php endif; ?>
 
-                    <form method="post" action="<?= site_url('login') ?>">
+                    <form method="post" >
                         <?= csrf_field() ?>
 
                         <div class="mb-3">
