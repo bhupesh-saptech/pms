@@ -24,7 +24,7 @@ class ProjectsController extends BaseController {
     }
     public function create() {
         $data['mode'] = 'create';
-        $data['clients'] = $this->ProjectsModel->select('client_id,clnts_name')->orderBy('client_id')->findAll();
+        $data['clients'] = $this->ProjectsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
         if ($this->request->is('post')) {
             $form = [
                 'is_title' => $this->request->getPost('is_title'),
