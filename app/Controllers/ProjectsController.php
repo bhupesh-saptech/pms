@@ -18,17 +18,6 @@ class ProjectsController extends BaseController {
         $this->ClientsModel  = new ClientsModel();
         $this->AgentsModel   = new AgentsModel();
         $this->ProjectsModel = new ProjectsModel();
-        
-    }
-    public function index() {
-        $data['projects'] = $this->ProjectsModel->read_data();
-        $data['dash']   = $this->ProjectsModel->dashboard();
-        return view('projects/projectsList',$data);
-    }
-    public function create() {
-        $data['mode'] = 'create';
-        $data['clients'] = $this->ClientsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
-        $data['agents']  = $this->AgentsModel->select('agent_id,agent_nm')->orderBy('agent_id')->findAll();
         $data['status']  =  [   0 => 'Draft',                            
                                 1 => 'Active',
                                 2 => 'On Hold',
@@ -54,6 +43,18 @@ class ProjectsController extends BaseController {
                                 7=> 'CapEx vs OpEx',
                              
                             ];
+        
+    }
+    public function index() {
+        $data['projects'] = $this->ProjectsModel->read_data();
+        $data['dash']   = $this->ProjectsModel->dashboard();
+        return view('projects/projectsList',$data);
+    }
+    public function create() {
+        $data['mode'] = 'create';
+        $data['clients'] = $this->ClientsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
+        $data['agents']  = $this->AgentsModel->select('agent_id,agent_nm')->orderBy('agent_id')->findAll();
+
 
         if ($this->request->is('post')) {
             $form = [
@@ -88,6 +89,7 @@ class ProjectsController extends BaseController {
         $data['mode'] = 'update';
         $data['project'] = $this->ProjectsModel->find($project_id);
         $data['clients'] = $this->ClientsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
+        $data['agents']  = $this->AgentsModel->select('agent_id,agent_nm')->orderBy('agent_id')->findAll();
         if ($this->request->is('post')) {
             
             $form = [
