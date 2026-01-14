@@ -57,13 +57,13 @@ class ProjectsController extends BaseController {
                 return view('projects/projectsForm', $data);  
             }
         } else {
-            return view('projects/form',$data);
+            return view('projects/projectsForm',$data);
         }
     }
     public function view() {
         $data['mode'] = 'view';
         $data['clients'] = $this->ClientsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
-        return view('projects/form',$data);
+        return view('projects/projectsForm',$data);
     }
     public function delete() {
         $data['mode'] = 'delete';
