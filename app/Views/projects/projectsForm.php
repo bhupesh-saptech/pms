@@ -20,7 +20,7 @@
         </div>
         <div class="form-group">
             <label class="form-label">Project Description</label>
-            <input class="form-control" type="textarea" name="proj_desc"value="<?= set_value('proj_desc', isset($project->proj_desc) ? $project->proj_desc : '') ?>" autocomplete="off">               
+            <textarea class="form-control" rows="3" name="proj_desc"value="<?= set_value('proj_desc', isset($project->proj_desc) ? $project->proj_desc : '') ?>" autocomplete="off"></textarea>               
         </div>
         <div class="form-group">
             <label class="form-label">Project type</label>
