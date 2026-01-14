@@ -33,6 +33,10 @@
             
         </div>
         <div class="form-group">
+            <label class="form-label">Client Name</label>
+            <input class="form-control" type="text" name="client_id" value="<?= set_value('client_id', isset($project->client_id) ? $project->client_id : '') ?>" autocomplete="off">               
+        </div>
+        <div class="form-group">
             <label class="form-label">Project Manager</label>
             <input class="form-control" type="text" name="agent_id" value="<?= set_value('agent_id', isset($project->agent_id) ? $project->agent_id : '') ?>" autocomplete="off">               
         </div>
