@@ -27,9 +27,16 @@ class ProjectsController extends BaseController {
         $data['clients'] = $this->ClientsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
         if ($this->request->is('post')) {
             $form = [
-                'is_title' => $this->request->getPost('is_title'),
-                'proj_id' => $this->request->getPost('proj_id'),
-                'iss_type' => $this->request->getPost('iss_type'),
+                'project_cd' => $this->request->getPost('project_cd'),
+                'project_nm' => $this->request->getPost('project_nm'),
+                'proj_desc' => $this->request->getPost('proj_desc'),
+                'proj_type' => $this->request->getPost('proj_type'),
+                'proj_catg' => $this->request->getPost('proj_catg'),
+                'agent_id' => $this->request->getPost('agent_id'),
+                'client_id' => $this->request->getPost('client_id'),
+                'start_dt' => $this->request->getPost('start_dt'),
+                'finish_dt' => $this->request->getPost('finish_dt'),
+                'status' => $this->request->getPost('status'),
             ];
             if($this->ProjectsModel->insert($form,false)) {
                 return redirect()->to('/projects')->with('message',"Data Inserted Succefully");
@@ -45,10 +52,18 @@ class ProjectsController extends BaseController {
         $data['mode'] = 'edit';
         $data['clients'] = $this->ClientsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
         if ($this->request->is('post')) {
+            
             $form = [
-                'is_title' => $this->request->getPost('is_title'),
-                'proj_id' => $this->request->getPost('proj_id'),
-                'iss_type' => $this->request->getPost('iss_type'),
+                'project_cd' => $this->request->getPost('project_cd'),
+                'project_nm' => $this->request->getPost('project_nm'),
+                'proj_desc' => $this->request->getPost('proj_desc'),
+                'proj_type' => $this->request->getPost('proj_type'),
+                'proj_catg' => $this->request->getPost('proj_catg'),
+                'agent_id' => $this->request->getPost('agent_id'),
+                'client_id' => $this->request->getPost('client_id'),
+                'start_dt' => $this->request->getPost('start_dt'),
+                'finish_dt' => $this->request->getPost('finish_dt'),
+                'status' => $this->request->getPost('status'),
             ];
             if($this->ProjectsModel->update($form,false)) {
                 return redirect()->to('/projects')->with('message',"Data updated Succefully");
