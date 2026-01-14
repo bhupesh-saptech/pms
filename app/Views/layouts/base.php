@@ -95,7 +95,9 @@
           <!--end::Container-->
         </div>
         <!--end::App Content Header-->
-        <?=  $this->include('layouts/dashboard') ?>
+        <div class="row">
+          <?= $this->renderSection('dashboard'); ?>
+        </div>
         <div class="row">
           <?= $this->renderSection('content'); ?>
         </div>
