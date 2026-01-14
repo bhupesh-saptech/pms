@@ -21,8 +21,7 @@ class IssuesController extends BaseController {
     }
     public function index() {
         $data['issues'] = $this->IssuesModel->read_data();
-        // echo "<pre>";
-        // print_r($data['issues']);
+        $data['dash']   = $this->IssuesModel->dashboard();
         return view('issues/list',$data);
     }
     public function create() {

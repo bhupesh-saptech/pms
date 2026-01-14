@@ -15,6 +15,7 @@ class AgentsController extends BaseController {
     }
     public function index() {
         $data['agents'] = $this->AgentsModel->findAll();
+        $data['dash']   = $this->AgentsModel->dashboard();
         return view('agents/list',$data);
     }
     public function create() {

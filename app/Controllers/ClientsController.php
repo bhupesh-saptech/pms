@@ -15,6 +15,7 @@ class ClientsController extends BaseController {
     }
     public function index() {
         $data['clients'] = $this->ClientsModel->findAll();
+        $data['dash']   = $this->ClientsModel->dashboard();
         return view('clients/list',$data);
     }
     public function create() {

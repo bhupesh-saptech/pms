@@ -15,6 +15,7 @@ class UsersController extends BaseController {
     }
     public function index() {
         $data['users'] = $this->UsersModel->findAll();
+        $data['dash']   = $this->UsersModel->dashboard();
         return view('users/list',$data);
     }
     public function login(){
