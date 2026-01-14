@@ -10,52 +10,49 @@ use App\Models\ClientsModel;
 use App\Models\AgentsModel;
 
 class ProjectsController extends BaseController {
-    public $AgentsModel;
-    public $ClientsModel;
-    public $ProjectsModel;
+    protected $AgentsModel,$ClientsModel,$ProjectsModel;
+    protected $data;
+
     public function __construct() {
         helper('form');
         $this->ClientsModel  = new ClientsModel();
         $this->AgentsModel   = new AgentsModel();
         $this->ProjectsModel = new ProjectsModel();
-        $data['status']  =  [   0 => 'Draft',                            
-                                1 => 'Active',
-                                2 => 'On Hold',
-                                3 => 'Cancelled',
-                                4 => 'Completed' 
-                            ];
-        $data['types'] = [  1=> 'Implementation',
-                            2=> 'Innovation / Transformation',
-                            3=> 'Upgrade / Conversion',
-                            4=> 'Enhancement / Change',
-                            5=> 'Support / Maintenance',
-                            6=> 'Integration',
-                            7=> 'Migration',
-                            8=> 'Compliance / Regulatory',
-                            9=> 'Infrastructure / Technical Projects'
-                         ];
-        $data['category'] = [   1=> 'Strategic',
-                                2=> 'Mandatory / Compliance',
-                                3=> 'Business-Driven',
-                                4=> 'IT-Driven',
-                                5=> 'Run-the-Business (RTB)',
-                                6=> 'Change-the-Business (CTB)',
-                                7=> 'CapEx vs OpEx',
-                             
-                            ];
+        $this->data['status']  =  [ 0 => 'Draft',                            
+                                    1 => 'Active',
+                                    2 => 'On Hold',
+                                    3 => 'Cancelled',
+                                    4 => 'Completed' 
+                                  ];
+        $this->data['types'] = [    1=> 'Implementation',
+                                    2=> 'Innovation / Transformation',
+                                    3=> 'Upgrade / Conversion',
+                                    4=> 'Enhancement / Change',
+                                    5=> 'Support / Maintenance',
+                                    6=> 'Integration',
+                                    7=> 'Migration',
+                                    8=> 'Compliance / Regulatory',
+                                    9=> 'Infrastructure / Technical Projects'
+                                ];
+        $this->data['category'] = [ 1=> 'Strategic',
+                                    2=> 'Mandatory / Compliance',
+                                    3=> 'Business-Driven',
+                                    4=> 'IT-Driven',
+                                    5=> 'Run-the-Business (RTB)',
+                                    6=> 'Change-the-Business (CTB)',
+                                    7=> 'CapEx vs OpEx',
+                                  ];
+        $this->data['clients'] = $this->ClientsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
+        $this->data['agents']  = $this->AgentsModel->select('agent_id,agent_nm')->orderBy('agent_id')->findAll();
         
     }
     public function index() {
-        $data['projects'] = $this->ProjectsModel->read_data();
-        $data['dash']   = $this->ProjectsModel->dashboard();
-        return view('projects/projectsList',$data);
+        $this->data['projects'] = $this->ProjectsModel->read_data();
+        $this->data['dash']   = $this->ProjectsModel->dashboard();
+        return view('projects/projectsList',$this->data);
     }
     public function create() {
-        $data['mode'] = 'create';
-        $data['clients'] = $this->ClientsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
-        $data['agents']  = $this->AgentsModel->select('agent_id,agent_nm')->orderBy('agent_id')->findAll();
-
-
+        $this->data['mode'] = 'create';
         if ($this->request->is('post')) {
             $form = [
                 'project_cd' => $this->request->getPost('project_cd'),
@@ -73,25 +70,21 @@ class ProjectsController extends BaseController {
                 return redirect()->to('/projects')->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->ProjectsModel->errors();     
-                return view('projects/projectsForm', $data);  
+                return view('projects/projectsForm', $this->data);  
             }
         } else {
-            return view('projects/projectsForm',$data);
+            return view('projects/projectsForm',$this->data);
         }
     }
     public function read($project_id) {
-        $data['mode'] = 'read';
-        $data['project'] = $this->ProjectsModel->find($project_id);
-        $data['clients'] = $this->ClientsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
+        $this->data['mode'] = 'read';
+        $this->data['project'] = $this->ProjectsModel->find($project_id);
         return view('projects/projectsForm',$data);
     }
     public function update($project_id) {
-        $data['mode'] = 'update';
-        $data['project'] = $this->ProjectsModel->find($project_id);
-        $data['clients'] = $this->ClientsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
-        $data['agents']  = $this->AgentsModel->select('agent_id,agent_nm')->orderBy('agent_id')->findAll();
-        if ($this->request->is('post')) {
-            
+        $this->data['mode'] = 'update';
+        $this->data['project'] = $this->ProjectsModel->find($project_id);
+        if ($this->request->is('post')) {  
             $form = [
                 'project_cd' => $this->request->getPost('project_cd'),
                 'project_nm' => $this->request->getPost('project_nm'),
@@ -108,16 +101,15 @@ class ProjectsController extends BaseController {
                 return redirect()->to('/projects')->with('message',"Data updated Succefully");
             } else {
                 $data['errors'] = $this->ProjectsModel->errors();     
-                return view('projects/projectsForm', $data);  
+                return view('projects/projectsForm', $this->data);  
             }
         } else {
-            return view('projects/projectsForm',$data);
+            return view('projects/projectsForm',$this->data);
         }
     }
     public function delete($project_id) {
-        $data['mode'] = 'delete';
-        $data['project'] = $this->ProjectsModel->find($project_id);
-        $data['clients'] = $this->ClientsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
-        return view('projects/projectsForm',$data);
+        $this->data['mode'] = 'delete';
+        $this->data['project'] = $this->ProjectsModel->find($project_id);
+        return view('projects/projectsForm',$this->data);
     }
 }
