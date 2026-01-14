@@ -1,7 +1,4 @@
 <?=  $this->extend('layouts/base'); ?>
-<!-- <?=  $this->section("dashboard"); ?>
-<?= $this->include('layouts/dashboard'); ?>
-<?=  $this->endSection(); ?> -->
 <?=  $this->section("content"); ?>
 
 <div class="container">
