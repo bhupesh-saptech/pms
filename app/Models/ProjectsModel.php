@@ -14,14 +14,14 @@ class ProjectsModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [ "project_cd",
                                     "project_nm",
+                                    "proj_desc",
                                     "proj_type",
                                     "proj_catg",
                                     "client_id",
                                     "agent_id",
                                     "start_dt",
                                     "finish_dt",
-                                    "status",
-                                    "proj_desc"
+                                    "status"
                                   ];
 
     protected bool $allowEmptyInserts = false;

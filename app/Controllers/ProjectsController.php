@@ -25,6 +25,13 @@ class ProjectsController extends BaseController {
     public function create() {
         $data['mode'] = 'create';
         $data['clients'] = $this->ClientsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
+        $data['status']  =  [   0 => 'Draft',                            
+                                1 => 'Active',
+                                2 => 'On Hold',
+                                3 => 'Cancelled',
+                                4 => 'Completed' 
+                            ];
+
         if ($this->request->is('post')) {
             $form = [
                 'project_cd' => $this->request->getPost('project_cd'),
@@ -49,13 +56,13 @@ class ProjectsController extends BaseController {
         }
     }
     public function read($project_id) {
-        $data['mode'] = 'view';
+        $data['mode'] = 'read';
         $data['project'] = $this->ProjectsModel->find($project_id);
         $data['clients'] = $this->ClientsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
         return view('projects/projectsForm',$data);
     }
     public function update($project_id) {
-        $data['mode'] = 'edit';
+        $data['mode'] = 'update';
         $data['project'] = $this->ProjectsModel->find($project_id);
         $data['clients'] = $this->ClientsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
         if ($this->request->is('post')) {

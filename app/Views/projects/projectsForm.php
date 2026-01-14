@@ -50,7 +50,12 @@
         </div>
         <div class="form-group">
             <label class="form-label">Project Status </label>
-            <input class="form-control"  type="text" name="status" id="status" value="<?= set_value('status', isset($project->status) ? $project->status : '') ?>">
+            <select class="form-select"  name="status" id="status" >
+                <option value="">-- Select Status --</option>
+                <?php foreach($status as $key=>$value): ?>
+                    <option value="<?= $key ?>"><?= $value; ?></option>
+                <?php endforeach; ?>
+            </select>
         </div>
         <div class="form-group">
             <button class="btn btn-primary " type="submit"> submit </button>
