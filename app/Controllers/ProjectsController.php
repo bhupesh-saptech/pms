@@ -20,7 +20,7 @@ class ProjectsController extends BaseController {
     public function index() {
         $data['projects'] = $this->ProjectsModel->read_data();
         $data['dash']   = $this->ProjectsModel->dashboard();
-        return view('projects/list',$data);
+        return view('projects/projectsList',$data);
     }
     public function create() {
         $data['mode'] = 'create';
@@ -35,10 +35,10 @@ class ProjectsController extends BaseController {
                 return redirect()->to('/projects')->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->ProjectsModel->errors();     
-                return view('projects/form', $data);  
+                return view('projects/projectsForm', $data);  
             }
         } else {
-            return view('projects/form',$data);
+            return view('projects/projectsForm',$data);
         }
     }
     public function edit() {
@@ -54,7 +54,7 @@ class ProjectsController extends BaseController {
                 return redirect()->to('/projects')->with('message',"Data updated Succefully");
             } else {
                 $data['errors'] = $this->ProjectsModel->errors();     
-                return view('projects/form', $data);  
+                return view('projects/projectsForm', $data);  
             }
         } else {
             return view('projects/form',$data);
@@ -68,6 +68,6 @@ class ProjectsController extends BaseController {
     public function delete() {
         $data['mode'] = 'delete';
         $data['clients'] = $this->ClientsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
-        return view('projects/form',$data);
+        return view('projects/projectsForm',$data);
     }
 }

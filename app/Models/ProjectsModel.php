@@ -14,10 +14,13 @@ class ProjectsModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [ "project_cd",
                                     "project_nm",
-                                    "client_id",
                                     "proj_type",
                                     "proj_catg",
-                                    "pr_manager",
+                                    "client_id",
+                                    "agent_id",
+                                    "start_dt",
+                                    "finish_dt",
+                                    "status",
                                     "proj_desc"
                                   ];
 
