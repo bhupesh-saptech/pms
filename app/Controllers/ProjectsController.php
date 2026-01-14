@@ -7,13 +7,16 @@ use CodeIgniter\HTTP\ResponseInterface;
 
 use App\Models\ProjectsModel;
 use App\Models\ClientsModel;
+use App\Models\AgentsModel;
 
 class ProjectsController extends BaseController {
+    public $AgentsModel;
     public $ClientsModel;
     public $ProjectsModel;
     public function __construct() {
         helper('form');
-        $this->ClientsModel = new ClientsModel();
+        $this->ClientsModel  = new ClientsModel();
+        $this->AgentsModel   = new AgentsModel();
         $this->ProjectsModel = new ProjectsModel();
         
     }
@@ -25,6 +28,7 @@ class ProjectsController extends BaseController {
     public function create() {
         $data['mode'] = 'create';
         $data['clients'] = $this->ClientsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
+        $data['agents']  = $this->AgentsModel->select('agent_id,agent_nm')->orderBy('agent_id')->findAll();
         $data['status']  =  [   0 => 'Draft',                            
                                 1 => 'Active',
                                 2 => 'On Hold',
