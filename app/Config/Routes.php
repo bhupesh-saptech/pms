@@ -31,11 +31,10 @@ $routes->get("/issues/delete/(:num)","IssuesController::delete/$1");
 
 
 $routes->get("/projects","ProjectsController::index");
-$routes->get("/projects/create","ProjectsController::create");
-$routes->post("/projects/create","ProjectsController::create");
-$routes->get("/projects/edit/(:num)","ProjectsController::edit/$1");
-$routes->get("/projects/view/(:num)","ProjectsController::view/$1");
-$routes->get("/projects/delete/(:num)","ProjectsController::delete/$1");
+$routes->get("/projects/read/(:num)","ProjectsController::read/$1");
+$routes->match(['get','post'],"/projects/create","ProjectsController::create");
+$routes->match(['get','post'],"/projects/update/(:num)","ProjectsController::update/$1");
+$routes->match(['get','post'],"/projects/delete/(:num)","ProjectsController::delete/$1");
 
 $routes->get("/tasks","TasksController::index");
 $routes->get("/tasks/create","TasksController::create");

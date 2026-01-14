@@ -48,7 +48,13 @@ class ProjectsController extends BaseController {
             return view('projects/projectsForm',$data);
         }
     }
-    public function edit($project_id) {
+    public function read($project_id) {
+        $data['mode'] = 'view';
+        $data['project'] = $this->ProjectsModel->find($project_id);
+        $data['clients'] = $this->ClientsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
+        return view('projects/projectsForm',$data);
+    }
+    public function update($project_id) {
         $data['mode'] = 'edit';
         $data['project'] = $this->ProjectsModel->find($project_id);
         $data['clients'] = $this->ClientsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
@@ -75,12 +81,6 @@ class ProjectsController extends BaseController {
         } else {
             return view('projects/projectsForm',$data);
         }
-    }
-    public function view($project_id) {
-        $data['mode'] = 'view';
-        $data['project'] = $this->ProjectsModel->find($project_id);
-        $data['clients'] = $this->ClientsModel->select('client_id,client_nm')->orderBy('client_id')->findAll();
-        return view('projects/projectsForm',$data);
     }
     public function delete($project_id) {
         $data['mode'] = 'delete';
