@@ -31,8 +31,8 @@ $routes->get("/issues/delete/(:num)","IssuesController::delete/$1");
 
 
 $routes->get("/projects","ProjectsController::index");
-$routes->get("/projects/read/(:num)","ProjectsController::read/$1");
-$routes->match(['get','post'],"/projects/create","ProjectsController::create");
+$routes->get("/projects/read/(:num)",                   "ProjectsController::read/$1");
+$routes->match(['get','post'],"/projects/create",       "ProjectsController::create");
 $routes->match(['get','post'],"/projects/update/(:num)","ProjectsController::update/$1");
 $routes->match(['get','post'],"/projects/delete/(:num)","ProjectsController::delete/$1");
 
