@@ -24,12 +24,22 @@
         </div>
         <div class="form-group">
             <label class="form-label">Project type</label>
-            <input class="form-control" type="text" name="proj_type"value="<?= set_value('proj_type', isset($project->proj_type) ? $project->proj_type : '') ?>" autocomplete="off">               
-            
+            <select class="form-select" name="proj_type">
+                <option value="">select project type</option>
+                <?php foreach($types as $key=>$value): ?>
+                    <option value="<?= $key ?>"><?= $value; ?></option>
+                <?php endforeach;?>
+            </select>               
         </div>
         <div class="form-group">
             <label class="form-label">Project Category</label>
-            <input class="form-control" type="text" name="proj_catg"value="<?= set_value('proj_catg', isset($project->proj_catg) ? $project->proj_catg : '') ?>" autocomplete="off">               
+            <select class="form-select" name="proj_catg" >
+                <option value="">select project Category</option>
+                <?php foreach($category as $key=>$value): ?>
+                    <option value="<?= $key ?>"><?= $value; ?></option>
+                <?php endforeach;?>
+            </select>
+
             
         </div>
         <div class="form-group">

@@ -35,6 +35,25 @@ class ProjectsController extends BaseController {
                                 3 => 'Cancelled',
                                 4 => 'Completed' 
                             ];
+        $data['types'] = [  1=> 'Implementation',
+                            2=> 'Innovation / Transformation',
+                            3=> 'Upgrade / Conversion',
+                            4=> 'Enhancement / Change',
+                            5=> 'Support / Maintenance',
+                            6=> 'Integration',
+                            7=> 'Migration',
+                            8=> 'Compliance / Regulatory',
+                            9=> 'Infrastructure / Technical Projects'
+                         ];
+        $data['category'] = [   1=> 'Strategic',
+                                2=> 'Mandatory / Compliance',
+                                3=> 'Business-Driven',
+                                4=> 'IT-Driven',
+                                5=> 'Run-the-Business (RTB)',
+                                6=> 'Change-the-Business (CTB)',
+                                7=> 'CapEx vs OpEx',
+                             
+                            ];
 
         if ($this->request->is('post')) {
             $form = [
