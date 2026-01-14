@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class ProjectsModel extends Model
 {
     protected $table            = 'projects';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'project_id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
