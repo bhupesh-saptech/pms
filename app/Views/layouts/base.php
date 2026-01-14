@@ -2,7 +2,7 @@
 <html lang="en">
   <!--begin::Head-->
   <head>
-    <base href="http://localhost/pms/">
+    <base href="http://agilesaptech.com/pms/">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Project Management - Dashboard</title>
     <!--begin::Accessibility Meta Tags-->
