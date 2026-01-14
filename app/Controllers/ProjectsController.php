@@ -41,4 +41,33 @@ class ProjectsController extends BaseController {
             return view('projects/form',$data);
         }
     }
+    public function edit() {
+        $data['mode'] = 'edit';
+        $data['clients'] = $this->ProjectsModel->select('client_id,clnts_name')->orderBy('client_id')->findAll();
+        if ($this->request->is('post')) {
+            $form = [
+                'is_title' => $this->request->getPost('is_title'),
+                'proj_id' => $this->request->getPost('proj_id'),
+                'iss_type' => $this->request->getPost('iss_type'),
+            ];
+            if($this->ProjectsModel->update($form,false)) {
+                return redirect()->to('/projects')->with('message',"Data updated Succefully");
+            } else {
+                $data['errors'] = $this->ProjectsModel->errors();     
+                return view('projects/form', $data);  
+            }
+        } else {
+            return view('projects/form',$data);
+        }
+    }
+    public function view() {
+        $data['mode'] = 'view';
+        $data['clients'] = $this->ProjectsModel->select('client_id,clnts_name')->orderBy('client_id')->findAll();
+        return view('projects/form',$data);
+    }
+    public function delete() {
+        $data['mode'] = 'delete';
+        $data['clients'] = $this->ProjectsModel->select('client_id,clnts_name')->orderBy('client_id')->findAll();
+        return view('projects/form',$data);
+    }
 }
