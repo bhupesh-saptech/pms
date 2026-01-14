@@ -34,11 +34,21 @@
         </div>
         <div class="form-group">
             <label class="form-label">Client Name</label>
-            <input class="form-control" type="text" name="client_id" value="<?= set_value('client_id', isset($project->client_id) ? $project->client_id : '') ?>" autocomplete="off">               
+            <select class="form-select" name="client_id">
+                <option value="">select client</option>
+                <?php foreach($clients as $client) :?>
+                    <option value="<?= $client->client_id; ?>"><?= $client->client_nm; ?></option>
+                <?php endforeach;?>
+            </select>                
         </div>
         <div class="form-group">
             <label class="form-label">Project Manager</label>
-            <input class="form-control" type="text" name="agent_id" value="<?= set_value('agent_id', isset($project->agent_id) ? $project->agent_id : '') ?>" autocomplete="off">               
+            <select class="form-select"  name="agent_id" >
+                <option value="">select Project Manager</option>
+                <?php foreach( $agents as $agent) :?>
+                    <option value="<?= $agent->agent_id; ?>"><?= $agent->agent_nm; ?></option>
+                <?php endforeach; ?>
+            </select>               
         </div>
         <div class="form-group">
             <label class="form-label">Start Date </label>
