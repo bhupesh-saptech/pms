@@ -32,10 +32,10 @@ class ProjectsController extends BaseController {
                                     6=> 'Integration',
                                     7=> 'Migration',
                                     8=> 'Compliance / Regulatory',
-                                    9=> 'Infrastructure / Technical Projects'
+                                    9=> 'Infrastructure / Technical'
                                 ];
         $this->data['category'] = [ 1=> 'Strategic',
-                                    2=> 'Mandatory / Compliance',
+                                    2=> 'Compliance',
                                     3=> 'Business-Driven',
                                     4=> 'IT-Driven',
                                     5=> 'Run-the-Business (RTB)',
@@ -79,7 +79,7 @@ class ProjectsController extends BaseController {
     public function read($project_id) {
         $this->data['mode'] = 'read';
         $this->data['project'] = $this->ProjectsModel->find($project_id);
-        return view('projects/projectsForm',$data);
+        return view('projects/projectsForm',$this->data);
     }
     public function update($project_id) {
         $this->data['mode'] = 'update';
