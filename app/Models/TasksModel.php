@@ -12,8 +12,8 @@ class TasksModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [ "ts_desc",
-                                    "proj_id",
+    protected $allowedFields    = [ "task_title",
+                                    "project_id",
                                     "agent_id"
                                   ];
 
