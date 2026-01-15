@@ -30,7 +30,7 @@
                 <?php foreach($agents as $agent): ?>
                     <tr>
                         <td><?= $agent->agent_id ?></td>
-                        <td><?= $agent->agent_nm ?></td>
+                        <td><a href="agents/view/<?= $agent->agent_id ?>"><?= $agent->agent_nm ?></a></td>
                         <td><?= $agent->email_id ?></td>
                         <td><?= $agent->emp_id ?></td>
                         <td><?= $agent->mobile_no ?></td>
