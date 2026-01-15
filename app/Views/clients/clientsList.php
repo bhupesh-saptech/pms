@@ -24,9 +24,6 @@
                     <th>Client Contact</th>
                     <th>Cell Number</th>
                     <th>Created At</th>
-                    <th class="text-center">View</th>
-                    <th class="text-center">Edit</th>
-                    <th class="text-center">Delete</th>
                 </tr>
                 <?php foreach($clients as $client): ?>
                     <tr>
@@ -36,9 +33,7 @@
                         <td></td>   
                         <td><?= $client->mobile_no ?></td>
                         <td><?= $client->created_at ?></td>
-                        <td class="text-center"><a href="clients/read/<?= $client->client_id ?>"  ><i class="fa fa-eye"   ></i></a></td>
-                        <td class="text-center"><a href="clients/update/<?= $client->client_id ?>"  ><i class="fa fa-edit"  ></i></a></td>
-                        <td class="text-center"><a href="clients/delete/<?= $client->client_id ?>"><i class="fa fa-trash" ></i></a></td>
+                  
                     </tr>
                 <?php endforeach; ?>
             </table>

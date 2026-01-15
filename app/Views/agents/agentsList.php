@@ -26,9 +26,6 @@
                     <th>Emp ID</th>
                     <th>Cell Number</th>
                     <th>Created At</th>
-                    <th class="text-center">View</th>
-                    <th class="text-center">Edit</th>
-                    <th class="text-center">Delete</th>
                 </tr>
                 <?php foreach($agents as $agent): ?>
                     <tr>
@@ -38,9 +35,6 @@
                         <td><?= $agent->emp_id ?></td>
                         <td><?= $agent->mobile_no ?></td>
                         <td><?= $agent->created_at ?></td>
-                        <td class="text-center"><a href="agents/read/<?= $agent->agent_id ?>"><i class="fa fa-eye"   ></i></a></td>
-                        <td class="text-center"><a href="agents/update/<?= $agent->agent_id ?>"><i class="fa fa-edit"  ></i></a></td>
-                        <td class="text-center"><a href="agents/delete/<?= $agent->agent_id ?>"><i class="fa fa-trash" ></i></a></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
