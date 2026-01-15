@@ -24,7 +24,7 @@ class TasksController extends BaseController {
     public function index() {
         $data['tasks'] = $this->TasksModel->read_data();
         $data['dash']   = $this->TasksModel->dashboard();
-        return view('tasks/list',$data);
+        return view('tasks/taskList',$data);
     }
     public function create() {
         $data['mode'] = 'create';
@@ -42,10 +42,10 @@ class TasksController extends BaseController {
                 return redirect()->to('/tasks')->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->TasksModel->errors();     
-                return view('tasks/form', $data);  
+                return view('tasks/tasksForm', $data);  
             }
         } else {
-            return view('tasks/form',$data);
+            return view('tasks/tasksForm',$data);
         }
     }
 }

@@ -16,7 +16,7 @@ class AgentsController extends BaseController {
     public function index() {
         $data['agents'] = $this->AgentsModel->findAll();
         $data['dash']   = $this->AgentsModel->dashboard();
-        return view('agents/list',$data);
+        return view('agents/agentsList',$data);
     }
     public function create() {
         $data['mode'] = 'create';
@@ -32,10 +32,10 @@ class AgentsController extends BaseController {
                 return redirect()->to('/agents')->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->AgentsModel->errors();     
-                return view('agents/form', $data);  
+                return view('agents/agentsForm', $data);  
             }
         } else {
-            return view('agents/form',$data);
+            return view('agents/agentsForm',$data);
         }
     }
 }

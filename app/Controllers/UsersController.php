@@ -16,7 +16,7 @@ class UsersController extends BaseController {
     public function index() {
         $data['users'] = $this->UsersModel->findAll();
         $data['dash']   = $this->UsersModel->dashboard();
-        return view('users/list',$data);
+        return view('users/usersList',$data);
     }
     public function login(){
         $session = session();
@@ -63,10 +63,10 @@ class UsersController extends BaseController {
                 return redirect()->to('/users')->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->UsersModel->errors();
-                return view('users/form', $data);
+                return view('users/usersForm', $data);
             }
         } else {
-            return view('users/form',$data);
+            return view('users/usersForm',$data);
         }   
     }
      public function edit($id) {
@@ -81,23 +81,23 @@ class UsersController extends BaseController {
             ];
             if($this->UsersModel->update($form,false)) {
                 $data['errors'] = $this->UsersModel->errors();
-                return view('users/form', $data);
+                return view('users/usersForm', $data);
             } else {
                 return redirect()->to('/users')->with('message',"Data Inserted Succefully");
             }
         }
-        return view('users/form',$data);
+        return view('users/usersForm',$data);
     }
     public function view($id) {
         $data['mode'] = 'view';
         $data['user'] = $this->UsersModel->find($id);
-        return view('users/form',$data);
+        return view('users/usersForm',$data);
     }
     public function delete($id) {
         $data['mode'] = 'delete';
         $data['user'] = $this->UsersModel->find($id);
         $data['validation'] = $this->validator;
-        return view('users/form',$data);
+        return view('users/usersForm',$data);
     }
    
 }

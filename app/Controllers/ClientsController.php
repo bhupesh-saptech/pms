@@ -16,7 +16,7 @@ class ClientsController extends BaseController {
     public function index() {
         $data['clients'] = $this->ClientsModel->findAll();
         $data['dash']   = $this->ClientsModel->dashboard();
-        return view('clients/list',$data);
+        return view('clients/clientList',$data);
     }
     public function create() {
         $data['mode'] = 'create';
@@ -30,10 +30,10 @@ class ClientsController extends BaseController {
                 return redirect()->to('/clients')->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->ClientsModel->errors();     
-                return view('clients/form', $data);  
+                return view('clients/clientForm', $data);  
             }
         } else {
-            return view('clients/form',$data);
+            return view('clients/clientForm',$data);
         }
     }
 }
