@@ -24,12 +24,17 @@ class IssuesController extends BaseController {
                                     4=>'Resolved',
                                     5=>'Closed',
                                 ];
+        $this->data['issues'] = $this->IssuesModel->read_data();
+        $this->data['dash']   = $this->IssuesModel->dashboard();
     }
     public function index() {
-        $data['issues'] = $this->IssuesModel->read_data();
-        $data['dash']   = $this->IssuesModel->dashboard();
-        return view('issues/issuesList',$data);
+        return view('issues/issuesList',$this->data);
     }
+    public function view($issue_id) {
+        $this->data['issue'] = $this->IssuesModel->find($issue_id);
+        return view('issues/issuesForm',$this->data);
+    }
+    
     public function create() {
         $data['mode'] = 'create';
         $data['projects'] = $this->ProjectsModel->select('project_id,project_nm')->orderBy('project_id')->findAll();
