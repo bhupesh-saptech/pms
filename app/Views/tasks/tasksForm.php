@@ -8,8 +8,7 @@
             <h4 class="mb-4 text-center">Task Creation</h4>                 
             <button type="submit" class="btn btn-primary float-end"><i class="fa fa-edit"></i></button>
             <button type="submit" class="btn btn-primary float-end"><i class="fa fa-trash"></i></button>
-            <button type="submit" class="btn btn-primary float-end"><i class="fa fa-arrow-left"></i></button>
-            
+            <button type="submit" class="btn btn-primary float-end"><i class="fa fa-arrow-left"></i></button> 
         </div>
         <div class="form-group">
             <label class="form-label">Task ID</label>
