@@ -71,8 +71,10 @@ class TasksController extends BaseController {
         }
     }
     public function delete($task_id) {
-        $this->data['mode'] = 'delete';
-        $this->data['task'] = $this->TasksModel->find($task_id);
-        return view('tasks/tasksForm',$this->data);
+       if($this->TasksModel->delete($task_id)) {
+           return redirect()->to('/tasks')->with('message',"record Deleted Successfully");
+       } else {
+
+       }
     }
 }
