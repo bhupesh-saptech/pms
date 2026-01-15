@@ -18,8 +18,8 @@
         <div class="card-body">
             <table class="table table-stripped table-bordered">
                 <tr>
-                    <th>UserID</th>
-                    <th>Username</th>
+                    <th>User ID</th>
+                    <th>User Name</th>
                     <th>Email ID</th>
                     <th>User Real Name</th>
                     <th>Cell Number</th>
