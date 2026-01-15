@@ -14,7 +14,7 @@
                     <button type="submit" class="btn btn-primary float-end me-3"><i class="fa fa-save"></i></button>
                 <?php else : ?>
                     <button type="submit" class="btn btn-primary float-end me-3"><i class="fa fa-edit"></i></button>
-                    <a href="issues/delete/<?= $task->task_id ?>" class="btn btn-danger float-end me-3" onclick="return confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash"></i></a>
+                    <a href="issues/delete/<?= $issue->issue_id ?>" class="btn btn-danger float-end me-3" onclick="return confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash"></i></a>
                 <?php endif ?>
             </div>
         </div>
