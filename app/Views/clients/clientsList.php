@@ -20,18 +20,24 @@
                 <tr>
                     <th>Client ID</th>
                     <th>Client Name</th>
-                    <th>Email ID</th>
-                    <th>Client Contact</th>
-                    <th>Cell Number</th>
+                    <th>Contact Name</th>
+                    <th>Email ID</th>                 
+                    <th>Mobile No</th>
+                    <th>Client Type</th>
+                    <th>Industry</th>
+                    <th>status</th>
                     <th>Created At</th>
                 </tr>
                 <?php foreach($clients as $client): ?>
                     <tr>
                         <td><?= $client->client_id ?></td>
-                        <td><?= $client->client_nm ?></td>
+                        <td><a href="clients/view/<?= $client->client_id ?>"><?= $client->client_nm ?></a></td>
+                        <td><?= $client->contact_nm ?></td>   
                         <td><?= $client->email_id ?></td>
-                        <td></td>   
                         <td><?= $client->mobile_no ?></td>
+                        <td><?= $types[$client->client_type] ?? null; ?></td>
+                        <td><?= $industry[$client->industry] ?? null; ?></td>
+                        <td><?= $status[$client->status] ?? null; ?></td>
                         <td><?= $client->created_at ?></td>
                   
                     </tr>

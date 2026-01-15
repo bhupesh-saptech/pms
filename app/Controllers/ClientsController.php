@@ -8,32 +8,47 @@ use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\ClientsModel;
 
 class ClientsController extends BaseController {
-    public $ClientsModel;
+    protected $ClientsModel;
+    protected $data;
     public function __construct() {
         helper('form');
         $this->ClientsModel = new ClientsModel;
+        $this->data['types']    = [ 0=>'Individual',
+                                    1=>'Company',
+                                    2=>'Government',
+                                    3=>'Internal'
+                                  ];
+        $this->data['industry'] = [ 0=>'IT',
+                                    1=>'Manufacturing',
+                                    2=>'Pharma',
+                                    3=>'Agro'
+                                  ];
+        $this->data['status']   = [ 0=>'Active',
+                                    1=>'Inactive',
+                                    2=>'Blacklisted'   
+                                  ];
+        $this->data['clients'] = $this->ClientsModel->findAll();
+        $this->data['dash']   = $this->ClientsModel->dashboard();
     }
     public function index() {
-        $data['clients'] = $this->ClientsModel->findAll();
-        $data['dash']   = $this->ClientsModel->dashboard();
-        return view('clients/clientsList',$data);
+        return view('clients/clientsList',$this->data);
     }
     public function create() {
         $data['mode'] = 'create';
         if ($this->request->is('post')) {
             $form = [
-                'clnts_name' => $this->request->getPost('clnts_name'),
-                'csemail_id' => $this->request->getPost('csemail_id'),
-                'cmobile_no' => $this->request->getPost('cmobile_no'),
+                'client_nm' => $this->request->getPost('client_nm'),
+                'email_id' => $this->request->getPost('email_id'),
+                'mobile_no' => $this->request->getPost('mobile_no'),
             ];
             if($this->ClientsModel->insert($form,false)) {
                 return redirect()->to('/clients')->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->ClientsModel->errors();     
-                return view('clients/clientsForm', $data);  
+                return view('clients/clientsForm', $this->data);  
             }
         } else {
-            return view('clients/clientsForm',$data);
+            return view('clients/clientsForm',$this->data);
         }
     }
 }
