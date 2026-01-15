@@ -52,10 +52,10 @@ class IssuesController extends BaseController {
                 return redirect()->to('/issues')->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->IssuesModel->errors();     
-                return view('issues/issuesForm', $data);  
+                return view('issues/issuesForm', $this->data);  
             }
         } else {
-            return view('issues/issuesForm',$data);
+            return view('issues/issuesForm',$this->data);
         }
     }
 }
