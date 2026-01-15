@@ -21,17 +21,17 @@
         </div>
         <div class="form-group">
             <label class="form-label">Client Name</label>
-            <input class="form-control" type="text" name="clnts_name" value="<?= set_value('clnts_name', isset($client->clnts_name) ? $client->clnts_name : '') ?>" autocomplete="off">
+            <input class="form-control" type="text" name="client_nm" value="<?= set_value('client_nm', isset($client->client_nm) ? $client->client_nm : '') ?>" autocomplete="off">
            
         </div> 
         <div class="form-group">
             <label class="form-label">Email ID</label>
-            <input class="form-control" type="text" name="csemail_id" value="<?= set_value('csemail_id', isset($client->csemail_id) ? $client->csemail_id : '') ?>" autocomplete="off">               
+            <input class="form-control" type="text" name="email_id" value="<?= set_value('email_id', isset($client->email_id) ? $client->email_id : '') ?>" autocomplete="off">               
             
         </div>
         <div class="form-group">
             <label class="form-label">Contact No</label>
-            <input class="form-control" type="text" name="cmobile_no" value="<?= set_value('cell_no', isset($client->cmobile_no) ? $client->cmobile_no : '') ?>" autocomplete="off">               
+            <input class="form-control" type="text" name="mobile_no" value="<?= set_value('mobile_no', isset($client->mobile_no) ? $client->mobile_no : '') ?>" autocomplete="off">               
             
         </div>
     </form>
@@ -54,7 +54,8 @@
                             }?>";
         switch(mode) {
             case 'read':
-                $('#form input').prop('readonly', true);
+                $('#form input' ).prop('disabled', true);
+                $('#form select').prop('disabled', true);
                 break;
             case 'update' :
                 $('#pass_wd').hide();
