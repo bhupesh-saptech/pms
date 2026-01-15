@@ -33,6 +33,7 @@ class IssuesController extends BaseController {
         return view('issues/issuesList',$this->data);
     }
     public function view($issue_id) {
+        $this->data['mode'] = 'view';
         $this->data['issue'] = $this->IssuesModel->find($issue_id);
         return view('issues/issuesForm',$this->data);
     }
