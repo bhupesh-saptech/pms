@@ -64,6 +64,7 @@
         switch(mode) {
             case 'view':
                 $('#form input').prop('disabled', true);
+                $('#form select').prop('disabled', true);
                 break;
             case 'update' :
                 $('#pass_wd').hide();
