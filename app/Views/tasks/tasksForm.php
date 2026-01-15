@@ -10,7 +10,7 @@
             </div>
             <div class="col-sm-3">                 
                 <button type="button" class="btn btn-primary float-end " onclick="history.back();" ><i class="fa fa-arrow-left"></i></button> 
-                <a href="tasks/delete/<?= $task->task_id ?>"><i class="fa fa-trash"></i></a>
+                <a href="tasks/delete/<?= $task->task_id ?>" class="btn btn-danger float-end me-3"><i class="fa fa-trash"></i></a>
                 <button type="button" class="btn btn-primary float-end me-3"><i class="fa fa-edit"></i></button>
             </div>
         </div>
