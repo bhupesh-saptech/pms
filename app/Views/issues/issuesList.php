@@ -24,6 +24,7 @@
                     <th>Project ID</th>
                     <th>Issue Type</th>
                     <th>Assigned to</th>
+                    <th>Status</th>
                     <th>Created At</th>
                 </tr>
                 <?php foreach($issues as $issue): ?>
@@ -33,6 +34,7 @@
                         <td><?= $issue->project_nm ?></td>
                         <td><?= $issue->iss_type ?></td>
                         <td><?= $issue->agent_nm ?></td>
+                        <td><?= $status[$issue->status] ?? null; ?></td>
                         <td><?= $issue->created_at ?></td>
                     </tr>
                 <?php endforeach; ?>

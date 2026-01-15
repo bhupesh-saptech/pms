@@ -44,6 +44,14 @@
             <?php    endforeach; ?>
             </select> 
         </div>
+        <div class="form-group">
+            <label class="form-label">Status</label>
+            <select class="form-select select2" name="status" id="status">
+                <?php foreach($status as $key=>$value) : ?>
+                <option value="<?= $key; ?>"><?= $value; ?></option>
+            <?php    endforeach; ?>
+            </select> 
+        </div>
     </form>
 </div>
 <div class="col-sm-2">
