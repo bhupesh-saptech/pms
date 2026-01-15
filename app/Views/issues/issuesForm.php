@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
             <label class="form-label">Issue Title</label>
-            <input class="form-control" type="text" name="is_title" value="<?= set_value('is_title', isset($issue->is_title) ? $issue->is_title : '') ?>" autocomplete="off">
+            <input class="form-control" type="text" name="issue_title" value="<?= set_value('issue_title', isset($issue->issue_title) ? $issue->issue_title : '') ?>" autocomplete="off">
            
         </div> 
         <div class="form-group">

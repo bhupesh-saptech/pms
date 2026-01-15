@@ -7,15 +7,17 @@ use CodeIgniter\Model;
 class IssuesModel extends Model
 {
     protected $table            = 'issues';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'issue_id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-                                    "is_title",
+                                    "issue_title",
                                     "iss_type",
-                                    "proj_id"
+                                    "project_id",
+                                    "agent_id",
+                                    "status"
                                   ];
 
     protected bool $allowEmptyInserts = false;
