@@ -23,6 +23,7 @@
                     <th>Issue Title</th>
                     <th>Project ID</th>
                     <th>Issue Type</th>
+                    <th>SAP Module</th>
                     <th>Assigned to</th>
                     <th>Status</th>
                     <th>Created At</th>
@@ -33,6 +34,7 @@
                         <td><a href="issues/view/<?= $issue->issue_id ?>"><?= $issue->issue_title ?></td>
                         <td><?= $issue->project_nm ?></td>
                         <td><?= $types[$issue->iss_type] ?? null; ?></td>
+                        <td><?= $module[$issue->sap_module] ?? null; ?></td>
                         <td><?= $issue->agent_nm ?></td>
                         <td><?= $status[$issue->status] ?? null; ?></td>
                         <td><?= $issue->created_at ?></td>
