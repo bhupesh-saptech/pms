@@ -28,7 +28,7 @@ class TasksController extends BaseController {
         return view('tasks/tasksList',$this->data);
     }
     public function create() {
-        $data['mode'] = 'create';
+        $this->data['mode'] = 'create';
         if ($this->request->is('post')) {
             $form = [
                 'ts_desc' => $this->request->getPost('ts_desc'),
