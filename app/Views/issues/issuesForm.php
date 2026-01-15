@@ -39,7 +39,7 @@
         <div class="form-group">
             <label class="form-label">SAP Module</label>
             <select class="form-select select2" name="sap_module" id="sap_module">
-                <?php foreach($modules as $key=>$value) : ?>
+                <?php foreach($module as $key=>$value) : ?>
                 <option value="<?= $key; ?>"><?= $value; ?></option>
             <?php    endforeach; ?>
             </select> 
