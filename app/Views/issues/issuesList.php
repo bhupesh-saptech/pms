@@ -25,21 +25,15 @@
                     <th>Issue Type</th>
                     <th>Assigned to</th>
                     <th>Created At</th>
-                    <th class="text-center">View</th>
-                    <th class="text-center">Edit</th>
-                    <th class="text-center">Delete</th>
                 </tr>
                 <?php foreach($issues as $issue): ?>
                     <tr>
                         <td><?= $issue->issue_id ?></td>
-                        <td><?= $issue->issue_title ?></td>
-                        <td><?= $issue->ps_name ?></td>
+                        <td><a href="issues/view/<?= $issue->issue_id ?>"><?= $issue->issue_title ?></td>
+                        <td><?= $issue->project_nm ?></td>
                         <td><?= $issue->iss_type ?></td>
                         <td><?= $issue->agent_nm ?></td>
                         <td><?= $issue->created_at ?></td>
-                        <td class="text-center"><a href="issues/read/<?= $issue->issue_id ?>"><i class="fa fa-eye"   ></i></a></td>
-                        <td class="text-center"><a href="issues/update/<?= $issue->issue_id ?>"><i class="fa fa-edit"  ></i></a></td>
-                        <td class="text-center"><a href="issues/delete/<?= $issue->issue_id ?>"><i class="fa fa-trash" ></i></a></td>
                     </tr>
                 <?php endforeach; ?>
             </table>

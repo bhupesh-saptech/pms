@@ -26,9 +26,9 @@
         </div> 
         <div class="form-group">
             <label class="form-label">Project ID</label>
-            <select class="form-select select2" name="proj_id" id="proj_id">
+            <select class="form-select select2" name="project_id" id="project_id">
                 <?php foreach($projects as $project) : ?>
-                <option value="<?= $project->proj_id; ?>"><?= $project->ps_name; ?></option>
+                <option value="<?= $project->project_id; ?>"><?= $project->project_nm; ?></option>
             <?php    endforeach; ?>
             </select> 
         </div>
