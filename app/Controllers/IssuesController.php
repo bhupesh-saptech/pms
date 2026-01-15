@@ -22,7 +22,7 @@ class IssuesController extends BaseController {
     public function index() {
         $data['issues'] = $this->IssuesModel->read_data();
         $data['dash']   = $this->IssuesModel->dashboard();
-        return view('issues/list',$data);
+        return view('issues/issuesList',$data);
     }
     public function create() {
         $data['mode'] = 'create';
@@ -38,10 +38,10 @@ class IssuesController extends BaseController {
                 return redirect()->to('/issues')->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->IssuesModel->errors();     
-                return view('issues/form', $data);  
+                return view('issues/issuesForm', $data);  
             }
         } else {
-            return view('issues/form',$data);
+            return view('issues/issuesForm',$data);
         }
     }
 }
