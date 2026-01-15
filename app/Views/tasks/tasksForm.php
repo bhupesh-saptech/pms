@@ -37,9 +37,17 @@
         </div> 
         <div class="form-group">
             <label class="form-label">Agent ID</label>
-            <select class="form-select selectpicker" name="agent_id" id="agent_id">
+            <select class="form-select select2" name="agent_id" id="agent_id">
                 <?php foreach($agents as $agent) : ?>
                 <option value="<?= $agent->agent_id; ?>"><?= $agent->agent_nm; ?></option>
+            <?php    endforeach; ?>
+            </select> 
+        </div>
+        <div class="form-group">
+            <label class="form-label">Status</label>
+            <select class="form-select select2" name="status" id="status">
+                <?php foreach($status as $key=>$value) : ?>
+                <option value="<?= $key; ?>"><?= $value; ?></option>
             <?php    endforeach; ?>
             </select> 
         </div>

@@ -18,6 +18,13 @@ class TasksController extends BaseController {
         $this->ProjectsModel = new ProjectsModel();
         $this->IssuesModel   = new IssuesModel();
         $this->TasksModel    = new TasksModel;
+        $this->data['status'] = [   0=>'New/Created',
+                                    1=>'Assigned',
+                                    2=>'In Progress',
+                                    3=>'On Hold/Blocked',
+                                    4=>'Completed',
+                                    5=>'Closed',
+                                ];
         $this->data['tasks'] = $this->TasksModel->read_data();
         $this->data['dash']  = $this->TasksModel->dashboard();
         $this->data['agents']   = $this->AgentsModel->select("agent_id,agent_nm")->orderBy("agent_id")->findAll();

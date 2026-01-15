@@ -10,14 +10,20 @@ use App\Models\ProjectsModel;
 use App\Models\IssuesModel;
 
 class IssuesController extends BaseController {
-    public $AgentsModel;
-    public $IssuesModel;
-    public $ProjectsModel;
+    protected $AgentsModel ,$IssuesModel,$ProjectsModel;
+    protected $data;
     public function __construct() {
         helper('form');
         $this->AgentsModel   = new AgentsModel();
         $this->ProjectsModel = new ProjectsModel();
         $this->IssuesModel   = new IssuesModel();
+        $this->data['status'] = [   0=>'New/Created',
+                                    1=>'Assigned',
+                                    2=>'In Progress',
+                                    3=>'On Hold/Blocked',
+                                    4=>'Resolved',
+                                    5=>'Closed',
+                                ];
     }
     public function index() {
         $data['issues'] = $this->IssuesModel->read_data();

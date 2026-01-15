@@ -23,6 +23,7 @@
                     <th>Task Title</th>
                     <th>Project ID</th>
                     <th>Assigned to</th>
+                    <th>Status</th>
                     <th>Created At</th>
                 </tr>
                 <?php foreach($tasks as $task): ?>
@@ -31,6 +32,7 @@
                         <td><a href="tasks/view/<?= $task->task_id ?>"><?= $task->task_title ?></a></td>
                         <td><?= $task->ps_name ?></td>
                         <td><?= $task->agent_nm ?></td>
+                        <td><?= $status[$task->status] ?? null; ?></td>
                         <td><?= $task->created_at ?></td>
                         
                     </tr>
