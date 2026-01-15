@@ -32,7 +32,7 @@
                         <td><?= $issue->issue_id ?></td>
                         <td><a href="issues/view/<?= $issue->issue_id ?>"><?= $issue->issue_title ?></td>
                         <td><?= $issue->project_nm ?></td>
-                        <td><?= $issue->iss_type ?></td>
+                        <td><?= $types[$issue->iss_type] ?? null; ?></td>
                         <td><?= $issue->agent_nm ?></td>
                         <td><?= $status[$issue->status] ?? null; ?></td>
                         <td><?= $issue->created_at ?></td>
