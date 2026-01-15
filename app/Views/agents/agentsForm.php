@@ -9,7 +9,7 @@
                 <h4 class="text-center">Agent Creation</h4>
             </div>
             <div class="col-sm-3">                 
-                <button type="button" class="btn btn-primary float-end " onclick="history.back();" ><i class="fa fa-arrow-left"></i></button>
+                <button type="button" class="btn btn-secondary float-end " onclick="history.back();" ><i class="fa fa-arrow-left"></i></button>
                 <?php if($mode == 'create') : ?> 
                     <button type="submit" class="btn btn-success float-end me-3"><i class="fa fa-save"></i></button>
                 <?php else : ?>
