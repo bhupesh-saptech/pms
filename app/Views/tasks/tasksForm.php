@@ -16,7 +16,7 @@
             <label class="form-label">Project ID</label>
             <select class="form-select selectpicker" name="proj_id" id="proj_id">
                 <?php foreach($projects as $project) : ?>
-                <option value="<?= $project->proj_id; ?>"><?= $project->ps_name; ?></option>
+                <option value="<?= $project->projec_id; ?>"><?= $project->project_nm; ?></option>
             <?php    endforeach; ?>
             </select> 
         </div> 
