@@ -27,10 +27,10 @@
                 </tr>
                 <?php foreach($users as $user): ?>
                     <tr>
-                        <td><?= $user->id ?></td>
-                        <td><a href="users/view/<?= $user->user_id ?>"><?= $user->user_id ?></a></td>
+                        <td><?= $user->user_id ?></td>
+                        <td><a href="users/view/<?= $user->user_id ?>"><?= $user->user_nm ?></a></td>
                         <td><?= $user->mail_id ?></td>
-                        <td><?= $user->user_nm ?></td>
+                        <td><?= $user->user_title ?></td>
                         <td><?= $user->cell_no ?></td>
                         <td><?= $user->created_at ?></td>
                     </tr>
