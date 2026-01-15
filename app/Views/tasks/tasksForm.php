@@ -10,10 +10,12 @@
             </div>
             <div class="col-sm-3">                 
                 <button type="button" class="btn btn-primary float-end " onclick="history.back();" ><i class="fa fa-arrow-left"></i></button>
-                <?php if($mode != 'create') : ?> 
+                <?php if($mode == 'create') : ?> 
+                    <button type="submit" class="btn btn-primary float-end me-3"><i class="fa fa-edit"></i></button>
+                <?php else : ?>
                     <a href="tasks/delete/<?= $task->task_id ?>" class="btn btn-danger float-end me-3" onclick="return confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash"></i></a>
-                <?php endif; ?>
-                <button type="button" class="btn btn-primary float-end me-3"><i class="fa fa-edit"></i></button>
+                <?php endif ?>
+                
             </div>
         </div>
         <div class="form-group">
