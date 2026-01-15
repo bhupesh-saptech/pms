@@ -26,6 +26,8 @@ class IssuesController extends BaseController {
                                 ];
         $this->data['issues'] = $this->IssuesModel->read_data();
         $this->data['dash']   = $this->IssuesModel->dashboard();
+        $this->data['projects'] = $this->ProjectsModel->select('project_id,project_nm')->orderBy('project_id')->findAll();
+        $this->data['agents']   = $this->AgentsModel->select('agent_id,agent_nm')->orderBy('agent_id')->findAll();
     }
     public function index() {
         return view('issues/issuesList',$this->data);
@@ -37,13 +39,14 @@ class IssuesController extends BaseController {
     
     public function create() {
         $data['mode'] = 'create';
-        $data['projects'] = $this->ProjectsModel->select('project_id,project_nm')->orderBy('project_id')->findAll();
-        $data['agents']   = $this->AgentsModel->select('agent_id,agent_nm')->orderBy('agent_id')->findAll();
+
         if ($this->request->is('post')) {
             $form = [
-                'is_title' => $this->request->getPost('is_title'),
-                'proj_id' => $this->request->getPost('proj_id'),
-                'iss_type' => $this->request->getPost('iss_type'),
+                'issue_title' => $this->request->getPost('issue_title'),
+                'project_id'  => $this->request->getPost('project_id'),
+                'iss_type'    => $this->request->getPost('iss_type'),
+                'agent_id'    => $this->request->getPost('agent_id'),
+                'status'      => $this->request->getPost('status')
             ];
             if($this->IssuesModel->insert($form,false)) {
                 return redirect()->to('/issues')->with('message',"Data Inserted Succefully");
