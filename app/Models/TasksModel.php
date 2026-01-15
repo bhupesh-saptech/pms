@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class TasksModel extends Model
 {
     protected $table            = 'tasks';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'task_id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
