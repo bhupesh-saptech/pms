@@ -49,7 +49,7 @@ class IssuesModel extends Model
     protected $afterDelete    = [];
 
     public function read_data() {
-        return $this->select('issues.*, projects.project_nm as ps_name,agents.agent_nm as agent_nm')
+        return $this->select('issues.*, projects.project_nm as project_nm,agents.agent_nm as agent_nm')
                     ->join('projects', 'projects.project_id = issues.project_id','left')
                     ->join('agents', 'agents.agent_id = issues.agent_id','left')
                     ->findAll();
