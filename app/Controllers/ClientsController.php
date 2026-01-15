@@ -30,10 +30,10 @@ class ClientsController extends BaseController {
                 return redirect()->to('/clients')->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->ClientsModel->errors();     
-                return view('clients/clientForm', $data);  
+                return view('clients/clientsForm', $data);  
             }
         } else {
-            return view('clients/clientForm',$data);
+            return view('clients/clientsForm',$data);
         }
     }
 }
