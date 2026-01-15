@@ -4,6 +4,16 @@
 </div>
 <div class="col-sm-8">
     <form method="post" id="form">
+        <div class="row">
+            <div class="col-sm-9">
+                <h4 class="text-center">Task Creation</h4>
+            </div>
+            <div class="col-sm-3">                 
+                <button type="button" class="btn btn-primary float-end " onclick="history.back();" ><i class="fa fa-arrow-left"></i></button> 
+                <button type="button" class="btn btn-primary float-end me-3"><i class="fa fa-trash"></i></button>
+                <button type="button" class="btn btn-primary float-end me-3"><i class="fa fa-edit"></i></button>
+            </div>
+        </div>
         <div class="form-group">
             <label class="form-label">Project ID</label>
             <input class="form-control" type="text" name="project_id" value="<?= set_value('project_id', isset($project->project_id) ? $project->project_id : '') ?>" autocomplete="off">
@@ -76,10 +86,6 @@
                     <option value="<?= $key ?>"><?= $value; ?></option>
                 <?php endforeach; ?>
             </select>
-        </div>
-        <div class="form-group">
-            <button class="btn btn-primary " type="submit"> submit </button>
-            <a href="users" class="btn btn-primary float-end"> back </a>
         </div>
     </form>
 </div>

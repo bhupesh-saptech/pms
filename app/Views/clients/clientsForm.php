@@ -4,6 +4,16 @@
 </div>
 <div class="col-sm-8">
     <form method="post" id="form">
+        <div class="row">
+            <div class="col-sm-9">
+                <h4 class="text-center">Task Creation</h4>
+            </div>
+            <div class="col-sm-3">                 
+                <button type="button" class="btn btn-primary float-end " onclick="history.back();" ><i class="fa fa-arrow-left"></i></button> 
+                <button type="button" class="btn btn-primary float-end me-3"><i class="fa fa-trash"></i></button>
+                <button type="button" class="btn btn-primary float-end me-3"><i class="fa fa-edit"></i></button>
+            </div>
+        </div>
         <div class="form-group">
             <label class="form-label">Client ID</label>
             <input class="form-control" type="text" name="clients_id" value="<?= set_value('clients_id', isset($client->clients_id) ? $client->clients_id : '') ?>" <?php if($mode == 'create') {echo 'disabled';} ?>>
@@ -23,10 +33,6 @@
             <label class="form-label">Contact No</label>
             <input class="form-control" type="text" name="cmobile_no" value="<?= set_value('cell_no', isset($client->cmobile_no) ? $client->cmobile_no : '') ?>" autocomplete="off">               
             
-        </div>
-        <div class="form-group">
-            <button class="btn btn-primary " type="submit"> submit </button>
-            <a href="users" class="btn btn-primary float-end"> back </a>
         </div>
     </form>
 </div>
