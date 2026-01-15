@@ -11,9 +11,9 @@
             <div class="col-sm-3">                 
                 <button type="button" class="btn btn-primary float-end " onclick="history.back();" ><i class="fa fa-arrow-left"></i></button>
                 <?php if($mode == 'create') : ?> 
-                    <button type="submit" class="btn btn-primary float-end me-3"><i class="fa fa-save"></i></button>
+                    <button type="submit" class="btn btn-success float-end me-3"><i class="fa fa-save"></i></button>
                 <?php else : ?>
-                    <button type="submit" class="btn btn-primary float-end me-3"><i class="fa fa-edit"></i></button>
+                    <button type="submit" class="btn btn-warning float-end me-3"><i class="fa fa-edit"></i></button>
                     <a href="tasks/delete/<?= $agent->agent_id ?>" class="btn btn-danger float-end me-3" onclick="return confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash"></i></a>
                 <?php endif ?>
                 
