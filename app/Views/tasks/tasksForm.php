@@ -5,10 +5,7 @@
 <div class="col-sm-8">
     <form method="post"  id="form">
          <div class="d-grid">
-            <button type="submit" class="btn btn-primary">
-                Save
-            </button>
-             <a href="users" class="btn btn-primary float-end"> back </a>
+            <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></button>
         </div>
         <div class="form-group">
             <label class="form-label">Task ID</label>
