@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
             <label class="form-label">Client ID</label>
-            <input class="form-control" type="text" name="clients_id" value="<?= set_value('clients_id', isset($client->clients_id) ? $client->clients_id : '') ?>" <?php if($mode == 'create') {echo 'disabled';} ?>>
+            <input class="form-control" type="text" name="client_id" value="<?= set_value('client_id', isset($client->client_id) ? $client->client_id : '') ?>" <?php if($mode == 'create') {echo 'disabled';} ?>>
             
         </div>
         <div class="form-group">
