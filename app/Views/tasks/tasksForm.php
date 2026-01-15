@@ -62,8 +62,8 @@
                                 echo '';
                             }?>";
         switch(mode) {
-            case 'read':
-                $('#form input').prop('readonly', true);
+            case 'view':
+                $('#form input').prop('disabled', true);
                 break;
             case 'update' :
                 $('#pass_wd').hide();

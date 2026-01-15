@@ -47,7 +47,7 @@ class TasksController extends BaseController {
         }
     }
     public function view($task_id) {
-        $this->data['mode'] = 'read';
+        $this->data['mode'] = 'view';
         $this->data['task'] = $this->TasksModel->find($task_id);
         return view('tasks/tasksForm',$this->data);
     }
