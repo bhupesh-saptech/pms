@@ -37,7 +37,7 @@ $routes->match(['get','post'],"/projects/update/(:num)","ProjectsController::upd
 $routes->match(['get','post'],"/projects/delete/(:num)","ProjectsController::delete/$1");
 
 $routes->get("/tasks",                               "TasksController::index");
-$routes->get("/tasks/read/(:num)",                   "TasksController::read/$1");
+$routes->get("/tasks/view/(:num)",                   "TasksController::view/$1");
 $routes->match(['get','post'],"/tasks/create",       "TasksController::create");
 $routes->match(['get','post'],"/tasks/update/(:num)","TasksController::update/$1");
 $routes->match(['get','post'],"/tasks/delete/(:num)","TasksController::delete/$1");
