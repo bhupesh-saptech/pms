@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">
             <label class="form-label">Title</label>
-            <input class="form-control" type="text" name="task_title"value="<?= set_value('task_title', isset($task->ts_desc) ? $task->ts_desc : '') ?>" autocomplete="off">                          
+            <input class="form-control" type="text" name="task_title"value="<?= set_value('task_title', isset($task->task_title) ? $task->task_title : '') ?>" autocomplete="off">                          
         </div>
         <div class="form-group">
             <label class="form-label">Project ID</label>
