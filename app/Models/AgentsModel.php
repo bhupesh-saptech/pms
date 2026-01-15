@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class AgentsModel extends Model
 {
     protected $table            = 'agents';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'agent_id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
