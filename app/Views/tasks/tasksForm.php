@@ -6,6 +6,7 @@
     <form method="post"  id="form">
         <div class="mb-3">         
             <button type="submit" class="btn btn-primary float-end"><i class="fa fa-edit"></i></button>
+            <button type="submit" class="btn btn-primary float-end"><i class="fa fa-trash"></i></button>
         </div>
         <div class="form-group">
             <label class="form-label">Task ID</label>
