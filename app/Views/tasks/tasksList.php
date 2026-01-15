@@ -27,8 +27,8 @@
                 </tr>
                 <?php foreach($tasks as $task): ?>
                     <tr>
-                        <td><a href="tasks/view/<?= $task->task_id ?>"><?= $task->task_id ?></a></td>
-                        <td><?= $task->task_title ?></td>
+                        <td><?= $task->task_id ?></td>
+                        <td><a href="tasks/view/<?= $task->task_id ?>"><?= $task->task_title ?></a></td>
                         <td><?= $task->ps_name ?></td>
                         <td><?= $task->agent_nm ?></td>
                         <td><?= $task->created_at ?></td>
