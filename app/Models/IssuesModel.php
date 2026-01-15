@@ -17,7 +17,8 @@ class IssuesModel extends Model
                                     "iss_type",
                                     "project_id",
                                     "agent_id",
-                                    "status"
+                                    "status",
+                                    "sap_module"
                                   ];
 
     protected bool $allowEmptyInserts = false;

@@ -34,11 +34,12 @@ class ClientsController extends BaseController {
         return view('clients/clientsList',$this->data);
     }
     public function view($client_id) {
+        $this->data['mode'] = 'view';
         $this->data['client'] = $this->ClientsModel->find($client_id);
         return view('clients/clientsForm',$this->data);
     }
     public function create() {
-        $data['mode'] = 'create';
+        $this->data['mode'] = 'create';
         if ($this->request->is('post')) {
             $form = [
                 'client_nm' => $this->request->getPost('client_nm'),
@@ -56,6 +57,7 @@ class ClientsController extends BaseController {
         }
     }
     public function delete($agent_id) {
+        $this->data['mode'] = 'delete';
        if($this->ClientsModel->delete($agent_id)) {
            return redirect()->to('/clients')->with('message',"record Deleted Successfully");
        } else {
