@@ -76,7 +76,7 @@ class ProjectsController extends BaseController {
             return view('projects/projectsForm',$this->data);
         }
     }
-    public function read($project_id) {
+    public function view($project_id) {
         $this->data['mode'] = 'read';
         $this->data['project'] = $this->ProjectsModel->find($project_id);
         return view('projects/projectsForm',$this->data);
