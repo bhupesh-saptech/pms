@@ -37,8 +37,20 @@
             </select> 
         </div>
         <div class="form-group">
+            <label class="form-label">SAP Module</label>
+            <select class="form-select select2" name="sap_module" id="sap_module">
+                <?php foreach($modules as $key=>$value) : ?>
+                <option value="<?= $key; ?>"><?= $value; ?></option>
+            <?php    endforeach; ?>
+            </select> 
+        </div>
+        <div class="form-group">
             <label class="form-label">Issue Type</label>
-            <input class="form-control" type="text" name="iss_type" value="<?= set_value('iss_type', isset($issue->iss_type) ? $issue->iss_type : '') ?>" autocomplete="off">               
+            <select class="form-select select2" name="iss_type" id="iss_type">
+                <?php foreach($types as $key=>$value) : ?>
+                <option value="<?= $key; ?>"><?= $value; ?></option>
+            <?php    endforeach; ?>
+            </select> 
         </div>
         <div class="form-group">
             <label class="form-label">Agent ID</label>

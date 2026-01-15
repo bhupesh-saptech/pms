@@ -24,6 +24,21 @@ class IssuesController extends BaseController {
                                     4=>'Resolved',
                                     5=>'Closed',
                                 ];
+        $this->data['types'] =  [   0=>'Application',
+                                    1=>'Technical',
+                                    2=>'Authorization',
+                                    3=>'Interface',
+                                    4=>'Data Related'
+                                ];
+        $this->data['module'] = [ 00=>'SAP FI / CO',
+                                  01=>'SAP MM',
+                                  02=>'SAP SD',
+                                  03=>'SAP PP',
+                                  04=>'SAP QM',
+                                  05=>'SAP WM',
+                                  06=>'SAP PM',
+                                  07=>'SAP PS'
+                                ];
         $this->data['issues'] = $this->IssuesModel->read_data();
         $this->data['dash']   = $this->IssuesModel->dashboard();
         $this->data['projects'] = $this->ProjectsModel->select('project_id,project_nm')->orderBy('project_id')->findAll();
