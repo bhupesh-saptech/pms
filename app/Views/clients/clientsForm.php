@@ -53,7 +53,7 @@
                                 echo '';
                             }?>";
         switch(mode) {
-            case 'read':
+            case 'view':
                 $('#form input' ).prop('disabled', true);
                 $('#form select').prop('disabled', true);
                 break;
