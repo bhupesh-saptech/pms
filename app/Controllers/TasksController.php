@@ -21,8 +21,8 @@ class TasksController extends BaseController {
         $this->data['tasks'] = $this->TasksModel->read_data();
         $this->data['dash']  = $this->TasksModel->dashboard();
         $this->data['agents']   = $this->AgentsModel->select("agent_id,agent_nm")->orderBy("agent_id")->findAll();
-        $this->data['projects'] = $this->ProjectsModel->select("proj_id,ps_name")->orderBy("proj_id")->findAll();
-        $this->data['issues']   = $this->IssuesModel->select("issue_id,is_title")->orderBy("issue_id")->findAll();
+        $this->data['projects'] = $this->ProjectsModel->select("project_id,project_nm")->orderBy("project_id")->findAll();
+        $this->data['issues']   = $this->IssuesModel->select("issue_id,issue_title")->orderBy("issue_id")->findAll();
     }
     public function index() {
         return view('tasks/tasksList',$this->data);
