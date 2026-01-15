@@ -6,7 +6,7 @@
     <form method="post"  id="form">
         <div class="row">
             <div class="col-sm-6">
-                <h4 class="mb-4 text-center">Task Creation</h4>
+                <h4 class="text-center">Task Creation</h4>
             </div>
             <div class="col-sm-6">                 
                 <button type="button" class="btn btn-primary float-end " onclick="history.back();" ><i class="fa fa-arrow-left"></i></button> 
