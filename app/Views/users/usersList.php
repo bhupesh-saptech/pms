@@ -24,21 +24,15 @@
                     <th>User Real Name</th>
                     <th>Cell Number</th>
                     <th>Created At</th>
-                    <th class="text-center">View</th>
-                    <th class="text-center">Edit</th>
-                    <th class="text-center">Delete</th>
                 </tr>
                 <?php foreach($users as $user): ?>
                     <tr>
                         <td><?= $user->id ?></td>
-                        <td><?= $user->user_id ?></td>
+                        <td><a href="users/view/<?= $user->user_id ?>"><?= $user->user_id ?></a></td>
                         <td><?= $user->mail_id ?></td>
                         <td><?= $user->user_nm ?></td>
                         <td><?= $user->cell_no ?></td>
                         <td><?= $user->created_at ?></td>
-                        <td class="text-center"><a href="users/read/<?= $user->user_id ?>"><i class="fa fa-eye"   ></i></a></td>
-                        <td class="text-center"><a href="users/update/<?= $user->user_id ?>"><i class="fa fa-edit"  ></i></a></td>
-                        <td class="text-center"><a href="users/delete/<?= $user->user_id ?>"><i class="fa fa-trash" ></i></a></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
