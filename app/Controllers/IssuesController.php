@@ -26,7 +26,7 @@ class IssuesController extends BaseController {
     }
     public function create() {
         $data['mode'] = 'create';
-        $data['projects'] = $this->ProjectsModel->select('proj_id,ps_name')->orderBy('proj_id')->findAll();
+        $data['projects'] = $this->ProjectsModel->select('project_id,project_nm')->orderBy('project_id')->findAll();
         $data['agents']   = $this->AgentsModel->select('agent_id,agent_nm')->orderBy('agent_id')->findAll();
         if ($this->request->is('post')) {
             $form = [
