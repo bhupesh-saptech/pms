@@ -8,18 +8,24 @@ use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\AgentsModel;
 
 class AgentsController extends BaseController {
-    public $AgentsModel;
+    protected $AgentsModel;
+    protected $data;
     public function __construct() {
         helper('form');
         $this->AgentsModel = new AgentsModel;
+        $this->data['agents'] = $this->AgentsModel->findAll();
+        $this->data['dash']   = $this->AgentsModel->dashboard();
     }
     public function index() {
-        $data['agents'] = $this->AgentsModel->findAll();
-        $data['dash']   = $this->AgentsModel->dashboard();
-        return view('agents/agentsList',$data);
+        return view('agents/agentsList',$this->data);
+    }
+    public function view($agent_id) {
+        $this->data['mode']  = 'view';
+        $this->data['agent'] = $this->AgentsModel->find($agent_id);
+        return view('agents/agentsForm',$this->data);
     }
     public function create() {
-        $data['mode'] = 'create';
+        $this->data['mode'] = 'create';
         if ($this->request->is('post')) {
             $form = [
                 'agent_nm'  => $this->request->getPost('agent_nm'),
@@ -32,10 +38,17 @@ class AgentsController extends BaseController {
                 return redirect()->to('/agents')->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->AgentsModel->errors();     
-                return view('agents/agentsForm', $data);  
+                return view('agents/agentsForm', $this->data);  
             }
         } else {
-            return view('agents/agentsForm',$data);
+            return view('agents/agentsForm',$this->data);
         }
+    }
+    public function delete($agent_id) {
+       if($this->AgentsModel->delete($agent_id)) {
+           return redirect()->to('/agents')->with('message',"record Deleted Successfully");
+       } else {
+
+       }
     }
 }
