@@ -25,23 +25,16 @@
                     <th>Project Type</th>
                     <th>Project Manager</th>
                     <th>Client ID</th>
-                    <th class="text-center">View</th>
-                    <th class="text-center">Edit</th>
-                    <th class="text-center">Delete</th>
                 </tr>
                 <?php foreach($projects as $project): ?>
                     <tr>
                         <td><?= $project->project_id ?></td>
                         <td><?= $project->project_cd ?></td>
-                        <td><?= $project->project_nm ?></td>
+                        <td><a href="projects/view/<?= $project->project_id ?>"><?= $project->project_nm ?></a></td>
                         <td><?= $category[$project->proj_catg] ?? null; ?></td>
                         <td><?= $types[$project->proj_type] ?? null; ?></td>
                         <td><?= $project->agent_nm ?></td>
                         <td><?= $project->client_nm ?></td>
-                        
-                        <td class="text-center"><a href="projects/read/<?= $project->project_id ?>"><i class="fa fa-eye"   ></i></a></td>
-                        <td class="text-center"><a href="projects/update/<?= $project->project_id ?>"><i class="fa fa-edit"  ></i></a></td>
-                        <td class="text-center"><a href="projects/delete/<?= $project->project_id ?>"><i class="fa fa-trash" ></i></a></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
