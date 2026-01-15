@@ -24,7 +24,7 @@ class TasksController extends BaseController {
     public function index() {
         $data['tasks'] = $this->TasksModel->read_data();
         $data['dash']   = $this->TasksModel->dashboard();
-        return view('tasks/taskList',$data);
+        return view('tasks/tasksList',$data);
     }
     public function create() {
         $data['mode'] = 'create';
