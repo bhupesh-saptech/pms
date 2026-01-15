@@ -16,8 +16,8 @@ $routes->match(['get','post'],"/agents/update/(:num)","AgentsController::update/
 $routes->match(['get','post'],"/agents/delete/(:num)","AgentsController::delete/$1");
 
 
-$routes->get(                 "/clients",               "ClientsController::index");
-$routes->get(                 "/clients/read/(:num)",   "ClientsController::read/$1");
+$routes->get(                 "/clients",              "ClientsController::index");
+$routes->get(                 "/clients/read/(:num)",  "ClientsController::read/$1");
 $routes->match(['get','post'],"/clients/create",       "ClientsController::create");
 $routes->match(['get','post'],"/clients/update/(:num)","ClientsController::update/$1");
 $routes->match(['get','post'],"/clients/delete/(:num)","ClientsController::delete/$1");
