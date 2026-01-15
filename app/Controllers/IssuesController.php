@@ -38,8 +38,7 @@ class IssuesController extends BaseController {
     }
     
     public function create() {
-        $data['mode'] = 'create';
-
+        $this->data['mode'] = 'create';
         if ($this->request->is('post')) {
             $form = [
                 'issue_title' => $this->request->getPost('issue_title'),
