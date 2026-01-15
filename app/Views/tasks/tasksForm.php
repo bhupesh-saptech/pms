@@ -4,6 +4,12 @@
 </div>
 <div class="col-sm-8">
     <form method="post"  id="form">
+         <div class="d-grid">
+            <button type="submit" class="btn btn-primary">
+                Save
+            </button>
+             <a href="users" class="btn btn-primary float-end"> back </a>
+        </div>
         <div class="form-group">
             <label class="form-label">Task ID</label>
             <input class="form-control" type="text" name="task_id" value="<?= set_value('task_id', isset($task->task_id) ? $task->task_id : '') ?>" autocomplete="off">
@@ -28,10 +34,7 @@
             <?php    endforeach; ?>
             </select> 
         </div>
-        <div class="form-group">
-            <button class="btn btn-primary " type="submit"> submit </button>
-            <a href="users" class="btn btn-primary float-end"> back </a>
-        </div>
+
     </form>
 </div>
 <div class="col-sm-2">
