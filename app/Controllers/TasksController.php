@@ -31,8 +31,8 @@ class TasksController extends BaseController {
         $this->data['mode'] = 'create';
         if ($this->request->is('post')) {
             $form = [
-                'ts_desc' => $this->request->getPost('ts_desc'),
-                'proj_id' => $this->request->getPost('proj_id'),
+                'task_title' => $this->request->getPost('task_title'),
+                'project_id' => $this->request->getPost('project_id'),
                 'agent_id' => $this->request->getPost('agent_id'),
                 
             ];
