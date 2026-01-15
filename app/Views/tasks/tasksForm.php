@@ -10,13 +10,13 @@
         </div>
         <div class="form-group">
             <label class="form-label">Title</label>
-            <input class="form-control" type="text" name="ts_desc"value="<?= set_value('ts_desc', isset($task->ts_desc) ? $task->ts_desc : '') ?>" autocomplete="off">                          
+            <input class="form-control" type="text" name="task_title"value="<?= set_value('task_title', isset($task->ts_desc) ? $task->ts_desc : '') ?>" autocomplete="off">                          
         </div>
         <div class="form-group">
             <label class="form-label">Project ID</label>
-            <select class="form-select selectpicker" name="proj_id" id="proj_id">
+            <select class="form-select select2" name="project_id" id="project_id">
                 <?php foreach($projects as $project) : ?>
-                <option value="<?= $project->projec_id; ?>"><?= $project->project_nm; ?></option>
+                <option value="<?= $project->project_id; ?>"><?= $project->project_nm; ?></option>
             <?php    endforeach; ?>
             </select> 
         </div> 
