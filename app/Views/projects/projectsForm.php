@@ -100,10 +100,10 @@
                                 echo '';
                             }?>";
         switch(mode) {
-            case 'view':
+            case 'read':
                 $('#form input').prop('readonly', true);
                 break;
-            case 'edit' :
+            case 'update' :
                 $('#pass_wd').hide();
                 $('#cpas_wd').hide();
                 break;
