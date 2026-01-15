@@ -38,9 +38,9 @@
                         <td><?= $agent->emp_id ?></td>
                         <td><?= $agent->mobile_no ?></td>
                         <td><?= $agent->created_at ?></td>
-                        <td class="text-center"><a href="agents/read/1"><i class="fa fa-eye"   ></i></a></td>
-                        <td class="text-center"><a href="agents/update/1"><i class="fa fa-edit"  ></i></a></td>
-                        <td class="text-center"><a href="agents/delete/1"><i class="fa fa-trash" ></i></a></td>
+                        <td class="text-center"><a href="agents/read/<?= $agent->agent_id ?>"><i class="fa fa-eye"   ></i></a></td>
+                        <td class="text-center"><a href="agents/update/<?= $agent->agent_id ?>"><i class="fa fa-edit"  ></i></a></td>
+                        <td class="text-center"><a href="agents/delete/<?= $agent->agent_id ?>"><i class="fa fa-trash" ></i></a></td>
                     </tr>
                 <?php endforeach; ?>
             </table>

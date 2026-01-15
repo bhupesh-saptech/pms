@@ -39,9 +39,9 @@
                         <td><?= $project->agent_nm ?></td>
                         <td><?= $project->client_nm ?></td>
                         
-                        <td class="text-center"><a href="projects/read/1"><i class="fa fa-eye"   ></i></a></td>
-                        <td class="text-center"><a href="projects/update/1"><i class="fa fa-edit"  ></i></a></td>
-                        <td class="text-center"><a href="projects/delete/1"><i class="fa fa-trash" ></i></a></td>
+                        <td class="text-center"><a href="projects/read/<?= $project->project_id ?>"><i class="fa fa-eye"   ></i></a></td>
+                        <td class="text-center"><a href="projects/update/<?= $project->project_id ?>"><i class="fa fa-edit"  ></i></a></td>
+                        <td class="text-center"><a href="projects/delete/<?= $project->project_id ?>"><i class="fa fa-trash" ></i></a></td>
                     </tr>
                 <?php endforeach; ?>
             </table>

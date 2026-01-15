@@ -36,8 +36,8 @@
                         <td></td>   
                         <td><?= $client->mobile_no ?></td>
                         <td><?= $client->created_at ?></td>
-                        <td class="text-center"><a href="clients/view/<?= $client->client_id ?>"  ><i class="fa fa-eye"   ></i></a></td>
-                        <td class="text-center"><a href="clients/edit/<?= $client->client_id ?>"  ><i class="fa fa-edit"  ></i></a></td>
+                        <td class="text-center"><a href="clients/read/<?= $client->client_id ?>"  ><i class="fa fa-eye"   ></i></a></td>
+                        <td class="text-center"><a href="clients/update/<?= $client->client_id ?>"  ><i class="fa fa-edit"  ></i></a></td>
                         <td class="text-center"><a href="clients/delete/<?= $client->client_id ?>"><i class="fa fa-trash" ></i></a></td>
                     </tr>
                 <?php endforeach; ?>

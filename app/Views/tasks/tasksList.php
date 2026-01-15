@@ -35,9 +35,9 @@
                         <td><?= $task->ps_name ?></td>
                         <td><?= $task->agent_nm ?></td>
                         <td><?= $task->created_at ?></td>
-                        <td class="text-center"><a href="users/view/1"><i class="fa fa-eye"   ></i></a></td>
-                        <td class="text-center"><a href="users/edit/1"><i class="fa fa-edit"  ></i></a></td>
-                        <td class="text-center"><a href="users/delete/1"><i class="fa fa-trash" ></i></a></td>
+                        <td class="text-center"><a href="tasks/read/1"><i class="fa fa-eye"   ></i></a></td>
+                        <td class="text-center"><a href="tasks/update/1"><i class="fa fa-edit"  ></i></a></td>
+                        <td class="text-center"><a href="tasks/delete/1"><i class="fa fa-trash" ></i></a></td>
                     </tr>
                 <?php endforeach; ?>
             </table>

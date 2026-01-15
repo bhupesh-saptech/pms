@@ -37,9 +37,9 @@
                         <td><?= $issue->iss_type ?></td>
                         <td><?= $issue->agent_nm ?></td>
                         <td><?= $issue->created_at ?></td>
-                        <td class="text-center"><a href="users/view/1"><i class="fa fa-eye"   ></i></a></td>
-                        <td class="text-center"><a href="users/edit/1"><i class="fa fa-edit"  ></i></a></td>
-                        <td class="text-center"><a href="users/delete/1"><i class="fa fa-trash" ></i></a></td>
+                        <td class="text-center"><a href="issues/read/<?= $issue->issue_id ?>"><i class="fa fa-eye"   ></i></a></td>
+                        <td class="text-center"><a href="issues/update/<?= $issue->issue_id ?>"><i class="fa fa-edit"  ></i></a></td>
+                        <td class="text-center"><a href="issues/delete/<?= $issue->issue_id ?>"><i class="fa fa-trash" ></i></a></td>
                     </tr>
                 <?php endforeach; ?>
             </table>

@@ -36,9 +36,9 @@
                         <td><?= $user->user_nm ?></td>
                         <td><?= $user->cell_no ?></td>
                         <td><?= $user->created_at ?></td>
-                        <td class="text-center"><a href="users/view/1"><i class="fa fa-eye"   ></i></a></td>
-                        <td class="text-center"><a href="users/edit/1"><i class="fa fa-edit"  ></i></a></td>
-                        <td class="text-center"><a href="users/delete/1"><i class="fa fa-trash" ></i></a></td>
+                        <td class="text-center"><a href="users/read/<?= $user->user_id ?>"><i class="fa fa-eye"   ></i></a></td>
+                        <td class="text-center"><a href="users/update/<?= $user->user_id ?>"><i class="fa fa-edit"  ></i></a></td>
+                        <td class="text-center"><a href="users/delete/<?= $user->user_id ?>"><i class="fa fa-trash" ></i></a></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
