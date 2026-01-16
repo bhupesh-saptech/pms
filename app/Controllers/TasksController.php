@@ -60,7 +60,7 @@ class TasksController extends BaseController {
                 
             ];
             if($this->TasksModel->insert($form,false)) {
-                return redirect()->to('/tasks')->with('message',"Data Inserted Succefully");
+                return redirect()->back()->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->TasksModel->errors();     
                 return view('tasks/tasksForm', $this->data);  
@@ -82,7 +82,7 @@ class TasksController extends BaseController {
                 
             ];
             if($this->TasksModel->update($id,$form)) {
-                return redirect()->to('/tasks')->with('message',"Data Inserted Succefully");
+                return redirect()->back()->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->TasksModel->errors();     
                 return view('tasks/tasksForm', $this->data);  
