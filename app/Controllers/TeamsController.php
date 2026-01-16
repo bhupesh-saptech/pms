@@ -19,7 +19,7 @@ class TeamsController extends BaseController {
                                  2=>'Functional',
                                  3=>'Technical'
                                 ];
-        $this->data['teams'] = $this->TeamsModel->select('teams.*,teams.agent_nm as agent_nm')
+        $this->data['teams'] = $this->TeamsModel->select('teams.*,agents.agent_nm as agent_nm')
                                                 ->join('agents','agents.agent_id = teams.agent_id','left')
                                                 ->findAll();
          $this->data['dash']   = $this->TeamsModel->dashboard();
