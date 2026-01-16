@@ -36,7 +36,7 @@ class TasksController extends BaseController {
         $project_id = $this->request->getGet('project_id') ?? null;
         $agent_id   = $this->request->getGet('agent_id')   ?? null;
         
-        $builder->select('tasks.*, project.project_nm as project_nm,agents.agent_nm as agent_nm')
+        $builder->select('tasks.*, projects.project_nm as project_nm,agents.agent_nm as agent_nm')
                 ->join('projects', 'projects.project_id = tasks.project_Id','left')
                 ->join('agents', 'agents.agent_id = tasks.agent_id','left');
 
