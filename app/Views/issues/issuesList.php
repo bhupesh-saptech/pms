@@ -26,7 +26,7 @@
                     <th>SAP Module</th>
                     <th>Assigned to</th>
                     <th>Status</th>
-                    <th>Created At</th>
+                    <th>Tasks</th>
                 </tr>
                 <?php foreach($issues as $issue): ?>
                     <tr>
@@ -37,7 +37,8 @@
                         <td><?= $module[$issue->sap_module] ?? null; ?></td>
                         <td><?= $issue->agent_nm ?></td>
                         <td><?= $status[$issue->status] ?? null; ?></td>
-                        <td><?= $issue->created_at ?></td>
+                        <td class="text-center text-success"><i class="fas fa-tasks"></i></td>
+                        
                     </tr>
                 <?php endforeach; ?>
             </table>
