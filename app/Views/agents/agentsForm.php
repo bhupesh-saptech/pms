@@ -13,16 +13,11 @@
                 <?php if($mode == 'create') : ?> 
                     <button type="submit" class="btn btn-success float-end me-3"><i class="fa fa-save"></i></button>
                 <?php else : ?>
-                    <button type="submit" class="btn btn-warning float-end me-3"><i class="fa fa-edit"></i></button>
-                    <a href="tasks/delete/<?= $agent->agent_id ?>" class="btn btn-danger float-end me-3" onclick="return confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash"></i></a>
+                    <button type="buttton" class="btn btn-warning float-end me-3" onclick="btnToggle(this,event);"><i class="fa fa-edit"></i></button>
+                    <a href="agents/delete/<?= $agent->agent_id ?>" class="btn btn-danger float-end me-3" onclick="return confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash"></i></a>
                 <?php endif ?>
-                
+                <input  type="hidden" name="agent_id" id="agent_id" value="<?= set_value('agent_id', isset($agent->agent_id) ? $agent->agent_id : '') ?>">
             </div>
-        </div>
-        <div class="form-group">
-            <label class="form-label">Agents ID</label>
-            <input class="form-control" type="text" name="agent_id" value="<?= set_value('agent_id', isset($agent->agent_id) ? $agent->agent_id : '') ?>" autocomplete="off">
-            
         </div>
         <div class="form-group">
             <label class="form-label">First Name</label>
