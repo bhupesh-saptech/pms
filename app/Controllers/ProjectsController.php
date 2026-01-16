@@ -76,7 +76,7 @@ class ProjectsController extends BaseController {
             return view('projects/projectsForm',$this->data);
         }
     }
-    public function view($project_id) {
+    public function update($project_id) {
         $this->data['mode'] = 'view';
         $this->data['project'] = $this->ProjectsModel->find($project_id);
          if ($this->request->is('post')) {
@@ -103,32 +103,7 @@ class ProjectsController extends BaseController {
             return view('projects/projectsForm',$this->data);
         }
     }
-    public function update($project_id) {
-        $this->data['mode'] = 'update';
-        $this->data['project'] = $this->ProjectsModel->find($project_id);
-        if ($this->request->is('post')) {  
-            $form = [
-                'project_cd' => $this->request->getPost('project_cd'),
-                'project_nm' => $this->request->getPost('project_nm'),
-                'proj_desc' => $this->request->getPost('proj_desc'),
-                'proj_type' => $this->request->getPost('proj_type'),
-                'proj_catg' => $this->request->getPost('proj_catg'),
-                'agent_id' => $this->request->getPost('agent_id'),
-                'client_id' => $this->request->getPost('client_id'),
-                'start_dt' => $this->request->getPost('start_dt'),
-                'finish_dt' => $this->request->getPost('finish_dt'),
-                'status' => $this->request->getPost('status'),
-            ];
-            if($this->ProjectsModel->update($form,false)) {
-                return redirect()->to('/projects')->with('message',"Data updated Succefully");
-            } else {
-                $data['errors'] = $this->ProjectsModel->errors();     
-                return view('projects/projectsForm', $this->data);  
-            }
-        } else {
-            return view('projects/projectsForm',$this->data);
-        }
-    }
+   
     public function delete($project_id) {
         $this->data['mode'] = 'delete';
         $this->data['project'] = $this->ProjectsModel->find($project_id);
