@@ -19,7 +19,6 @@
                 <input  type="hidden" name="project_id" id="project_id" value="<?= set_value('project_id', isset($project->agent_id) ? $project->agent_id : '') ?>">
             </div>
         </div>
-        </div>
         <div class="form-group">
             <label class="form-label">Project CD</label>
             <input class="form-control" type="text" name="project_cd" value="<?= set_value('project_cd', isset($project->project_cd) ? $project->project_cd : '') ?>" autocomplete="off">
