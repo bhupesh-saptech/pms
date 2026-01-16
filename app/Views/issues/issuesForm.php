@@ -19,7 +19,6 @@
                 <input  type="hidden" name="issue_id" id="issue_id" value="<?= set_value('issue_id', isset($issue->issue_id) ? $issue->issue_id : '') ?>">
             </div>
         </div>
-        </div>
         <div class="form-group">
             <label class="form-label">Issue ID</label>
             <input class="form-control" type="text" name="issue_id" value="<?= set_value('issue_id', isset($issue->issue_id) ? $issue->issue_id : '') ?>" autocomplete="off">
