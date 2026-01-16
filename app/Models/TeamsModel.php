@@ -12,7 +12,11 @@ class TeamsModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [ 'team_cd', 
+                                    'team_nm', 
+                                    'team_ty', 
+                                    'agent_id',
+                                    'status'  ];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
