@@ -11,7 +11,7 @@
             <div class="col-sm-3">                 
                 <button type="button" class="btn btn-primary float-end " onclick="history.back();" ><i class="fa fa-arrow-left"></i></button> 
                 <button type="button" class="btn btn-primary float-end me-3"><i class="fa fa-trash"></i></button>
-                <button type="button" class="btn btn-primary float-end me-3"><i class="fa fa-edit"></i></button>
+                <button type="button" class="btn btn-primary float-end me-3" onclick="btnToggle(this,event);"><i class="fa fa-edit"></i></button>
             </div>
         </div>
         <div class="form-group">
@@ -118,6 +118,16 @@
                 $('#form input').prop('readonly', true);
                 break;
         }
+        function btnToggle(obj,event) {
+            if (obj.type === "button") {
+                    form = $(obj).closest('form');
+                    form.find("input").prop('disabled',false);
+                    form.find("select").prop('disabled',false);
+                    obj.type = "submit"; // ✅ Change to submit
+                    event.preventDefault();
+                    obj.innerHTML = '<i class="fa fa-save"></i>';
+            } 
+    }
 
     </script>
 <?= $this->endSection(); ?>
