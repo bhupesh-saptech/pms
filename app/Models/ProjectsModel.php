@@ -53,12 +53,7 @@ class ProjectsModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-    public function read_data() {
-        return $this->select('projects.*, clients.client_nm as client_nm,agents.agent_nm as agent_nm')
-                    ->join('clients', 'clients.client_id = projects.client_Id','left')
-                    ->join('agents', 'agents.agent_id = projects.agent_id','left')
-                    ->findAll();
-    }
+
     public function dashboard() {
         $db  = \Config\Database::connect(); 
        $sql = "SELECT
