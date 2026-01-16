@@ -19,10 +19,27 @@ class AgentsController extends BaseController {
     public function index() {
         return view('agents/agentsList',$this->data);
     }
-    public function view($agent_id) {
+    public function update($agent_id) {
         $this->data['mode']  = 'view';
         $this->data['agent'] = $this->AgentsModel->find($agent_id);
-        return view('agents/agentsForm',$this->data);
+        if ($this->request->is('post')) {
+            $id = $this->request->getPost('agent_id');
+            $form = [
+                'agent_nm'  => $this->request->getPost('agent_nm'),
+                'first_name' => $this->request->getPost('first_name'),
+                'last_name'  => $this->request->getPost('last_name'),
+                'email_id'   => $this->request->getPost('email_id'),
+                'mobile_no'  => $this->request->getPost('mobile_no'),
+            ];
+            if($this->AgentsModel->update($id,$form)) {
+                return redirect()->to('/agents')->with('message',"Data Inserted Succefully");
+            } else {
+                $data['errors'] = $this->AgentsModel->errors();     
+                return view('agents/agentsForm', $this->data);  
+            }
+        } else {
+            return view('agents/agentsForm',$this->data);
+        }
     }
     public function create() {
         $this->data['mode'] = 'create';
