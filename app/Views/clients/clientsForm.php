@@ -42,18 +42,18 @@
         <div class="form-group">
             <label class="form-label">Client Type</label>
             <select class="form-control"  name="cl_type">
-                    <option value="" <?php if($client->cl_type == "") { echo "selected";} ?>>Select Client Type</option>
+                    <option value="" <?php if(isset($client->cl_type) && $client->cl_type == "") { echo "selected";} ?>>Select Client Type</option>
                     <?php foreach($types as $param=>$value) :?>
-                        <option value="<?= $param ?>" <?php if($client->cl_type == $param) { echo "selected";} ?>><?= $value ?></option>
+                        <option value="<?= $param ?>" <?php if(isset($client->cl_type) && $client->cl_type == $param) { echo "selected";} ?>><?= $value ?></option>
                     <?php endforeach?>
             </select>                   
         </div>
         <div class="form-group">
             <label class="form-label">Client Type</label>
             <select class="form-control"  name="industry">
-                    <option value="" <?php if($client->industry == "") { echo "selected";} ?>>Select Industry</option>
+                    <option value="" <?php if(isset($client->industry) && $client->industry == "") { echo "selected";} ?>>Select Industry</option>
                     <?php foreach($industry as $param=>$value) :?>
-                        <option value="<?= $param ?>" <?php if($client->industry == $param) { echo "selected";} ?>><?= $value ?></option>
+                        <option value="<?= $param ?>" <?php if(isset($client->industry) && $client->industry == $param) { echo "selected";} ?>><?= $value ?></option>
                     <?php endforeach; ?>
             </select>                   
         </div>

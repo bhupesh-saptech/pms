@@ -36,8 +36,8 @@
             <label class="form-label">Project type</label>
             <select class="form-select" name="proj_type">
                 <option value="" <?php if($project->proj_type == "") { echo "selected";} ?>>select project type</option>
-                <?php foreach($types as $key=>$value): ?>
-                    <option value="<?= $key ?>" <?php if($project->proj_type == $key ) { echo "selected";} ?>><?= $value; ?></option>
+                <?php foreach($types as $param=>$value): ?>
+                    <option value="<?= $param ?>" <?php if($project->proj_type == $param ) { echo "selected";} ?>><?= $value; ?></option>
                 <?php endforeach;?>
             </select>               
         </div>
@@ -45,8 +45,8 @@
             <label class="form-label">Project Category</label>
             <select class="form-select" name="proj_catg" >
                 <option value="">select project Category</option>
-                <?php foreach($category as $key=>$value): ?>
-                    <option value="<?= $key ?>" <?php if($project->proj_catg == $key ) { echo "selected";} ?>><?= $value; ?></option>
+                <?php foreach($category as $param=>$value): ?>
+                    <option value="<?= $param ?>" <?php if($project->proj_catg == $param ) { echo "selected";} ?>><?= $value; ?></option>
                 <?php endforeach;?>
             </select>
 
@@ -82,8 +82,8 @@
             <label class="form-label">Project Status </label>
             <select class="form-select"  name="status" id="status" >
                 <option value="">-- Select Status --</option>
-                <?php foreach($status as $key=>$value): ?>
-                    <option value="<?= $key ?>" <?php if($project->status == $key ) { echo "selected";} ?>><?= $value; ?></option>
+                <?php foreach($status as $param=>$value): ?>
+                    <option value="<?= $param ?>" <?php if($project->status == $param ) { echo "selected";} ?>><?= $value; ?></option>
                 <?php endforeach; ?>
             </select>
         </div>
