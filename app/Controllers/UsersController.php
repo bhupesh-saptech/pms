@@ -69,9 +69,9 @@ class UsersController extends BaseController {
             return view('users/usersForm',$data);
         }   
     }
-     public function update($id) {
+     public function update($user_id) {
         $data['mode'] = 'edit';
-        $data['user'] = $this->UsersModel->find($id);
+        $data['user'] = $this->UsersModel->find($user_id);
         if ($this->request->is('post')) {
             $form = [
                 'user_id' => $this->request->getPost('user_id'),
@@ -88,11 +88,7 @@ class UsersController extends BaseController {
         }
         return view('users/usersForm',$data);
     }
-    public function view($id) {
-        $data['mode'] = 'view';
-        $data['user'] = $this->UsersModel->find($id);
-        return view('users/usersForm',$data);
-    }
+
     public function delete($id) {
         $data['mode'] = 'delete';
         $data['user'] = $this->UsersModel->find($id);

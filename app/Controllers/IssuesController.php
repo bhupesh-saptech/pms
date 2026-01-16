@@ -46,13 +46,7 @@ class IssuesController extends BaseController {
     }
     public function index() {
         return view('issues/issuesList',$this->data);
-    }
-    public function view($issue_id) {
-        $this->data['mode'] = 'view';
-        $this->data['issue'] = $this->IssuesModel->find($issue_id);
-        return view('issues/issuesForm',$this->data);
-    }
-    
+    }    
     public function create() {
         $this->data['mode'] = 'create';
         if ($this->request->is('post')) {
@@ -64,6 +58,28 @@ class IssuesController extends BaseController {
                 'status'      => $this->request->getPost('status')
             ];
             if($this->IssuesModel->insert($form,false)) {
+                return redirect()->to('/issues')->with('message',"Data Inserted Succefully");
+            } else {
+                $data['errors'] = $this->IssuesModel->errors();     
+                return view('issues/issuesForm', $this->data);  
+            }
+        } else {
+            return view('issues/issuesForm',$this->data);
+        }
+    }
+    public function update($issue_id) {
+        $this->data['mode'] = 'view';
+        $this->data['issue'] = $this->IssuesModel->find($issue_id);
+        if ($this->request->is('post')) {
+            $id = $this->request->getPost('issue_id');
+            $form = [
+                'issue_title' => $this->request->getPost('issue_title'),
+                'project_id'  => $this->request->getPost('project_id'),
+                'iss_type'    => $this->request->getPost('iss_type'),
+                'agent_id'    => $this->request->getPost('agent_id'),
+                'status'      => $this->request->getPost('status')
+            ];
+            if($this->IssuesModel->update($id,$form,false)) {
                 return redirect()->to('/issues')->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->IssuesModel->errors();     
