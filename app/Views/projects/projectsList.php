@@ -35,8 +35,8 @@
                         <td><?= $types[$project->proj_type] ?? null; ?></td>
                         <td><?= $project->agent_nm ?></td>
                         <td><?= $project->client_nm ?></td>
-                        <td class="text-center text-danger"><i class="fa-solid fa-fire"></i></td>
-                        <td class="text-center text-success"><i class="fas fa-tasks"></i></td>
+                        <td class="text-center text-danger" ><a href="issues?project_id=<?= $project->project_id ?>"><i class="fa-solid fa-fire"></a></i></td>
+                        <td class="text-center text-success"><a href="tasks?project_id=<?= $project->project_id ?>"><i class="fas fa-tasks"></i></a></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
