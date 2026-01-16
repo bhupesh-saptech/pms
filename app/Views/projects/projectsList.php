@@ -33,12 +33,11 @@
                         <td><?= $project->project_id ?></td>
                         <td><?= $project->project_cd ?></td>
                         <td><a href="projects/update/<?= $project->project_id ?>"><?= $project->project_nm ?></a></td>
-                        <td><?= $category[$project->proj_catg] ?? null; ?></td>
                         <td><?= $types[$project->proj_type] ?? null; ?></td>
                         <td><?= $project->agent_nm ?></td>
                         <td><?= $project->client_nm ?></td>
-                        <td><i class="fa-solid fa-fire"></i></td>
-                        <td><i class="fas fa-tasks"></i></td>
+                        <td class="text-center text-danger"><i class="fa-solid fa-fire"></i></td>
+                        <td class="text-center text-success"><i class="fas fa-tasks"></i></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
