@@ -12,6 +12,7 @@ class TeamsController extends BaseController {
     public function __construct() {
         $TeamsModel = new TeamsModel();
         $this->data['Teams'] = $this->TeamsModel->findAll();
+
     }
     
     public function index() {
