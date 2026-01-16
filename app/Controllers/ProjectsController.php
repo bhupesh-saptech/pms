@@ -58,10 +58,8 @@ class ProjectsController extends BaseController {
             $builder->where('projects.client_id',$client_id);
         }
         $this->data['projects'] =   $builder->findAll();
-        echo "<pre>";
-        print_r($this->data['projects']);
         $this->data['dash']   = $this->ProjectsModel->dashboard();
-        // return view('projects/projectsList',$this->data);
+        return view('projects/projectsList',$this->data);
     }
     public function create() {
         $this->data['mode'] = 'create';
