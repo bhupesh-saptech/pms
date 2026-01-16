@@ -92,7 +92,7 @@ class ProjectsController extends BaseController {
                 'finish_dt' => $this->request->getPost('finish_dt'),
                 'status' => $this->request->getPost('status'),
             ];
-            if($this->ProjectsModel->update($form,false)) {
+            if($this->ProjectsModel->update($form)) {
                 return redirect()->to('/projects')->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->ProjectsModel->errors();     
