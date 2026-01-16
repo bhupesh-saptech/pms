@@ -6,13 +6,15 @@ use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 
 use App\Models\ClientsModel;
+use App\Models\ProjectsModel;
 
 class ClientsController extends BaseController {
-    protected $ClientsModel;
+    protected $ClientsModel,$ProjectsModel;
     protected $data;
     public function __construct() {
         helper('form');
-        $this->ClientsModel = new ClientsModel;
+        $this->ClientsModel  = new ClientsModel;
+        $this->ProjectsModel = new ProjectsModel();
         $this->data['types']    = [ 0=>'Individual',
                                     1=>'Company',
                                     2=>'Government',
@@ -87,5 +89,9 @@ class ClientsController extends BaseController {
        } else {
 
        }
+    }
+    public function projects($client_id) {
+        $this->data['projects'] = $this->ProjectsModel->where('client_id',$client_id)->findAll();
+        return view('projects/projectsList',$this->data);
     }
 }
