@@ -26,7 +26,6 @@
                     <th>Client Type</th>
                     <th>Industry</th>
                     <th>status</th>
-                    <th>Created At</th>
                 </tr>
                 <?php foreach($clients as $client): ?>
                     <tr>
@@ -37,9 +36,7 @@
                         <td><?= $client->mobile_no ?></td>
                         <td><?= $types[$client->cl_type] ?? null; ?></td>
                         <td><?= $industry[$client->industry] ?? null; ?></td>
-                        <td><?= $status[$client->status] ?? null; ?></td>
-                        <td><?= $client->created_at ?></td>
-                  
+                        <td><?= $status[$client->status] ?? null; ?></td>                  
                     </tr>
                 <?php endforeach; ?>
             </table>
