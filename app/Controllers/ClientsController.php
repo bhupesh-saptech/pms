@@ -33,11 +33,6 @@ class ClientsController extends BaseController {
     public function index() {
         return view('clients/clientsList',$this->data);
     }
-    public function view($client_id) {
-        $this->data['mode'] = 'view';
-        $this->data['client'] = $this->ClientsModel->find($client_id);
-        return view('clients/clientsForm',$this->data);
-    }
     public function create() {
         $this->data['mode'] = 'create';
         if ($this->request->is('post')) {
@@ -47,6 +42,26 @@ class ClientsController extends BaseController {
                 'mobile_no' => $this->request->getPost('mobile_no'),
             ];
             if($this->ClientsModel->insert($form,false)) {
+                return redirect()->to('/clients')->with('message',"Data Inserted Succefully");
+            } else {
+                $data['errors'] = $this->ClientsModel->errors();     
+                return view('clients/clientsForm', $this->data);  
+            }
+        } else {
+            return view('clients/clientsForm',$this->data);
+        }
+    }
+    public function update($client_id) {
+        $this->data['mode'] = 'view';
+        $this->data['client'] = $this->ClientsModel->find($client_id);
+        if ($this->request->is('post')) {
+            $id = $this->request->getPost('client_id');
+            $form = [
+                'client_nm' => $this->request->getPost('client_nm'),
+                'email_id' => $this->request->getPost('email_id'),
+                'mobile_no' => $this->request->getPost('mobile_no'),
+            ];
+            if($this->ClientsModel->update($id,$form)) {
                 return redirect()->to('/clients')->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->ClientsModel->errors();     
