@@ -60,9 +60,9 @@
         <div class="form-group">
             <label class="form-label">Client Status</label>
             <select class="form-control"  name="status">
-                    <option value="" <?php if($client->status == "") { echo "selected";} ?>>Select Status</option>
+                    <option value="" <?php if(isset($client->status) && $client->status  == "") { echo "selected";} ?>>Select Status</option>
                     <?php foreach($industry as $param=>$value) :?>
-                        <option value="<?= $param ?>" <?php if($client->status == $param) { echo "selected";} ?>><?= $value ?></option>
+                        <option value="<?= $param ?>" <?php if(isset($client->status) && $client->status == $param) { echo "selected";} ?>><?= $value ?></option>
                     <?php endforeach; ?>
             </select>                   
         </div>
