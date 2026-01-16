@@ -91,7 +91,10 @@ class ClientsController extends BaseController {
        }
     }
     public function projects($client_id) {
-        $this->data['projects'] = $this->ProjectsModel->where('client_id',$client_id)->findAll();
+        $this->data['projects'] = $this->ProjectsModel->select('projects.*,clients.client_nm,agents.agent_nm')
+                                                      ->join('clients','clients.client_id = projects.client_id','left')
+                                                      ->join('agents','agents.agent_id = projects.agent_id','left')
+                                                      ->where('client_id',$client_id)->findAll();
         return view('projects/projectsList',$this->data);
     }
 }
