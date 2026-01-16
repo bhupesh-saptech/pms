@@ -47,15 +47,18 @@ class ProjectsController extends BaseController {
         
     }
     public function index() {
-        $client_id = $this->request->getGet('client_id') ?? null;
-        
         $builder = $this->ProjectsModel;
-
+        $client_id = $this->request->getGet('client_id') ?? null;
+        $agent_id  = $this->request->getGet('agent_id') ?? null;
+        
         $builder->select('projects.*, clients.client_nm as client_nm,agents.agent_nm as agent_nm')
                 ->join('clients', 'clients.client_id = projects.client_Id','left')
                 ->join('agents', 'agents.agent_id = projects.agent_id','left');
         if (!empty($client_id)) {
             $builder->where('projects.client_id',$client_id);
+        }
+        if (!empty($agent_id)) {
+            $builder->where('projects.agent_id',$agent_id);
         }
         $this->data['projects'] =   $builder->findAll();
         $this->data['dash']   = $this->ProjectsModel->dashboard();
