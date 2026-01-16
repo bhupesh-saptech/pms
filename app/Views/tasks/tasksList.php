@@ -30,7 +30,7 @@
                     <tr>
                         <td><?= $task->task_id ?></td>
                         <td><a href="tasks/update/<?= $task->task_id ?>"><?= $task->task_title ?></a></td>
-                        <td><?= $task->ps_name ?></td>
+                        <td><?= $task->project_nm ?></td>
                         <td><?= $task->agent_nm ?></td>
                         <td><?= $status[$task->status] ?? null; ?></td>
                         <td><?= $task->created_at ?></td>
