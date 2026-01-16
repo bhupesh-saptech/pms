@@ -70,7 +70,7 @@ class UsersController extends BaseController {
         }   
     }
      public function update($user_id) {
-        $data['mode'] = 'edit';
+        $data['mode'] = 'view';
         $data['user'] = $this->UsersModel->find($user_id);
         if ($this->request->is('post')) {
             $form = [
