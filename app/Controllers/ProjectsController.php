@@ -54,7 +54,7 @@ class ProjectsController extends BaseController {
         $builder->select('projects.*, clients.client_nm as client_nm,agents.agent_nm as agent_nm')
                 ->join('clients', 'clients.client_id = projects.client_Id','left')
                 ->join('agents', 'agents.agent_id = projects.agent_id','left');
-        if (!empty($clientId)) {
+        if (!empty($client_id)) {
             $builder->where('projects.client_id',$client_id);
         }
         $this->data['projects'] =   $builder->findAll();
