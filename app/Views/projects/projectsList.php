@@ -25,6 +25,8 @@
                     <th>Project Type</th>
                     <th>Project Manager</th>
                     <th>Client ID</th>
+                    <th>Issues</th>
+                    <th>Tasks</th>
                 </tr>
                 <?php foreach($projects as $project): ?>
                     <tr>
@@ -35,6 +37,8 @@
                         <td><?= $types[$project->proj_type] ?? null; ?></td>
                         <td><?= $project->agent_nm ?></td>
                         <td><?= $project->client_nm ?></td>
+                        <td><i class="fa-solid fa-fire"></i></td>
+                        <td><i class="fas fa-tasks"></i></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
