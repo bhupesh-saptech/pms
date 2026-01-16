@@ -42,6 +42,11 @@ $routes->match(['get','post'],  "/teams/create",       "TeamsController::create"
 $routes->match(['get','post'],  "/teams/update/(:num)","TeamsController::update/$1");
 $routes->match(['get','post'],  "/teams/delete/(:num)","TeamsController::delete/$1");
 
+$routes->match(['get','post'],  "/tickets",              "TicketsController::index");
+$routes->match(['get','post'],  "/tickets/create",       "TicketsController::create");
+$routes->match(['get','post'],  "/tickets/update/(:num)","TicketsController::update/$1");
+$routes->match(['get','post'],  "/tickets/delete/(:num)","TicketsController::delete/$1");
+
 $routes->match(['get','post'],  "/users",              "UsersController::index");
 $routes->match(['get','post'],  "/users/create",       "UsersController::create");
 $routes->match(['get','post'],  "/users/update/(:num)","UsersController::update/$1");
