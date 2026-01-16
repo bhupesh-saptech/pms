@@ -16,7 +16,7 @@
                     <button type="button" class="btn btn-warning float-end me-3" onclick="btnToggle(this,event);"><i class="fa fa-edit"></i></button>
                     <a href="projects/delete/<?= $project->project_id ?>" class="btn btn-danger float-end me-3" onclick="return confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash"></i></a>
                 <?php endif ?>
-                <input  type="hidden" name="project_id" id="project_id" value="<?= set_value('project_id', isset($project->agent_id) ? $project->agent_id : '') ?>">
+                <input  type="hidden" name="project_id" id="project_id" value="<?= set_value('project_id', isset($project->project_id) ? $project->project_id : '') ?>">
             </div>
         </div>
         <div class="form-group">
