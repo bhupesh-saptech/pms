@@ -19,7 +19,6 @@
                 <input  type="hidden" name="user_id" id="user_id" value="<?= set_value('user_id', isset($user->user_id) ? $user->user_id : '') ?>">
             </div>
         </div>
-        </div>
         <div class="form-group">
             <label class="form-label">User ID</label>
             <input class="form-control" type="text" name="user_id" value="<?= set_value('user_id', isset($user->user_id) ? $user->user_id : '') ?>" autocomplete="off">

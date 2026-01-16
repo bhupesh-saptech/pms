@@ -19,7 +19,6 @@
                 <input  type="hidden" name="task_id" id="task_id" value="<?= set_value('task_id', isset($task->task_id) ? $task->task_id : '') ?>">
             </div>
         </div>
-        </div>
         <div class="form-group">
             <label class="form-label">Task ID</label>
             <input class="form-control" type="text" name="task_id" value="<?= set_value('task_id', isset($task->task_id) ? $task->task_id : '') ?>" autocomplete="off">
