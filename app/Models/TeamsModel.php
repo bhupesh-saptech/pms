@@ -7,9 +7,9 @@ use CodeIgniter\Model;
 class TeamsModel extends Model
 {
     protected $table            = 'teams';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'team_id';
     protected $useAutoIncrement = true;
-    protected $returnType       = 'array';
+    protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [];
