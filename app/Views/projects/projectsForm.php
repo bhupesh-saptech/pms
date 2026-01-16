@@ -103,8 +103,9 @@
                             }?>";
         switch(mode) {
             case 'view':
-                $('#form input' ).prop('disabled', true);
-                $('#form select').prop('disabled', true);
+                $('#form input'   ).prop('disabled', true);
+                $('#form select'  ).prop('disabled', true);
+                $('#form textarea').prop('disabled', true);
                 break;
             case 'update' :
                 $('#pass_wd').hide();
