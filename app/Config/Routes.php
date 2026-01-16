@@ -51,4 +51,6 @@ $routes->match(['get','post'],  "/users/delete/(:num)","UsersController::delete/
 $routes->match(["get","post"],  "/users/login", "UsersController::login");
 $routes->match(["get","post"],  "/users/logout","UsersController::logout");
 
+$routes->get("clients/(:num)","ClientsController::projects/$1");
+
 return $routes;
