@@ -12,12 +12,8 @@
                 <button type="button" class="btn btn-primary float-end " onclick="history.back();" ><i class="fa fa-arrow-left"></i></button> 
                 <button type="button" class="btn btn-primary float-end me-3"><i class="fa fa-trash"></i></button>
                 <button type="button" class="btn btn-primary float-end me-3" onclick="btnToggle(this,event);"><i class="fa fa-edit"></i></button>
+                <input  type="hidden" name="project_id" id="project_id" value="<?= set_value('project_id', isset($project->project_id) ? $project->project_id : '') ?>">
             </div>
-        </div>
-        <div class="form-group">
-            <label class="form-label">Project ID</label>
-            <input class="form-control" type="text" name="project_id" value="<?= set_value('project_id', isset($project->project_id) ? $project->project_id : '') ?>" autocomplete="off">
-            
         </div>
         <div class="form-group">
             <label class="form-label">Project CD</label>
