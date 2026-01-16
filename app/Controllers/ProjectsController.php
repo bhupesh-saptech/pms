@@ -67,7 +67,7 @@ class ProjectsController extends BaseController {
                 'status' => $this->request->getPost('status'),
             ];
             if($this->ProjectsModel->insert($form,false)) {
-                return redirect()->to('/projects')->with('message',"Data Inserted Succefully");
+                return redirect()->back()->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->ProjectsModel->errors();     
                 return view('projects/projectsForm', $this->data);  
@@ -93,7 +93,7 @@ class ProjectsController extends BaseController {
                 'status' => $this->request->getPost('status'),
             ];
             if($this->ProjectsModel->update($project_id,$form)) {
-                return redirect()->to('/projects')->with('message',"Data Inserted Succefully");
+                return redirect()->back()->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->ProjectsModel->errors();     
                 return view('projects/projectsForm', $this->data);  
@@ -105,7 +105,7 @@ class ProjectsController extends BaseController {
    
     public function delete($project_id) {
        if($this->ProjectsModel->delete($project_id)) {
-           return redirect()->to('/projects')->with('message',"record Deleted Successfully");
+           return redirect()->back()->with('message',"record Deleted Successfully");
        } else {
 
        }
