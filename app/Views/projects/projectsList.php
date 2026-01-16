@@ -21,7 +21,6 @@
                     <th>Project ID</th>
                     <th>Project Cd</th>
                     <th>Project Name</th>
-                    <th>Project Cat</th>
                     <th>Project Type</th>
                     <th>Project Manager</th>
                     <th>Client ID</th>
