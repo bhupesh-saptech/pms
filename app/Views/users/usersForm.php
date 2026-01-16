@@ -20,34 +20,24 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="form-label">User ID</label>
-            <input class="form-control" type="text" name="user_id" value="<?= set_value('user_id', isset($user->user_id) ? $user->user_id : '') ?>" autocomplete="off">
-            
-        </div>
-        <div class="form-group">
             <label class="form-label">Email ID</label>
             <input class="form-control" type="text" name="mail_id" value="<?= set_value('mail_id', isset($user->mail_id) ? $user->mail_id : '') ?>" autocomplete="off">
-           
         </div> 
         <div class="form-group">
             <label class="form-label">User name</label>
             <input class="form-control" type="text" name="user_nm"value="<?= set_value('user_nm', isset($user->user_nm) ? $user->user_nm : '') ?>" autocomplete="off">               
-            
         </div>
         <div class="form-group">
             <label class="form-label">Contact No</label>
             <input class="form-control" type="text" name="cell_no" value="<?= set_value('cell_no', isset($user->cell_no) ? $user->cell_no : '') ?>" autocomplete="off">               
-            
         </div>
         <div class="form-group">
             <label class="form-label">Password </label>
             <input class="form-control"  type="password" name="pass_wd" id="pass_id" value="<?= set_value('pass_wd', '', false) ?>">
-            
         </div>
         <div class="form-group">
             <label class="form-label">Confirm Pass </label>
             <input class="form-control"  type="password" name="cpas_wd" id="cpas_id" value="<?= set_value('cpas_wd', '', false) ?>">
-           
         </div>
     </form>
 </div>
