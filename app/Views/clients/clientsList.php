@@ -38,7 +38,7 @@
                         <td><?= $types[$client->cl_type] ?? null; ?></td>
                         <td><?= $industry[$client->industry] ?? null; ?></td>
                         <td><?= $status[$client->status] ?? null; ?></td>  
-                        <td class="text-center text-primary"><a href="clients/<?= $client->client_id ?>"><i class="fa-solid fa-diagram-project"></i></a></td>                
+                        <td class="text-center text-primary"><a href="/projects?client_id=<?= $client->client_id ?>"><i class="fa-solid fa-diagram-project"></i></a></td>                
                     </tr>
                 <?php endforeach; ?>
             </table>
