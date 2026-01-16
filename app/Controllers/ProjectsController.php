@@ -48,7 +48,7 @@ class ProjectsController extends BaseController {
     }
     public function index() {
         $client_id = $this->request->getGet('client_id') ?? null;
-
+        echo $client_id;
         $builder = $this->ProjectsModel;
 
         $builder->select('projects.*, clients.client_nm as client_nm,agents.agent_nm as agent_nm')
@@ -59,7 +59,7 @@ class ProjectsController extends BaseController {
         }
         $this->data['projects'] =   $builder->findAll();
         $this->data['dash']   = $this->ProjectsModel->dashboard();
-        return view('projects/projectsList',$this->data);
+        // return view('projects/projectsList',$this->data);
     }
     public function create() {
         $this->data['mode'] = 'create';
