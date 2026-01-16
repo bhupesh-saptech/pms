@@ -35,9 +35,9 @@
         <div class="form-group">
             <label class="form-label">Project type</label>
             <select class="form-select" name="proj_type">
-                <option value="">select project type</option>
+                <option value="" <?php if($project->proj_type == "") { echo "selected";} ?>>select project type</option>
                 <?php foreach($types as $key=>$value): ?>
-                    <option value="<?= $key ?>"><?= $value; ?></option>
+                    <option value="<?= $key ?>" <?php if($project->proj_type == $key ) { echo "selected";} ?>><?= $value; ?></option>
                 <?php endforeach;?>
             </select>               
         </div>
@@ -46,7 +46,7 @@
             <select class="form-select" name="proj_catg" >
                 <option value="">select project Category</option>
                 <?php foreach($category as $key=>$value): ?>
-                    <option value="<?= $key ?>"><?= $value; ?></option>
+                    <option value="<?= $key ?>" <?php if($project->proj_catg == $key ) { echo "selected";} ?>><?= $value; ?></option>
                 <?php endforeach;?>
             </select>
 
@@ -57,7 +57,7 @@
             <select class="form-select" name="client_id">
                 <option value="">select client</option>
                 <?php foreach($clients as $client) :?>
-                    <option value="<?= $client->client_id; ?>"><?= $client->client_nm; ?></option>
+                    <option value="<?= $client->client_id; ?>" <?php if($project->client_id == $client->client_id ) { echo "selected";} ?>><?= $client->client_nm; ?></option>
                 <?php endforeach;?>
             </select>                
         </div>
@@ -66,7 +66,7 @@
             <select class="form-select"  name="agent_id" >
                 <option value="">select Project Manager</option>
                 <?php foreach( $agents as $agent) :?>
-                    <option value="<?= $agent->agent_id; ?>"><?= $agent->agent_nm; ?></option>
+                    <option value="<?= $agent->agent_id; ?>" <?php if($project->agent_id == $agent->agent_id ) { echo "selected";} ?> ><?= $agent->agent_nm; ?></option>
                 <?php endforeach; ?>
             </select>               
         </div>
@@ -83,7 +83,7 @@
             <select class="form-select"  name="status" id="status" >
                 <option value="">-- Select Status --</option>
                 <?php foreach($status as $key=>$value): ?>
-                    <option value="<?= $key ?>"><?= $value; ?></option>
+                    <option value="<?= $key ?>" <?php if($project->status == $key ) { echo "selected";} ?>><?= $value; ?></option>
                 <?php endforeach; ?>
             </select>
         </div>
