@@ -10,6 +10,7 @@ class TeamsController extends BaseController {
     protected $TeamsModel;
     protected $data;
     public function __construct() {
+        helper('form');
         $this->TeamsModel = new TeamsModel();
         $this->data['status'] = [0=>'InActive',
                                  1=>'Active'
