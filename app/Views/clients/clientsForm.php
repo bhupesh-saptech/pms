@@ -13,7 +13,7 @@
                 <?php if($mode == 'create') : ?> 
                     <button type="submit" class="btn btn-success float-end me-3"><i class="fa fa-save"></i></button>
                 <?php else : ?>
-                    <button type="buttton" class="btn btn-warning float-end me-3" onclick="btnToggle(this,event);"><i class="fa fa-edit"></i></button>
+                    <button type="button" class="btn btn-warning float-end me-3" onclick="btnToggle(this,event);"><i class="fa fa-edit"></i></button>
                     <a href="clients/delete/<?= $client->client_id ?>" class="btn btn-danger float-end me-3" onclick="return confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash"></i></a>
                 <?php endif ?>
                 <input  type="hidden" name="client_id" id="client_id" value="<?= set_value('client_id', isset($client->client_id) ? $client->client_id : '') ?>">
