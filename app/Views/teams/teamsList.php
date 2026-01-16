@@ -12,7 +12,7 @@
                     <h5 class="card-title">List of Tickets</h1>
                 </div>
                 <div class="col-sm-8">
-                    <a href="$teams/create" class="btn btn-primary float-end">Create $team</a>
+                    <a href="$teams/create" class="btn btn-primary float-end">Create Team</a>
                 </div>
             </div>  
         </div>
