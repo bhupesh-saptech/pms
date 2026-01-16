@@ -25,7 +25,9 @@
                     <th>Email ID</th>
                     <th>Emp ID</th>
                     <th>Cell Number</th>
-                    <th>Created At</th>
+                    <th>Projects</th>
+                    <th>Issues</th>
+                    <th>Tasks</th>
                 </tr>
                 <?php foreach($agents as $agent): ?>
                     <tr>
@@ -34,7 +36,10 @@
                         <td><?= $agent->email_id ?></td>
                         <td><?= $agent->emp_id ?></td>
                         <td><?= $agent->mobile_no ?></td>
-                        <td><?= $agent->created_at ?></td>
+                        <td class="text-center text-primary"><i class="fa-solid fa-diagram-project"></i></td>
+                        <td class="text-center text-danger"><i class="fa-solid fa-fire"></i></td>
+                        <td class="text-center text-success"><i class="fas fa-tasks"></i></td>
+                       
                     </tr>
                 <?php endforeach; ?>
             </table>

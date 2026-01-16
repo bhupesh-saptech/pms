@@ -31,7 +31,7 @@
                     <tr>
                         <td><?= $project->project_id ?></td>
                         <td><?= $project->project_cd ?></td>
-                        <td><a href="projects/update/<?= $project->project_id ?>"><?= $project->project_nm ?></a></td>
+                        <td><a href="proje<td class="text-center text-success"><i class="fas fa-tasks"></i></td>cts/update/<?= $project->project_id ?>"><?= $project->project_nm ?></a></td>
                         <td><?= $types[$project->proj_type] ?? null; ?></td>
                         <td><?= $project->agent_nm ?></td>
                         <td><?= $project->client_nm ?></td>
