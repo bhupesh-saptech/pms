@@ -26,6 +26,7 @@
                     <th>Client Type</th>
                     <th>Industry</th>
                     <th>status</th>
+                    <th>Projects</th>
                 </tr>
                 <?php foreach($clients as $client): ?>
                     <tr>
@@ -36,7 +37,8 @@
                         <td><?= $client->mobile_no ?></td>
                         <td><?= $types[$client->cl_type] ?? null; ?></td>
                         <td><?= $industry[$client->industry] ?? null; ?></td>
-                        <td><?= $status[$client->status] ?? null; ?></td>                  
+                        <td><?= $status[$client->status] ?? null; ?></td>  
+                        <td class="text-center text-primary"><i class="fa-solid fa-diagram-project"></i></td>                
                     </tr>
                 <?php endforeach; ?>
             </table>
