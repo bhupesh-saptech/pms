@@ -55,26 +55,3 @@
     <a href="users" class="">Users</a>
 </div> 
 <?= $this->endSection(); ?>
-<?=  $this->section("jscript"); ?>
-    <script>
-        var mode = "<?php if(isset($mode)) { 
-                                echo $mode; 
-                            } else {
-                                echo '';
-                            }?>";
-        switch(mode) {
-            case 'view':
-                // $('#form input').prop('readonly', true);
-                 $('#form input').prop('disabled', true);
-                break;
-            case 'update' :
-                $('#pass_wd').hide();
-                $('#cpas_wd').hide();
-                break;
-            case 'delete':
-                $('#form input').prop('readonly', true);
-                break;
-        }
-
-    </script>
-<?= $this->endSection(); ?>
