@@ -35,18 +35,18 @@
         <div class="form-group">
             <label class="form-label">Project type</label>
             <select class="form-select" name="proj_type">
-                <option value="" <?php if($project->proj_type == "") { echo "selected";} ?>>select project type</option>
+                <option value="" <?php if(isset($project->proj_type) && $project->proj_type == "") { echo "selected";} ?>>select project type</option>
                 <?php foreach($types as $param=>$value): ?>
-                    <option value="<?= $param ?>" <?php if($project->proj_type == $param ) { echo "selected";} ?>><?= $value; ?></option>
+                    <option value="<?= $param ?>" <?php if(isset($project->proj_type) && $project->proj_type == $param ) { echo "selected";} ?>><?= $value; ?></option>
                 <?php endforeach;?>
             </select>               
         </div>
         <div class="form-group">
             <label class="form-label">Project Category</label>
             <select class="form-select" name="proj_catg" >
-                <option value="">select project Category</option>
+                <option value="" <?php if(isset($project->proj_catg) && $project->proj_catg == "" ) { echo "selected";} ?>>select project Category</option>
                 <?php foreach($category as $param=>$value): ?>
-                    <option value="<?= $param ?>" <?php if($project->proj_catg == $param ) { echo "selected";} ?>><?= $value; ?></option>
+                    <option value="<?= $param ?>" <?php if(isset($project->proj_catg) && $project->proj_catg == $param ) { echo "selected";} ?>><?= $value; ?></option>
                 <?php endforeach;?>
             </select>
 
@@ -55,18 +55,18 @@
         <div class="form-group">
             <label class="form-label">Client Name</label>
             <select class="form-select" name="client_id">
-                <option value="">select client</option>
+                <option value="" <?php if(isset($project->client_id) &&  $project->client_id == "" ) { echo "selected";} ?>>select client</option>
                 <?php foreach($clients as $client) :?>
-                    <option value="<?= $client->client_id; ?>" <?php if($project->client_id == $client->client_id ) { echo "selected";} ?>><?= $client->client_nm; ?></option>
+                    <option value="<?= $client->client_id; ?>" <?php if(isset($project->client_id) &&  $project->client_id == $client->client_id ) { echo "selected";} ?>><?= $client->client_nm; ?></option>
                 <?php endforeach;?>
             </select>                
         </div>
         <div class="form-group">
             <label class="form-label">Project Manager</label>
             <select class="form-select"  name="agent_id" >
-                <option value="">select Project Manager</option>
+                <option value="" <?php if(isset($project->agent_id) && $project->agent_id == "" ) { echo "selected";} ?>>select Project Manager</option>
                 <?php foreach( $agents as $agent) :?>
-                    <option value="<?= $agent->agent_id; ?>" <?php if($project->agent_id == $agent->agent_id ) { echo "selected";} ?> ><?= $agent->agent_nm; ?></option>
+                    <option value="<?= $agent->agent_id; ?>" <?php if(isset($project->agent_id) && $project->agent_id == $agent->agent_id ) { echo "selected";} ?> ><?= $agent->agent_nm; ?></option>
                 <?php endforeach; ?>
             </select>               
         </div>
@@ -81,9 +81,9 @@
         <div class="form-group">
             <label class="form-label">Project Status </label>
             <select class="form-select"  name="status" id="status" >
-                <option value="">-- Select Status --</option>
+                <option value="" <?php if(isset($project->status) && $project->status == "" ) { echo "selected";} ?>>-- Select Status --</option>
                 <?php foreach($status as $param=>$value): ?>
-                    <option value="<?= $param ?>" <?php if($project->status == $param ) { echo "selected";} ?>><?= $value; ?></option>
+                    <option value="<?= $param ?>" <?php if(isset($project->status) && $project->status == $param ) { echo "selected";} ?>><?= $value; ?></option>
                 <?php endforeach; ?>
             </select>
         </div>
