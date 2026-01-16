@@ -6,7 +6,7 @@
     <form method="post" id="form">
         <div class="row">
             <div class="col-sm-9">
-                <h4 class="text-center">Agent Creation</h4>
+                <h4 class="text-center">Client Creation</h4>
             </div>
             <div class="col-sm-3">                 
                 <button type="button" class="btn btn-secondary float-end " onclick="history.back();" ><i class="fa fa-arrow-left"></i></button>
@@ -18,12 +18,6 @@
                 <?php endif ?>
                 <input  type="hidden" name="client_id" id="client_id" value="<?= set_value('client_id', isset($client->client_id) ? $client->client_id : '') ?>">
             </div>
-        </div>
-
-        <div class="form-group">
-            <label class="form-label">Client ID</label>
-            <input class="form-control" type="text" name="client_id" value="<?= set_value('client_id', isset($client->client_id) ? $client->client_id : '') ?>" <?php if($mode == 'create') {echo 'disabled';} ?>>
-            
         </div>
         <div class="form-group">
             <label class="form-label">Client Name</label>
