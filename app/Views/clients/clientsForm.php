@@ -61,7 +61,7 @@
             <label class="form-label">Client Status</label>
             <select class="form-select select2"  name="status">
                     <option value="" <?php if(isset($client->status) && $client->status  == "") { echo "selected";} ?>>Select Status</option>
-                    <?php foreach($industry as $param=>$value) :?>
+                    <?php foreach($status as $param=>$value) :?>
                         <option value="<?= $param ?>" <?php if(isset($client->status) && $client->status == $param) { echo "selected";} ?>><?= $value ?></option>
                     <?php endforeach; ?>
             </select>                   

@@ -35,7 +35,7 @@
                         <td><?= $client->contact_nm ?></td>   
                         <td><?= $client->email_id ?></td>
                         <td><?= $client->mobile_no ?></td>
-                        <td><?= $types[$client->client_type] ?? null; ?></td>
+                        <td><?= $types[$client->cl_type] ?? null; ?></td>
                         <td><?= $industry[$client->industry] ?? null; ?></td>
                         <td><?= $status[$client->status] ?? null; ?></td>
                         <td><?= $client->created_at ?></td>
