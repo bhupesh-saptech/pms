@@ -80,7 +80,6 @@ class ProjectsController extends BaseController {
         $this->data['mode'] = 'view';
         $this->data['project'] = $this->ProjectsModel->find($project_id);
          if ($this->request->is('post')) {
-            $id = $this->request->getPost('project_id');
             $form = [
                 'project_cd' => $this->request->getPost('project_cd'),
                 'project_nm' => $this->request->getPost('project_nm'),
@@ -93,7 +92,7 @@ class ProjectsController extends BaseController {
                 'finish_dt'  => $this->request->getPost('finish_dt'),
                 'status' => $this->request->getPost('status'),
             ];
-            if($this->ProjectsModel->update($id,$form)) {
+            if($this->ProjectsModel->update($project_id,$form)) {
                 return redirect()->to('/projects')->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->ProjectsModel->errors();     
