@@ -71,9 +71,8 @@ class ClientsController extends BaseController {
             return view('clients/clientsForm',$this->data);
         }
     }
-    public function delete($agent_id) {
-        $this->data['mode'] = 'delete';
-       if($this->ClientsModel->delete($agent_id)) {
+    public function delete($client_id) {
+       if($this->ClientsModel->delete($client_id)) {
            return redirect()->to('/clients')->with('message',"record Deleted Successfully");
        } else {
 

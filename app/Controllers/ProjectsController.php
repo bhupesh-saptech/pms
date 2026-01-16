@@ -105,8 +105,10 @@ class ProjectsController extends BaseController {
     }
    
     public function delete($project_id) {
-        $this->data['mode'] = 'delete';
-        $this->data['project'] = $this->ProjectsModel->find($project_id);
-        return view('projects/projectsForm',$this->data);
+       if($this->ProjectsModel->delete($project_id)) {
+           return redirect()->to('/projects')->with('message',"record Deleted Successfully");
+       } else {
+
+       }
     }
 }

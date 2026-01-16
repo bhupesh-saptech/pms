@@ -89,4 +89,11 @@ class IssuesController extends BaseController {
             return view('issues/issuesForm',$this->data);
         }
     }
+    public function delete($issue_id) {
+       if($this->IssuesModel->delete($issue_id)) {
+           return redirect()->to('/issues')->with('message',"record Deleted Successfully");
+       } else {
+
+       }
+    }
 }

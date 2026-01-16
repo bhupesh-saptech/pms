@@ -89,11 +89,12 @@ class UsersController extends BaseController {
         return view('users/usersForm',$data);
     }
 
-    public function delete($id) {
-        $data['mode'] = 'delete';
-        $data['user'] = $this->UsersModel->find($id);
-        $data['validation'] = $this->validator;
-        return view('users/usersForm',$data);
+    public function delete($user_id) {
+       if($this->UsersModel->delete($user_id)) {
+           return redirect()->to('/users')->with('message',"record Deleted Successfully");
+       } else {
+
+       }
     }
    
 }
