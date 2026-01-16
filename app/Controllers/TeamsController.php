@@ -11,7 +11,9 @@ class TeamsController extends BaseController {
     protected $data;
     public function __construct() {
         $this->TeamsModel = new TeamsModel();
-        $this->data['Teams'] = $this->TeamsModel->findAll();
+        $this->data['Teams'] = $this->TeamsModel->select('teams.*,agents.agent_nm as agent_nm')
+                                                ->join('agents','agents.agent_id = teams.agent_id','left')
+                                                ->findAll();
 
     }
     
