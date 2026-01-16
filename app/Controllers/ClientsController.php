@@ -94,7 +94,7 @@ class ClientsController extends BaseController {
         $this->data['projects'] = $this->ProjectsModel->select('projects.*,clients.client_nm,agents.agent_nm')
                                                       ->join('clients','clients.client_id = projects.client_id','left')
                                                       ->join('agents','agents.agent_id = projects.agent_id','left')
-                                                      ->where('client_id',$client_id)->findAll();
+                                                      ->where('projects.client_id',$client_id)->findAll();
         return view('projects/projectsList',$this->data);
     }
 }
