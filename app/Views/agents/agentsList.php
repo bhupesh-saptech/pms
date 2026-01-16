@@ -34,7 +34,7 @@
                         <td><?= $agent->agent_id ?></td>
                         <td><a href="agents/update/<?= $agent->agent_id ?>"><?= $agent->agent_nm ?></a></td>
                         <td><?= $agent->email_id ?></td>
-                        <td><?= $agent->emp_id ?></td>
+                        <td><?= $agent->agent_cd ?></td>
                         <td><?= $agent->mobile_no ?></td>
                         <td class="text-center text-primary"><a href="projects?agent_id=<?= $agent->agent_id ?>"><i class="fa-solid fa-diagram-project"></a></i></td>
                         <td class="text-center text-danger"><a href="issues?agent_id=<?= $agent->agent_id ?>"><i class="fa-solid fa-fire"></i></a></td>
