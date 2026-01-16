@@ -6,7 +6,7 @@
     <form method="post" id="form">
         <div class="row">
             <div class="col-sm-9">
-                <h4 class="text-center">Client Creation</h4>
+                <h4 class="text-center">Agent Creation</h4>
             </div>
             <div class="col-sm-3">                 
                 <button type="button" class="btn btn-secondary float-end " onclick="history.back();" ><i class="fa fa-arrow-left"></i></button>
@@ -16,10 +16,10 @@
                     <button type="buttton" class="btn btn-warning float-end me-3" onclick="btnToggle(this,event);"><i class="fa fa-edit"></i></button>
                     <a href="clients/delete/<?= $client->client_id ?>" class="btn btn-danger float-end me-3" onclick="return confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash"></i></a>
                 <?php endif ?>
-                <input  type="hidden" name="client_id" id="client_id" value="<?= set_value('client_id', isset($client->client) ? $client->client_id : '') ?>">
+                <input  type="hidden" name="client_id" id="client_id" value="<?= set_value('client_id', isset($client->client_id) ? $client->client_id : '') ?>">
             </div>
         </div>
-        </div>
+
         <div class="form-group">
             <label class="form-label">Client ID</label>
             <input class="form-control" type="text" name="client_id" value="<?= set_value('client_id', isset($client->client_id) ? $client->client_id : '') ?>" <?php if($mode == 'create') {echo 'disabled';} ?>>
