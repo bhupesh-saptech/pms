@@ -53,29 +53,27 @@ class TasksController extends BaseController {
             return view('tasks/tasksForm',$this->data);
         }
     }
-    public function view($task_id) {
+
+    public function update($task_id) {
         $this->data['mode'] = 'view';
         $this->data['task'] = $this->TasksModel->find($task_id);
-        return view('tasks/tasksForm',$this->data);
-    }
-    public function update() {
-        $data['mode'] = 'update';
         if ($this->request->is('post')) {
+            $id = $this->request->getPost('task_id');
             $form = [
-                'ts_desc' => $this->request->getPost('ts_desc'),
-                'proj_id' => $this->request->getPost('proj_id'),
+                'task_title' => $this->request->getPost('task_title'),
+                'project_id' => $this->request->getPost('project_id'),
                 'agent_id' => $this->request->getPost('agent_id'),
                 
             ];
-            if($this->TasksModel->update($form,false)) {
-                return redirect()->to('/tasks')->with('message',"Data updated Succefully");
+            if($this->TasksModel->update($id,$form)) {
+                return redirect()->to('/tasks')->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->TasksModel->errors();     
                 return view('tasks/tasksForm', $this->data);  
             }
         } else {
             return view('tasks/tasksForm',$this->data);
-        }
+        }  
     }
     public function delete($task_id) {
        if($this->TasksModel->delete($task_id)) {
