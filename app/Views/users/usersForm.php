@@ -20,13 +20,18 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="form-label">Email ID</label>
-            <input class="form-control" type="text" name="mail_id" value="<?= set_value('mail_id', isset($user->mail_id) ? $user->mail_id : '') ?>" autocomplete="off">
-        </div> 
-        <div class="form-group">
             <label class="form-label">User name</label>
             <input class="form-control" type="text" name="user_nm"value="<?= set_value('user_nm', isset($user->user_nm) ? $user->user_nm : '') ?>" autocomplete="off">               
         </div>
+        <div class="form-group">
+            <label class="form-label">Real name</label>
+            <input class="form-control" type="text" name="real_name"value="<?= set_value('real_name', isset($user->real_name) ? $user->real_name : '') ?>" autocomplete="off">               
+        </div>
+        <div class="form-group">
+            <label class="form-label">Email ID</label>
+            <input class="form-control" type="text" name="mail_id" value="<?= set_value('mail_id', isset($user->mail_id) ? $user->mail_id : '') ?>" autocomplete="off">
+        </div> 
+
         <div class="form-group">
             <label class="form-label">Contact No</label>
             <input class="form-control" type="text" name="cell_no" value="<?= set_value('cell_no', isset($user->cell_no) ? $user->cell_no : '') ?>" autocomplete="off">               
