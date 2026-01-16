@@ -31,7 +31,7 @@
                 <?php foreach($issues as $issue): ?>
                     <tr>
                         <td><?= $issue->issue_id ?></td>
-                        <td><a href="issues/view/<?= $issue->issue_id ?>"><?= $issue->issue_title ?></td>
+                        <td><a href="issues/update/<?= $issue->issue_id ?>"><?= $issue->issue_title ?></td>
                         <td><?= $issue->project_nm ?></td>
                         <td><?= $types[$issue->iss_type] ?? null; ?></td>
                         <td><?= $module[$issue->sap_module] ?? null; ?></td>

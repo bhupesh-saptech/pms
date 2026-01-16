@@ -31,7 +31,7 @@
                 <?php foreach($clients as $client): ?>
                     <tr>
                         <td><?= $client->client_id ?></td>
-                        <td><a href="clients/view/<?= $client->client_id ?>"><?= $client->client_nm ?></a></td>
+                        <td><a href="clients/update/<?= $client->client_id ?>"><?= $client->client_nm ?></a></td>
                         <td><?= $client->contact_nm ?></td>   
                         <td><?= $client->email_id ?></td>
                         <td><?= $client->mobile_no ?></td>
