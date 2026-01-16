@@ -32,6 +32,22 @@ class TasksController extends BaseController {
         $this->data['issues']   = $this->IssuesModel->select("issue_id,issue_title")->orderBy("issue_id")->findAll();
     }
     public function index() {
+        $builder = $this->TasksModel;
+        $project_id = $this->request->getGet('project_id') ?? null;
+        $agent_id   = $this->request->getGet('agent_id')   ?? null;
+        
+        $builder->select('tasks.*, project.project_nm as project_nm,agents.agent_nm as agent_nm')
+                ->join('projects', 'projects.project_id = tasks.project_Id','left')
+                ->join('agents', 'agents.agent_id = tasks.agent_id','left');
+
+        if (!empty($project_id)) {
+            $builder->where('tasks.project_id',$project_id);
+        }
+        if (!empty($agent_id)) {
+            $builder->where('tasks.agent_id',$agent_id);
+        }
+        $this->data['tasks'] =   $builder->findAll();
+        $this->data['dash']   = $this->ProjectsModel->dashboard();
         return view('tasks/tasksList',$this->data);
     }
     public function create() {

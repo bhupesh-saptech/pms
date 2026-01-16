@@ -45,6 +45,21 @@ class IssuesController extends BaseController {
         $this->data['agents']   = $this->AgentsModel->select('agent_id,agent_nm')->orderBy('agent_id')->findAll();
     }
     public function index() {
+        $builder   = $this->IssuesModel;
+        $project_id = $this->request->getGet('project_id') ?? null;
+        $agent_id   = $this->request->getGet('agent_id') ?? null;
+        
+        $builder->select('issues.*, projects.project_nm as project_nm,agents.agent_nm as agent_nm')
+                ->join('projects', 'projects.project_id = issues.project_Id','left')
+                ->join('agents', 'agents.agent_id = issues.agent_id','left');
+        if (!empty($project_id)) {
+            $builder->where('issues.project_id',$project_id);
+        }
+        if (!empty($agent_id)) {
+            $builder->where('issues.agent_id',$agent_id);
+        }
+        $this->data['issues'] =   $builder->findAll();
+        $this->data['dash']   = $this->ProjectsModel->dashboard();
         return view('issues/issuesList',$this->data);
     }    
     public function create() {
