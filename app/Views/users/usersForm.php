@@ -13,7 +13,7 @@
                 <?php if($mode == 'create') : ?> 
                     <button type="submit" class="btn btn-success float-end me-3"><i class="fa fa-save"></i></button>
                 <?php else : ?>
-                    <button type="buttton" class="btn btn-warning float-end me-3" onclick="btnToggle(this,event);"><i class="fa fa-edit"></i></button>
+                    <button type="button" class="btn btn-warning float-end me-3" onclick="btnToggle(this,event);"><i class="fa fa-edit"></i></button>
                     <a href="users/delete/<?= $user->user_id ?>" class="btn btn-danger float-end me-3" onclick="return confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash"></i></a>
                 <?php endif ?>
                 <input  type="hidden" name="user_id" id="user_id" value="<?= set_value('user_id', isset($user->user_id) ? $user->user_id : '') ?>">

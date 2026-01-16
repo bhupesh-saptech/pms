@@ -28,7 +28,7 @@ class ClientsController extends BaseController {
                                     2=>'Blacklisted'   
                                   ];
         $this->data['clients'] = $this->ClientsModel->findAll();
-        $this->data['dash']   = $this->ClientsModel->dashboard();
+        $this->data['dash']    = $this->ClientsModel->dashboard();
     }
     public function index() {
         return view('clients/clientsList',$this->data);
