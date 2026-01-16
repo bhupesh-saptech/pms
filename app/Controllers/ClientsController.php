@@ -37,9 +37,14 @@ class ClientsController extends BaseController {
         $this->data['mode'] = 'create';
         if ($this->request->is('post')) {
             $form = [
-                'client_nm' => $this->request->getPost('client_nm'),
-                'email_id' => $this->request->getPost('email_id'),
-                'mobile_no' => $this->request->getPost('mobile_no'),
+                'client_cd'  => $this->request->getPost('client_cd'),
+                'client_nm'  => $this->request->getPost('client_nm'),
+                'contact_nm' => $this->request->getPost('contact_nm'),
+                'mobile_no'  => $this->request->getPost('mobile_no'),
+                'email_id'   => $this->request->getPost('email_id'),
+                'cl_type'    => $this->request->getPost('cl_type'),
+                'industry'   => $this->request->getPost('industry'),
+                'status'     => $this->request->getPost('status')
             ];
             if($this->ClientsModel->insert($form,false)) {
                 return redirect()->to('/clients')->with('message',"Data Inserted Succefully");

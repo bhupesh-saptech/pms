@@ -12,9 +12,15 @@ class ClientsModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [ "clnts_name",
-                                    "csemail_id",
-                                    "cmobile_no"
+    protected $allowedFields    = [ 'client_cd',
+                                    'client_nm',
+                                    'contact_nm',
+                                    'mobile_no',
+                                    'email_id', 
+                                    'cl_type',  
+                                    'industry', 
+                                    'status',   
+                                    'client_cd'
                                   ];
 
     protected bool $allowEmptyInserts = false;

@@ -20,19 +20,51 @@
             </div>
         </div>
         <div class="form-group">
+            <label class="form-label">Client Code</label>
+            <input class="form-control" type="text" name="client_cd" value="<?= set_value('client_cd', isset($client->client_cd) ? $client->client_cd : '') ?>" autocomplete="off">   
+        </div> 
+        <div class="form-group">
             <label class="form-label">Client Name</label>
             <input class="form-control" type="text" name="client_nm" value="<?= set_value('client_nm', isset($client->client_nm) ? $client->client_nm : '') ?>" autocomplete="off">
-           
         </div> 
+        <div class="form-group">
+            <label class="form-label">Contact Name</label>
+            <input class="form-control" type="text" name="contact_nm" value="<?= set_value('contact_nm', isset($client->contact_nm) ? $client->contact_nm : '') ?>" autocomplete="off">
+        </div> 
+        <div class="form-group">
+            <label class="form-label">Mobile No</label>
+            <input class="form-control" type="text" name="mobile_no" value="<?= set_value('mobile_no', isset($client->mobile_no) ? $client->mobile_no : '') ?>" autocomplete="off">               
+        </div>
         <div class="form-group">
             <label class="form-label">Email ID</label>
             <input class="form-control" type="text" name="email_id" value="<?= set_value('email_id', isset($client->email_id) ? $client->email_id : '') ?>" autocomplete="off">               
-            
         </div>
         <div class="form-group">
-            <label class="form-label">Contact No</label>
-            <input class="form-control" type="text" name="mobile_no" value="<?= set_value('mobile_no', isset($client->mobile_no) ? $client->mobile_no : '') ?>" autocomplete="off">               
-            
+            <label class="form-label">Client Type</label>
+            <select class="form-control"  name="cl_type">
+                    <option value="" <?php if($client->cl_type == "") { echo "selected";} ?>>Select Client Type</option>
+                    <?php foreach($types as $param=>$value) :?>
+                        <option value="<?= $param ?>" <?php if($client->cl_type == $param) { echo "selected";} ?>><?= $value ?></option>
+                    <?php endforeach?>
+            </select>                   
+        </div>
+        <div class="form-group">
+            <label class="form-label">Client Type</label>
+            <select class="form-control"  name="industry">
+                    <option value="" <?php if($client->industry == "") { echo "selected";} ?>>Select Industry</option>
+                    <?php foreach($industry as $param=>$value) :?>
+                        <option value="<?= $param ?>" <?php if($client->industry == $param) { echo "selected";} ?>><?= $value ?></option>
+                    <?php endforeach; ?>
+            </select>                   
+        </div>
+        <div class="form-group">
+            <label class="form-label">Client Status</label>
+            <select class="form-control"  name="status">
+                    <option value="" <?php if($client->status == "") { echo "selected";} ?>>Select Status</option>
+                    <?php foreach($industry as $param=>$value) :?>
+                        <option value="<?= $param ?>" <?php if($client->status == $param) { echo "selected";} ?>><?= $value ?></option>
+                    <?php endforeach; ?>
+            </select>                   
         </div>
     </form>
 </div>
