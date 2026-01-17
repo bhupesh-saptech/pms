@@ -20,4 +20,63 @@ class TicketsController extends BaseController{
     public function index() {
             return view('tickets/ticketsList',$this->data);
     }
+    public function create() {
+        $this->data['mode'] = 'create';
+        if ($this->request->is('post')) {
+            $form = [
+                'ticket_cd'  => $this->request->getPost('ticket_cd'),
+                'ticket_nm'  => $this->request->getPost('ticket_nm'),
+                'ticket_ty'  => $this->request->getPost('ticket_ty'),
+                'project_id' => $this->request->getPost('project_id'),
+                'team_id'    => $this->request->getPost('team_id'),
+                'agent_id'   => $this->request->getPost('agent_id'),
+                'start_dt'   => $this->request->getPost('start_dt'),
+                'due_dt'     => $this->request->getPost('due_dt'),
+                'module'     => $this->request->getPost('module'),
+                'status'     => $this->request->getPost('status')
+            ];
+            if($this->TicketsModel->insert($form,false)) {
+                return redirect()->back()->with('message',"Data Inserted Succefully");
+            } else {
+                $data['errors'] = $this->TicketsModel->errors();     
+                return view('tasks/tasksForm', $this->data);  
+            }
+        } else {
+            return view('tasks/tasksForm',$this->data);
+        }
+    }
+
+    public function update($ticket_id) {
+        $this->data['mode'] = 'view';
+        $this->data['task'] = $this->TicketsModel->find($ticket_id);
+        if ($this->request->is('post')) {
+            $form = [
+                'ticket_cd'  => $this->request->getPost('ticket_cd'),
+                'ticket_nm'  => $this->request->getPost('ticket_nm'),
+                'ticket_ty'  => $this->request->getPost('ticket_ty'),
+                'project_id' => $this->request->getPost('project_id'),
+                'team_id'    => $this->request->getPost('team_id'),
+                'agent_id'   => $this->request->getPost('agent_id'),
+                'start_dt'   => $this->request->getPost('start_dt'),
+                'due_dt'     => $this->request->getPost('due_dt'),
+                'module'     => $this->request->getPost('module'),
+                'status'     => $this->request->getPost('status')
+            ];
+            if($this->TicketsModel->update($ticket_id,$form)) {
+                return redirect()->back()->with('message',"Data Inserted Succefully");
+            } else {
+                $data['errors'] = $this->TicketsModel->errors();     
+                return view('tasks/tasksForm', $this->data);  
+            }
+        } else {
+            return view('tasks/tasksForm',$this->data);
+        }  
+    }
+    public function delete($ticket_id) {
+       if($this->TicketsModel->delete($ticket_id)) {
+           return redirect()->to('/tasks')->with('message',"record Deleted Successfully");
+       } else {
+
+       }
+    }
 }

@@ -12,7 +12,17 @@ class TicketsModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [ "ticket_cd",
+                                    "ticket_nm",
+                                    "ticket_ty",
+                                    "project_id",
+                                    "team_id",
+                                    "agent_id",
+                                    "start_dt",
+                                    "due_dt",
+                                    "module",
+                                    "status"
+                                  ];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
