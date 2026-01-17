@@ -16,6 +16,28 @@ class TicketsController extends BaseController{
         $this->TicketsModel  = new TicketsModel();
         $this->ProjectsModel = new ProjectsModel();
         $this->AgentsModel   = new AgentsModel();
+        $this->data['status'] = [   0=>'New/Created',
+                                    1=>'Assigned',
+                                    2=>'In Progress',
+                                    3=>'On Hold/Blocked',
+                                    4=>'Resolved',
+                                    5=>'Closed',
+                                ];
+        $this->data['types'] =  [   0=>'Application',
+                                    1=>'Technical',
+                                    2=>'Authorization',
+                                    3=>'Interface',
+                                    4=>'Data Related'
+                                ];
+        $this->data['module'] = [ 00=>'SAP FI / CO',
+                                  01=>'SAP MM',
+                                  02=>'SAP SD',
+                                  03=>'SAP PP',
+                                  04=>'SAP QM',
+                                  05=>'SAP WM',
+                                  06=>'SAP PM',
+                                  07=>'SAP PS'
+                                ];
         $this->data['tickets'] = $this->TicketsModel->select('tickets.*,projects.project_nm as project_nm,agents.agent_nm as agent_nm')
                                                     ->join('projects','projects.project_id = tickets.project_id','left')
                                                     ->join('agents','agents.agent_id = tickets.agent_id','left')
