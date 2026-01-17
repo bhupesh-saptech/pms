@@ -32,7 +32,7 @@
                     <tr>
                         <td><?= $team->team_id ?></td>
                         <td><?= $team->team_cd ?></td>
-                        <td><a href="teams/update/<?= $team->team_id ?>"><?= $team->team_mn ?></td>
+                        <td><a href="teams/update/<?= $team->team_id ?>"><?= $team->team_nm ?></td>
                         <td><?= $types[$team->team_ty] ?? null; ?></td>
                         <td><?= $team->agent_nm ?></td>
                         <td><?= $status[$team->status] ?? null; ?></td>
