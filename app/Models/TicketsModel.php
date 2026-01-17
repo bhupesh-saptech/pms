@@ -7,9 +7,9 @@ use CodeIgniter\Model;
 class TicketsModel extends Model
 {
     protected $table            = 'tickets';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'ticket_id';
     protected $useAutoIncrement = true;
-    protected $returnType       = 'array';
+    protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [ "ticket_cd",
