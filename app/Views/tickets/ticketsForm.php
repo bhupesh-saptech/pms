@@ -14,14 +14,14 @@
                     <button type="submit" class="btn btn-success float-end me-3"><i class="fa fa-save"></i></button>
                 <?php else : ?>
                     <button type="button" class="btn btn-warning float-end me-3" onclick="btnToggle(this,event);"><i class="fa fa-edit"></i></button>
-                    <a href="issues/delete/<?= $issue->issue_id ?>" class="btn btn-danger float-end me-3" onclick="return confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash"></i></a>
+                    <a href="tickets/delete/<?= $ticket->ticket_id ?>" class="btn btn-danger float-end me-3" onclick="return confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash"></i></a>
                 <?php endif ?>
-                <input  type="hidden" name="issue_id" id="issue_id" value="<?= set_value('issue_id', isset($issue->issue_id) ? $issue->issue_id : '') ?>">
+                <input  type="hidden" name="ticket_id" id="ticket_id" value="<?= set_value('ticket_id', isset($ticket->ticket_id) ? $ticket->ticket_id : '') ?>">
             </div>
         </div>
         <div class="form-group">
-            <label class="form-label">Issue Title</label>
-            <input class="form-control" type="text" name="issue_title" value="<?= set_value('issue_title', isset($issue->issue_title) ? $issue->issue_title : '') ?>" autocomplete="off">
+            <label class="form-label">ticket Title</label>
+            <input class="form-control" type="text" name="ticket_nm" value="<?= set_value('ticket_nm', isset($ticket->ticket_nm) ? $ticket->ticket_nm : '') ?>" autocomplete="off">
            
         </div> 
         <div class="form-group">
@@ -34,15 +34,15 @@
         </div>
         <div class="form-group">
             <label class="form-label">SAP Module</label>
-            <select class="form-select select2" name="sap_module" id="sap_module">
+            <select class="form-select select2" name="module" id="sap_module">
                 <?php foreach($module as $key=>$value) : ?>
                 <option value="<?= $key; ?>"><?= $value; ?></option>
             <?php    endforeach; ?>
             </select> 
         </div>
         <div class="form-group">
-            <label class="form-label">Issue Type</label>
-            <select class="form-select select2" name="iss_type" id="iss_type">
+            <label class="form-label">ticket Type</label>
+            <select class="form-select select2" name="ticket_ty" id="ticket_ty">
                 <?php foreach($types as $key=>$value) : ?>
                 <option value="<?= $key; ?>"><?= $value; ?></option>
             <?php    endforeach; ?>
