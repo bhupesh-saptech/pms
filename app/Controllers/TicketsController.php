@@ -68,10 +68,10 @@ class TicketsController extends BaseController{
                 return redirect()->back()->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->TicketsModel->errors();     
-                return view('tasks/tasksForm', $this->data);  
+                return view('tickets/ticketForm', $this->data);  
             }
         } else {
-            return view('tasks/tasksForm',$this->data);
+            return view('tickets/ticketsForm',$this->data);
         }
     }
 
@@ -95,10 +95,10 @@ class TicketsController extends BaseController{
                 return redirect()->back()->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->TicketsModel->errors();     
-                return view('tasks/tasksForm', $this->data);  
+                return view('tickets/ticketsForm', $this->data);  
             }
         } else {
-            return view('tasks/tasksForm',$this->data);
+            return view('tickets/ticketsForm',$this->data);
         }  
     }
     public function delete($ticket_id) {
