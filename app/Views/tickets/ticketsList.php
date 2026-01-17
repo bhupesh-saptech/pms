@@ -30,8 +30,8 @@
                 </tr>
                 <?php foreach($tickets as $ticket): ?>
                     <tr>
-                        <td><?= $ticket->$ticket_id ?></td>
-                        <td><a href="tickets/update/<?= $ticket->$ticket_id ?>"><?= $ticket->$ticket_title ?></td>
+                        <td><?= $ticket->ticket_id ?></td>
+                        <td><a href="tickets/update/<?= $ticket->ticket_id ?>"><?= $ticket->ticket_title ?></td>
                         <td><?= $ticket->project_nm ?></td>
                         <td><?= $types[$ticket->ticket_ty] ?? null; ?></td>
                         <td><?= $module[$ticket->module] ?? null; ?></td>
