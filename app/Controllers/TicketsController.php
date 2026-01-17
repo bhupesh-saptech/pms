@@ -10,6 +10,7 @@ class TicketsController extends BaseController{
     protected $TicketsModel;
     protected $data;
     public function __construct() {
+        helper('form');
         $this->TicketsModel = new TicketsModel();
         $this->data['tickets'] = $this->TicketsModel->select('tickets.*,projects.project_nm as project_nm,agents.agent_nm as agent_nm')
                                                     ->join('projects','projects.project_id = tickets.project_id','left')
