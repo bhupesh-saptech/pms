@@ -79,7 +79,7 @@ class TicketsController extends BaseController{
 
     public function update($ticket_id) {
         $this->data['mode'] = 'view';
-        $this->data['task'] = $this->TicketsModel->find($ticket_id);
+        $this->data['ticket'] = $this->TicketsModel->find($ticket_id);
         if ($this->request->is('post')) {
             $form = [
                 'ticket_cd'  => $this->request->getPost('ticket_cd'),
