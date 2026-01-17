@@ -36,8 +36,8 @@
                         <td><?= $types[$team->team_ty] ?? null; ?></td>
                         <td><?= $team->agent_nm ?></td>
                         <td><?= $status[$team->status] ?? null; ?></td>
-                        <td class="text-center text-success"><i class="fas fa-tasks"></i></td>
-                        <td class="text-center text-success"><i class="fas fa-tasks"></i></td>
+                        <td class="text-center text-success"><a href="tickets?team_id=<?= $team->team_id ?>"><i class="fa-solid fa-ticket"></i></a></i></td>
+                        <td class="text-center text-success"><a href="tasks?team_id=<?= $team->team_id ?>"><i class="fas fa-tasks"></i></a></td>
                         
                     </tr>
                 <?php endforeach; ?>
