@@ -3,20 +3,26 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\AgentsModel;
+use App\Models\ProjectsModel;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\TicketsModel;
 
 class TicketsController extends BaseController{
-    protected $TicketsModel;
+    protected $TicketsModel,$AgentsModel,$ProjectsModel;
     protected $data;
     public function __construct() {
         helper('form');
-        $this->TicketsModel = new TicketsModel();
+        $this->TicketsModel  = new TicketsModel();
+        $this->ProjectsModel = new ProjectsModel();
+        $this->AgentsModel   = new AgentsModel();
         $this->data['tickets'] = $this->TicketsModel->select('tickets.*,projects.project_nm as project_nm,agents.agent_nm as agent_nm')
                                                     ->join('projects','projects.project_id = tickets.project_id','left')
                                                     ->join('agents','agents.agent_id = tickets.agent_id','left')
                                                     ->findAll();
-         $this->data['dash']   = $this->TicketsModel->dashboard();
+         $this->data['dash']    = $this->TicketsModel->dashboard();
+        $this->data['agents']   = $this->AgentsModel->select("agent_id,agent_nm")->orderBy("agent_id")->findAll();
+        $this->data['projects'] = $this->ProjectsModel->select("project_id,project_nm")->orderBy("project_id")->findAll();
     }
     public function index() {
             return view('tickets/ticketsList',$this->data);
