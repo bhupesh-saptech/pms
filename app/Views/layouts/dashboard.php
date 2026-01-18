@@ -22,7 +22,7 @@
       <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <?php include('../incld/messages.php'); ?>
+                <?php $this->include('layouts/messages.php'); ?>
             </div>
         </div>
         <!-- Small boxes (Stat box) -->
