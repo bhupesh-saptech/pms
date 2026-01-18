@@ -6,19 +6,19 @@ use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\AgentsModel;
 use App\Models\ProjectsModel;
-use App\Models\IssuesModel;
+use App\Models\TicketsModel;
 use App\Models\TasksModel;
 use App\Models\TeamsModel;
 
 class TasksController extends BaseController {
-    protected $AgentsModel,$ProjectsModel,$IssuesModel,$TasksModel,$TeamsModel;
+    protected $AgentsModel,$ProjectsModel,$TicketsModel,$TasksModel,$TeamsModel;
     protected $data;
     public function __construct() {
         helper('form');
         $this->TeamsModel    = new TeamsModel();
         $this->AgentsModel   = new AgentsModel();
         $this->ProjectsModel = new ProjectsModel();
-        $this->IssuesModel   = new IssuesModel();
+        $this->TicketsModel   = new TicketsModel();
         $this->TasksModel    = new TasksModel;
         $this->data['status'] = [   0=>'New/Created',
                                     1=>'Assigned',
@@ -32,6 +32,7 @@ class TasksController extends BaseController {
         $this->data['agents']   = $this->AgentsModel->select("agent_id,agent_nm")->orderBy("agent_id")->findAll();
         $this->data['teams']    = $this->TeamsModel->select("team_id,team_nm")->orderBy("team_id")->findAll();
         $this->data['projects'] = $this->ProjectsModel->select("project_id,project_nm")->orderBy("project_id")->findAll();
+        $this->data['tickets'] = $this->TicketsModel->select("ticket_id,ticket_nm")->orderBy("ticket_id")->findAll();
         $this->data['issues']   = $this->IssuesModel->select("issue_id,issue_title")->orderBy("issue_id")->findAll();
     }
     public function index() {
