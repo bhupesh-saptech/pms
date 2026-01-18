@@ -13,7 +13,11 @@
                     <h4 class="card-title">List of Tickets</h4>
                 </div>
                 <div class="col-sm-8">
-                    <a href="tickets/create" class="btn btn-primary float-end">Create ticket</a>
+                     <?php   $url = 'tickets/create';
+                        $get = request()->getGet();
+                        if(!empty($get)): $url .= '?' . http_build_query($get); endif;
+                    ?>
+                    <a href="<?= $url ?>" class="btn btn-primary float-end">Create ticket</a>
                 </div>
             </div>
         </div>
