@@ -54,10 +54,13 @@ class TasksController extends BaseController {
         $this->data['mode'] = 'create';
         if ($this->request->is('post')) {
             $form = [
-                'task_title' => $this->request->getPost('task_title'),
+                'task_cd' => $this->request->getPost('task_cd'),
+                'task_nm' => $this->request->getPost('task_nm'),
                 'project_id' => $this->request->getPost('project_id'),
+                'ticket_id' => $this->request->getPost('ticket_id'),
+                'team_id' => $this->request->getPost('team_id'),
                 'agent_id' => $this->request->getPost('agent_id'),
-                
+                'status' => $this->request->getPost('status'),
             ];
             if($this->TasksModel->insert($form,false)) {
                 return redirect()->back()->with('message',"Data Inserted Succefully");
@@ -74,14 +77,16 @@ class TasksController extends BaseController {
         $this->data['mode'] = 'view';
         $this->data['task'] = $this->TasksModel->find($task_id);
         if ($this->request->is('post')) {
-            $id = $this->request->getPost('task_id');
             $form = [
-                'task_title' => $this->request->getPost('task_title'),
+                'task_cd'    => $this->request->getPost('task_cd'),
+                'task_nm'    => $this->request->getPost('task_nm'),
                 'project_id' => $this->request->getPost('project_id'),
-                'agent_id' => $this->request->getPost('agent_id'),
-                
+                'ticket_id'  => $this->request->getPost('ticket_id'),
+                'team_id'    => $this->request->getPost('team_id'),
+                'agent_id'   => $this->request->getPost('agent_id'),
+                'status'     => $this->request->getPost('status')
             ];
-            if($this->TasksModel->update($id,$form)) {
+            if($this->TasksModel->update($task_id,$form)) {
                 return redirect()->back()->with('message',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->TasksModel->errors();     

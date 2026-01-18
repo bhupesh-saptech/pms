@@ -12,9 +12,13 @@ class TasksModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [ "task_title",
+    protected $allowedFields    = [ "task_cd",
+                                    "task_nm",
                                     "project_id",
-                                    "agent_id"
+                                    "ticket_id",
+                                    "team_id",
+                                    "agent_id",
+                                    "status"
                                   ];
 
     protected bool $allowEmptyInserts = false;
