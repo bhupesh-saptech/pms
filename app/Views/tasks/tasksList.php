@@ -10,8 +10,12 @@
                 <div class="col-sm-4">
                     <h5 class="card-title">List of Tasks</h1>
                 </div>
+                <?php   $url = 'tasks/create';
+                        $get = $this->request()->getGet();
+                        if(!empty($get)): $url .= '?' . http_build_query($get); endif;
+                ?>
                 <div class="col-sm-8">
-                    <a href="tasks/create" class="btn btn-primary float-end">Create Task</a>
+                    <a href="<?= $url ?>" class="btn btn-primary float-end">Create Task</a>
                 </div>
             </div>  
         </div>
