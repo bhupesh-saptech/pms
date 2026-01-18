@@ -26,7 +26,7 @@
                     <th>Emp ID</th>
                     <th>Cell Number</th>
                     <th>Projects</th>
-                    <th>Issues</th>
+                    <th>Tickets</th>
                     <th>Tasks</th>
                 </tr>
                 <?php foreach($agents as $agent): ?>
@@ -37,7 +37,7 @@
                         <td><?= $agent->agent_cd ?></td>
                         <td><?= $agent->mobile_no ?></td>
                         <td class="text-center text-primary"><a href="projects?agent_id=<?= $agent->agent_id ?>"><i class="fa-solid fa-diagram-project"></a></i></td>
-                        <td class="text-center text-danger"><a href="issues?agent_id=<?= $agent->agent_id ?>"><i class="fa-solid fa-fire"></i></a></td>
+                        <td class="text-center text-danger"><a href="tickets?agent_id=<?= $agent->agent_id ?>"><i class="fa-solid fa-ticket"></i></a></td>
                         <td class="text-center text-success"><a href="tasks?agent_id=<?= $agent->agent_id ?>"><i class="fas fa-tasks"></a></i></td>
                        
                     </tr>
