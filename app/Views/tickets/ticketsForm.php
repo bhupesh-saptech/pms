@@ -24,8 +24,6 @@
              <option value="" <?php if(isset($ticket->project_id) && $ticket->project_id == "" ){ echo 'selected';} ?>>Select Project name</option>
             <select class="form-select select2" name="project_id" id="project_id">
                 <?php foreach($projects as $project) : ?> <option value="<?= $project->project_id; ?>" <?php if(isset($ticket->project_id) && $ticket->project_id == $project->project_id ){ echo 'selected';} ?>><?= $project->project_nm; ?></option>
-                
-                <option value="<?= $project->project_id; ?>"><?= $project->project_nm; ?></option>
             <?php    endforeach; ?>
             </select> 
         </div>
@@ -36,16 +34,18 @@
         <div class="form-group">
             <label class="form-label">SAP Module</label>
             <select class="form-select select2" name="module" id="sap_module">
+                <option value="" <?if(isset($ticket->module) && $ticket->module = "") {echo 'selected';}?>>select SAP Module</option>
                 <?php foreach($module as $param=>$value) : ?>
-                <option value="<?= $param; ?>"><?= $value; ?></option>
+                <option value="<?= $param; ?>"> <?if(isset($ticket->module) && $ticket->module = $param) {echo 'selected';}?>><?= $value; ?></option>
             <?php    endforeach; ?>
             </select> 
         </div>
         <div class="form-group">
             <label class="form-label">Ticket Type</label>
             <select class="form-select select2" name="ticket_ty" id="ticket_ty">
+                 <option value="" <?if(isset($ticket->ticket_ty) && $ticket->ticket_ty = "") {echo 'selected';}?>>select Ticket Type</option>
                 <?php foreach($types as $param=>$value) : ?>
-                <option value="<?= $param; ?>"><?= $value; ?></option>
+                <option value="<?= $param; ?>" <?if(isset($ticket->ticket_ty) && $ticket->ticket_ty = $param ) {echo 'selected';}?>><?= $value; ?></option>
             <?php    endforeach; ?>
             </select> 
         </div>
@@ -61,16 +61,18 @@
         <div class="form-group">
             <label class="form-label">Agent ID</label>
             <select class="form-select select2" name="agent_id" id="agent_id">
+                 <option value="<?= $team->team_id; ?>" <?php if(isset($ticket->agent_id) && $ticket->agent_id == "" ){ echo 'selected';} ?>>Select Agent Name</option>
                 <?php foreach($agents as $agent) : ?>
-                <option value="<?= $agent->agent_id; ?>"><?= $agent->agent_nm; ?></option>
+                <option value="<?= $agent->agent_id; ?>" <?php if(isset($ticket->agent_id) && $ticket->agent_id == $agent->agent_id ){ echo 'selected';} ?>><?= $agent->agent_nm; ?></option>
             <?php    endforeach; ?>
             </select> 
         </div>
         <div class="form-group">
             <label class="form-label">Status</label>
             <select class="form-select select2" name="status" id="status">
+                <option value="" <?php if(isset($ticket->status) && $ticket->status == "" ){ echo 'selected';} ?>>Select Status</option>
                 <?php foreach($status as $param=>$value) : ?>
-                <option value="<?= $param; ?>"><?= $value; ?></option>
+                <option value="<?= $param; ?>" <?php if(isset($ticket->status) && $ticket->status == $param ){ echo 'selected';} ?>><?= $value; ?></option>
             <?php    endforeach; ?>
             </select> 
         </div>

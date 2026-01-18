@@ -49,7 +49,7 @@ class TasksController extends BaseController {
         if (!empty($agent_id)) {
             $builder->where('tasks.agent_id',$agent_id);
         }
-        $this->data['tasks'] =   $builder->findAll();
+        $this->data['tasks']  =   $builder->findAll();
         $this->data['dash']   = $this->ProjectsModel->dashboard();
         return view('tasks/tasksList',$this->data);
     }
@@ -57,13 +57,13 @@ class TasksController extends BaseController {
         $this->data['mode'] = 'create';
         if ($this->request->is('post')) {
             $form = [
-                'task_cd' => $this->request->getPost('task_cd'),
-                'task_nm' => $this->request->getPost('task_nm'),
+                'task_cd'    => $this->request->getPost('task_cd'),
+                'task_nm'    => $this->request->getPost('task_nm'),
                 'project_id' => $this->request->getPost('project_id'),
-                'ticket_id' => $this->request->getPost('ticket_id'),
-                'team_id' => $this->request->getPost('team_id'),
-                'agent_id' => $this->request->getPost('agent_id'),
-                'status' => $this->request->getPost('status'),
+                'ticket_id'  => $this->request->getPost('ticket_id'),
+                'team_id'    => $this->request->getPost('team_id'),
+                'agent_id'   => $this->request->getPost('agent_id'),
+                'status'     => $this->request->getPost('status'),
             ];
             if($this->TasksModel->insert($form,false)) {
                 return redirect()->back()->with('message',"Data Inserted Succefully");
