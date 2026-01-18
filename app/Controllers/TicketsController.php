@@ -36,15 +36,15 @@ class TicketsController extends BaseController{
                                     4=>'Interface',
                                     5=>'Data Related'
                                 ];
-        $this->data['module'] = [ '00'=>'SAP FI',
-                                  '01'=>'SAP MM',
-                                  '02'=>'SAP SD',
-                                  '03'=>'SAP PP',
-                                  '04'=>'SAP QM',
-                                  '05'=>'SAP WM',
-                                  '06'=>'SAP PM',
-                                  '07'=>'SAP PS',
-                                  '09'=>'ABAP'
+        $this->data['module'] = [ 0=>'SAP FI',
+                                  1=>'SAP MM',
+                                  2=>'SAP SD',
+                                  3=>'SAP PP',
+                                  4=>'SAP QM',
+                                  5=>'SAP WM',
+                                  6=>'SAP PM',
+                                  7=>'SAP PS',
+                                  9=>'ABAP'
                                 ];
         $this->data['tickets'] = $this->TicketsModel->select('tickets.*,projects.project_nm as project_nm,agents.agent_nm as agent_nm')
                                                     ->join('projects','projects.project_id = tickets.project_id','left')
