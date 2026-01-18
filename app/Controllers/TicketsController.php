@@ -3,19 +3,25 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use CodeIgniter\HTTP\ResponseInterface;
+
 use App\Models\AgentsModel;
 use App\Models\ProjectsModel;
-use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\TicketsModel;
+use App\Models\TeamsModel;
+
+
 
 class TicketsController extends BaseController{
-    protected $TicketsModel,$AgentsModel,$ProjectsModel;
+    protected $TicketsModel,$AgentsModel,$ProjectsModel,$TeamsModel;
     protected $data;
     public function __construct() {
         helper('form');
         $this->TicketsModel  = new TicketsModel();
         $this->ProjectsModel = new ProjectsModel();
         $this->AgentsModel   = new AgentsModel();
+        $this->TeamsModel   = new TeamsModel();
+
         $this->data['status'] = [   0=>'New/Created',
                                     1=>'Assigned',
                                     2=>'In Progress',
@@ -43,6 +49,7 @@ class TicketsController extends BaseController{
                                                     ->join('agents','agents.agent_id = tickets.agent_id','left')
                                                     ->findAll();
          $this->data['dash']    = $this->ProjectsModel->dashboard();
+        $this->data['teams']   = $this->TeamsModel->select("team_id,team_nm")->orderBy("team_id")->findAll();
         $this->data['agents']   = $this->AgentsModel->select("agent_id,agent_nm")->orderBy("agent_id")->findAll();
         $this->data['projects'] = $this->ProjectsModel->select("project_id,project_nm")->orderBy("project_id")->findAll();
     }
