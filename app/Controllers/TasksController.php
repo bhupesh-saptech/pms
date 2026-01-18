@@ -33,7 +33,6 @@ class TasksController extends BaseController {
         $this->data['teams']    = $this->TeamsModel->select("team_id,team_nm")->orderBy("team_id")->findAll();
         $this->data['projects'] = $this->ProjectsModel->select("project_id,project_nm")->orderBy("project_id")->findAll();
         $this->data['tickets'] = $this->TicketsModel->select("ticket_id,ticket_nm")->orderBy("ticket_id")->findAll();
-        $this->data['issues']   = $this->IssuesModel->select("issue_id,issue_title")->orderBy("issue_id")->findAll();
     }
     public function index() {
         $builder = $this->TasksModel;
