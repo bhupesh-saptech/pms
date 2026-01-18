@@ -8,10 +8,10 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     <h5 class="card-title">List of Tickets</h1>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-7">
                     <?= $this->include('layouts/messages'); ?>
                 </div>
                 <div class="col-sm-3">
