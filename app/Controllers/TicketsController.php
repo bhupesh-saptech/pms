@@ -74,7 +74,7 @@ class TicketsController extends BaseController{
                 'status'     => $this->request->getPost('status')
             ];
             if($this->TicketsModel->insert($form,false)) {
-                return redirect()->to('tickets')->with('message',"Data Inserted Succefully");
+                return redirect()->to('tickets')->with('status',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->TicketsModel->errors();     
                 return view('tickets/ticketForm', $this->data);  
@@ -101,7 +101,7 @@ class TicketsController extends BaseController{
                 'status'     => $this->request->getPost('status')
             ];
             if($this->TicketsModel->update($ticket_id,$form)) {
-                return redirect()->to('tickets')->with('message',"Data Inserted Succefully");
+                return redirect()->to('tickets')->with('status',"Data Inserted Succefully");
             } else {
                 $data['errors'] = $this->TicketsModel->errors();     
                 return view('tickets/ticketsForm', $this->data);  
