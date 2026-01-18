@@ -22,7 +22,6 @@
         <div class="form-group">
             <label class="form-label">Project CD</label>
             <input class="form-control" type="text" name="project_cd" value="<?= set_value('project_cd', isset($project->project_cd) ? $project->project_cd : '') ?>" autocomplete="off">
-           
         </div> 
         <div class="form-group">
             <label class="form-label">Project name</label>
@@ -35,22 +34,20 @@
         <div class="form-group">
             <label class="form-label">Project type</label>
             <select class="form-select" name="proj_type">
-                <option value="" <?php if(isset($project->proj_type) && $project->proj_type == "") { echo "selected";} ?>>select project type</option>
+                <option value="" <?php if(isset($project->project_ty) && $project->project_ty == "") { echo "selected";} ?>>select Project type</option>
                 <?php foreach($types as $param=>$value): ?>
-                    <option value="<?= $param ?>" <?php if(isset($project->proj_type) && $project->proj_type == $param ) { echo "selected";} ?>><?= $value; ?></option>
+                    <option value="<?= $param ?>" <?php if(isset($project->project_ty) && $project->project_ty == $param ) { echo "selected";} ?>><?= $value; ?></option>
                 <?php endforeach;?>
             </select>               
         </div>
         <div class="form-group">
             <label class="form-label">Project Category</label>
-            <select class="form-select" name="proj_catg" >
-                <option value="" <?php if(isset($project->proj_catg) && $project->proj_catg == "" ) { echo "selected";} ?>>select project Category</option>
+            <select class="form-select" name="project_ct" >
+                <option value="" <?php if(isset($project->project_ct) && $project->project_ct == "" ) { echo "selected";} ?>>select project Category</option>
                 <?php foreach($category as $param=>$value): ?>
-                    <option value="<?= $param ?>" <?php if(isset($project->proj_catg) && $project->proj_catg == $param ) { echo "selected";} ?>><?= $value; ?></option>
+                    <option value="<?= $param ?>" <?php if(isset($project->project_ct) && $project->project_ct == $param ) { echo "selected";} ?>><?= $value; ?></option>
                 <?php endforeach;?>
             </select>
-
-            
         </div>
         <div class="form-group">
             <label class="form-label">Client Name</label>
