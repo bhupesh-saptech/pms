@@ -9,7 +9,7 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-sm-4">
-                    <h5 class="card-title">List of Tickets</h1>
+                    <h5 class="card-title">List of Teams</h1>
                 </div>
                 <div class="col-sm-8">
                     <a href="teams/create" class="btn btn-primary float-end">Create Team</a>
