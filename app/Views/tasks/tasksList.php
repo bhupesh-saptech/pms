@@ -11,7 +11,7 @@
                     <h5 class="card-title">List of Tasks</h1>
                 </div>
                 <?php   $url = 'tasks/create';
-                        $get = $this->request()->getGet();
+                        $get = request()->getGet();
                         if(!empty($get)): $url .= '?' . http_build_query($get); endif;
                 ?>
                 <div class="col-sm-8">
