@@ -50,18 +50,5 @@ class UsersModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-    
-    public function dashboard() {
-        $db  = \Config\Database::connect(); 
-       $sql = "SELECT
-                (SELECT COUNT(*) FROM clients)  AS cnt_clients,
-                (SELECT COUNT(*) FROM projects) AS cnt_projects,
-                (SELECT COUNT(*) FROM agents)   AS cnt_agents,
-                (SELECT COUNT(*) FROM issues)   AS cnt_issues";
 
-        $qry = $db->query($sql);
-        
-        return $qry->getRowObject();
-
-    }
 }
