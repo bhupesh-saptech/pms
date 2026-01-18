@@ -8,13 +8,13 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-2">
                     <h5 class="card-title">List of Tickets</h1>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-8">
                     <?= $this->include('layouts/messages'); ?>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-2">
                     <a href="tickets/create" class="btn btn-primary float-end">Create ticket</a>
                 </div>
             </div>  
