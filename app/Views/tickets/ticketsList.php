@@ -8,6 +8,11 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
+                <div class="col-sm-12">
+                    <?= $this->include('layouts/messages'); ?>
+                </div>
+            </div>  
+            <div class="row">
                 <div class="col-sm-6">
                     <h5 class="card-title">List of Tickets</h1>
                 </div>
@@ -15,11 +20,6 @@
                     <a href="tickets/create" class="btn btn-primary float-end">Create ticket</a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <?= $this->include('layouts/messages'); ?>
-                </div>
-            </div>  
         </div>
         <div class="card-body">
             <table class="table table-stripped table-bordered">
