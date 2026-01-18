@@ -20,6 +20,15 @@
             </div>
         </div>
         <div class="form-group">
+            <label class="form-label">Client Name</label>
+            <select class="form-select" name="client_id">
+                <option value="" <?php if(isset($project->client_id) &&  $project->client_id == "" ) { echo "selected";} ?>>select client</option>
+                <?php foreach($clients as $client) :?>
+                    <option value="<?= $client->client_id; ?>" <?php if(isset($project->client_id) &&  $project->client_id == $client->client_id ) { echo "selected";} ?>><?= $client->client_nm; ?></option>
+                <?php endforeach;?>
+            </select>                
+        </div>
+        <div class="form-group">
             <label class="form-label">Project CD</label>
             <input class="form-control" type="text" name="project_cd" value="<?= set_value('project_cd', isset($project->project_cd) ? $project->project_cd : '') ?>" autocomplete="off">
         </div> 
@@ -49,15 +58,7 @@
                 <?php endforeach;?>
             </select>
         </div>
-        <div class="form-group">
-            <label class="form-label">Client Name</label>
-            <select class="form-select" name="client_id">
-                <option value="" <?php if(isset($project->client_id) &&  $project->client_id == "" ) { echo "selected";} ?>>select client</option>
-                <?php foreach($clients as $client) :?>
-                    <option value="<?= $client->client_id; ?>" <?php if(isset($project->client_id) &&  $project->client_id == $client->client_id ) { echo "selected";} ?>><?= $client->client_nm; ?></option>
-                <?php endforeach;?>
-            </select>                
-        </div>
+        
         <div class="form-group">
             <label class="form-label">Project Manager</label>
             <select class="form-select"  name="agent_id" >
