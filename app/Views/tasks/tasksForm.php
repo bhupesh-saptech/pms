@@ -29,6 +29,15 @@
             </select> 
         </div> 
         <div class="form-group">
+            <label class="form-label">Ticket ID</label>
+            <select class="form-select select2" name="ticket_id" id="ticket_id">
+                <option value="" <?php if(isset($task->ticket_id) && $task->ticket_id == "") {echo 'selected';}?>></option>
+                <?php foreach($projects as $project) : ?>
+                <option value="<?= $project->ticket_id; ?>" <?php if(isset($task->ticket_id) && $task->ticket_id == $project->ticket_id) {echo 'selected';}?>><?= $project->ticket_nm; ?></option>
+            <?php    endforeach; ?>
+            </select> 
+        </div> 
+        <div class="form-group">
             <label class="form-label">Task Title</label>
             <input class="form-control" type="text" name="task_nm" value="<?= set_value('task_nm', isset($task->task_nm) ? $task->task_nm : '') ?>" autocomplete="off">                          
         </div>
