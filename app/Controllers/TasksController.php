@@ -76,8 +76,14 @@ class TasksController extends BaseController {
                 return view('tasks/tasksForm', $this->data);  
             }
         } else {
-            $ticket_id = request()->getGet('ticket_id') ?? null;
-            $this->data['task'] = (object) ['ticket_id'=>$ticket_id];
+            $ticket_id  = request()->getGet('ticket_id') ?? null;
+            $project_id = request()->getGet('project_id') ?? null;
+            if(!empty($project_id)) {
+                $this->data['task'] = (object) ['project_id'=>$project_id];
+            }
+            if(!empty($ticket_id)) {
+                $this->data['task'] = (object) ['ticket_id'=>$ticket_id];
+            }
             return view('tasks/tasksForm',$this->data);
         }
     }
