@@ -36,7 +36,7 @@
             <select class="form-select select2" name="module" id="sap_module">
                 <option value="" <?if(isset($ticket->module) && $ticket->module = "") {echo 'selected';}?>>select SAP Module</option>
                 <?php foreach($module as $param=>$value) : ?>
-                <option value="<?= $param; ?>"> <?if(isset($ticket->module) && $ticket->module = $param) {echo 'selected';}?>><?= $value; ?></option>
+                <option value="<?= $param; ?>" <?if(isset($ticket->module) && $ticket->module = $param) {echo 'selected';}?>><?= $value; ?></option>
             <?php    endforeach; ?>
             </select> 
         </div>
