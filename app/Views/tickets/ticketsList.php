@@ -38,7 +38,7 @@
                         <td><?= $module[$ticket->module] ?? null; ?></td>
                         <td><?= $ticket->agent_nm ?></td>
                         <td><?= $status[$ticket->status] ?? null; ?></td>
-                        <td class="text-center text-success"><i class="fas fa-tasks"></i></td>
+                        <td class="text-center text-success"><a href="tasks?ticket_id=<?= $ticket->ticket_id; ?>"><i class="fas fa-tasks"></i></a></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
