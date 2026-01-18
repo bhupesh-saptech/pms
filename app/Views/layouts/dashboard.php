@@ -57,7 +57,7 @@
             <!-- small box -->
             <div class="small-box bg-warning ">
               <div class="inner">
-                <h3><?php echo $dash->cnt_tickets; ?></h3>
+                <h3><?php echo $dash->cnt_issues; ?></h3>
 
                 <p>Tickets</p>
               </div>
