@@ -52,7 +52,7 @@
             <select class="form-select select2" name="team_id" id="team_id">
                 <option value="" <?php if(isset($ticket->team_id) && $ticket->team_id = "" ){ echo 'selected';} ?>>Select team name</option>
                 <?php foreach($teams as $team) : ?>
-                <option value="<?= $team->team_id; ?>" <?php if(isset($ticket->team_id) && $ticket->team_id = $team->item_id ){ echo 'selected';} ?>><?= $team->team_nm; ?></option>
+                <option value="<?= $team->team_id; ?>" <?php if(isset($ticket->team_id) && $ticket->team_id = $team->team_id ){ echo 'selected';} ?>><?= $team->team_nm; ?></option>
                 <?php endforeach; ?>
             </select> 
         </div>
