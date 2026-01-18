@@ -31,7 +31,7 @@
             <!-- small box -->
             <div class="small-box bg-secondary">
               <div class="inner">
-                <h3><?php echo $dash->cnt1; ?></h3>
+                <h3><?php echo $dash->cnt_projects; ?></h3>
 
                 <p>Users</p>
               </div>
@@ -46,7 +46,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3><?php echo $dash->cnt2; ?></h3>
+                <h3><?php echo $dash->cnt_clients; ?></h3>
 
                 <p>User Roles</p>
               </div>
@@ -61,7 +61,7 @@
             <!-- small box -->
             <div class="small-box bg-primary">
               <div class="inner">
-                <h3><?php echo $dash->cnt3; ?></h3>
+                <h3><?php echo $dash->cnt_projects; ?></h3>
 
                 <p>Suppliers</p>
               </div>
@@ -76,7 +76,7 @@
             <!-- small box -->
             <div class="small-box bg-warning ">
               <div class="inner">
-                <h3><?php echo $dash->cnt4; ?></h3>
+                <h3><?php echo $dash->cnt_projects; ?></h3>
 
                 <p>Pur Groups</p>
               </div>
@@ -91,7 +91,7 @@
             <!-- small box -->
             <div class="small-box bg-success ">
               <div class="inner">
-                <h3><?php echo $dash->cnt5; ?></h3>
+                <h3><?php echo $dash->cnt_projects; ?></h3>
 
                 <p>Plants</p>
               </div>
@@ -106,7 +106,7 @@
             <!-- small box -->
             <div class="small-box bg-dark">
               <div class="inner">
-                <h3><?php echo $dash->cnt6; ?></h3>
+                <h3><?php echo $dash->cnt_projects; ?></h3>
 
                 <p>Storage Locations</p>
               </div>
