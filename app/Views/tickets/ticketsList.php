@@ -11,8 +11,10 @@
                 <div class="col-sm-4">
                     <h5 class="card-title">List of Tickets</h1>
                 </div>
-                <?= $this->include('layouts/messages'); ?>
-                <div class="col-sm-8">
+                <div class="col-sm-4">
+                    <?= $this->include('layouts/messages'); ?>
+                </div>
+                <div class="col-sm-4">
                     <a href="tickets/create" class="btn btn-primary float-end">Create ticket</a>
                 </div>
             </div>  
