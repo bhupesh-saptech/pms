@@ -41,15 +41,17 @@
         </div>
         <div class="form-group">
             <label class="form-label">Client Type</label>
-            <select class="form-select select2"  name="cl_type">
+            <option value="" <?if(isset($client->client_ty) && $client->client_ty == "") { echo 'selected'; }?>>select Client Type</option>
+            <select class="form-select select2"  name="client_ty">
                     <option value="" <?php if(isset($client->cl_type) && $client->cl_type == "") { echo "selected";} ?>>Select Client Type</option>
                     <?php foreach($types as $param=>$value) :?>
-                        <option value="<?= $param ?>" <?php if(isset($client->cl_type) && $client->cl_type == $param) { echo "selected";} ?>><?= $value ?></option>
+                        <option value="<?= $param ?>" <?php if(isset($client->client_ty) && $client->client_ty == $param) { echo "selected";} ?>><?= $value ?></option>
                     <?php endforeach?>
             </select>                   
         </div>
         <div class="form-group">
-            <label class="form-label">Client Type</label>
+            <label class="form-label">Client Industry</label>
+            <option value="" <?if(isset($client->industry) && $client->industry == "") { echo 'selected'; }?>>select Industry</option>
             <select class="form-select select2"  name="industry">
                     <option value="" <?php if(isset($client->industry) && $client->industry == "") { echo "selected";} ?>>Select Industry</option>
                     <?php foreach($industry as $param=>$value) :?>
