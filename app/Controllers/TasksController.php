@@ -50,7 +50,7 @@ class TasksController extends BaseController {
         if (!empty($agent_id)) {
             $builder->where('tasks.agent_id',$agent_id);
         }
-        if (!empty($agent_id)) {
+        if (!empty($ticket_id)) {
             $builder->where('tasks.ticket_id',$ticket_id);
         }
         $this->data['tasks']  =   $builder->findAll();
