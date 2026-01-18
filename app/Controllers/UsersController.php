@@ -6,16 +6,18 @@ use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 
 use App\Models\UsersModel;
+use App\Models\ProjectsModel;
 
 class UsersController extends BaseController {
-    public $UsersModel;
+    public $UsersModel,$ProjectsModel;
     public function __construct() {
         helper('form');
-        $this->UsersModel = new UsersModel;
+        $this->UsersModel    = new UsersModel();
+        $this->ProjectsModel = new ProjectsModel();
     }
     public function index() {
         $data['users'] = $this->UsersModel->findAll();
-        $data['dash']   = $this->UsersModel->dashboard();
+        $data['dash']   = $this->ProjectsModel->dashboard();
         return view('users/usersList',$data);
     }
     public function login(){
