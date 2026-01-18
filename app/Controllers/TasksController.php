@@ -8,12 +8,14 @@ use App\Models\AgentsModel;
 use App\Models\ProjectsModel;
 use App\Models\IssuesModel;
 use App\Models\TasksModel;
+use App\Models\TeamsModel;
 
 class TasksController extends BaseController {
-    protected $AgentsModel,$ProjectsModel,$IssuesModel,$TasksModel;
+    protected $AgentsModel,$ProjectsModel,$IssuesModel,$TasksModel,$TeamsModel;
     protected $data;
     public function __construct() {
         helper('form');
+        $this->TeamsModel    = new TeamsModel();
         $this->AgentsModel   = new AgentsModel();
         $this->ProjectsModel = new ProjectsModel();
         $this->IssuesModel   = new IssuesModel();
@@ -28,6 +30,7 @@ class TasksController extends BaseController {
         $this->data['tasks']    = $this->TasksModel->read_data();
         $this->data['dash']     = $this->ProjectsModel->dashboard();
         $this->data['agents']   = $this->AgentsModel->select("agent_id,agent_nm")->orderBy("agent_id")->findAll();
+        $this->data['teams']    = $this->TeamsModel->select("team_id,team_nm")->orderBy("team_id")->findAll();
         $this->data['projects'] = $this->ProjectsModel->select("project_id,project_nm")->orderBy("project_id")->findAll();
         $this->data['issues']   = $this->IssuesModel->select("issue_id,issue_title")->orderBy("issue_id")->findAll();
     }
