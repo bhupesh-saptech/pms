@@ -32,8 +32,8 @@
             <label class="form-label">Ticket ID</label>
             <select class="form-select select2" name="ticket_id" id="ticket_id">
                 <option value="" <?php if(isset($task->ticket_id) && $task->ticket_id == "") {echo 'selected';}?>></option>
-                <?php foreach($projects as $project) : ?>
-                <option value="<?= $project->ticket_id; ?>" <?php if(isset($task->ticket_id) && $task->ticket_id == $project->ticket_id) {echo 'selected';}?>><?= $project->ticket_nm; ?></option>
+                <?php foreach($tickets as $ticket) : ?>
+                <option value="<?= $ticket->ticket_id; ?>" <?php if(isset($task->ticket_id) && $task->ticket_id == $ticket->ticket_id) {echo 'selected';}?>><?= $ticket->ticket_nm; ?></option>
             <?php    endforeach; ?>
             </select> 
         </div> 
