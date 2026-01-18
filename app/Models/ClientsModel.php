@@ -17,7 +17,7 @@ class ClientsModel extends Model
                                     'contact_nm',
                                     'mobile_no',
                                     'email_id', 
-                                    'cl_type',  
+                                    'client_ty',  
                                     'industry', 
                                     'status',   
                                     'client_cd'

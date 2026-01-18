@@ -44,7 +44,7 @@ class ClientsController extends BaseController {
                 'contact_nm' => $this->request->getPost('contact_nm'),
                 'mobile_no'  => $this->request->getPost('mobile_no'),
                 'email_id'   => $this->request->getPost('email_id'),
-                'cl_type'    => $this->request->getPost('cl_type'),
+                'client_ty'  => $this->request->getPost('client_ty'),
                 'industry'   => $this->request->getPost('industry'),
                 'status'     => $this->request->getPost('status')
             ];
@@ -69,7 +69,7 @@ class ClientsController extends BaseController {
                 'contact_nm' => $this->request->getPost('contact_nm'),
                 'mobile_no'  => $this->request->getPost('mobile_no'),
                 'email_id'   => $this->request->getPost('email_id'),
-                'cl_type'    => $this->request->getPost('cl_type'),
+                'client_ty'  => $this->request->getPost('client_ty'),
                 'industry'   => $this->request->getPost('industry'),
                 'status'     => $this->request->getPost('status')
             ];
