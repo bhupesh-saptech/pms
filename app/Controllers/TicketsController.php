@@ -82,6 +82,19 @@ class TicketsController extends BaseController{
                 return view('tickets/ticketForm', $this->data);  
             }
         } else {
+            $project_id = request()->getGet('project_id') ?? null;
+            $agent_id  = request()->getGet('agent_id') ?? null;
+            $team_id  = request()->getGet('team_id') ?? null;
+            if(!empty($project_id)) {
+                $ticket['project_id'] = $project_id;
+            }
+            if(!empty($team_id)) {
+               $ticket['team_id']  = $team_id;
+            }
+            if(!empty($agent_id)) {
+               $ticket['agent_id']  = $agent_id;
+            }
+            $this->data['ticket'] = (object) $ticket;
             return view('tickets/ticketsForm',$this->data);
         }
     }
