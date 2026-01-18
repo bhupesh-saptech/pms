@@ -8,14 +8,16 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-sm-6">
                     <h5 class="card-title">List of Tickets</h1>
                 </div>
-                <div class="col-sm-7">
-                    <?= $this->include('layouts/messages'); ?>
-                </div>
-                <div class="col-sm-3">
+                <div class="col-sm-6">
                     <a href="tickets/create" class="btn btn-primary float-end">Create ticket</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <?= $this->include('layouts/messages'); ?>
                 </div>
             </div>  
         </div>
@@ -41,7 +43,6 @@
                         <td><?= $ticket->agent_nm ?></td>
                         <td><?= $status[$ticket->status] ?? null; ?></td>
                         <td class="text-center text-success"><i class="fas fa-tasks"></i></td>
-                        
                     </tr>
                 <?php endforeach; ?>
             </table>
