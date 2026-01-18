@@ -20,11 +20,6 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="form-label">ticket Title</label>
-            <input class="form-control" type="text" name="ticket_nm" value="<?= set_value('ticket_nm', isset($ticket->ticket_nm) ? $ticket->ticket_nm : '') ?>" autocomplete="off">
-           
-        </div> 
-        <div class="form-group">
             <label class="form-label">Project ID</label>
             <select class="form-select select2" name="project_id" id="project_id">
                 <?php foreach($projects as $project) : ?>
@@ -32,6 +27,10 @@
             <?php    endforeach; ?>
             </select> 
         </div>
+        <div class="form-group">
+            <label class="form-label">Ticket Title</label>
+            <input class="form-control" type="text" name="ticket_nm" value="<?= set_value('ticket_nm', isset($ticket->ticket_nm) ? $ticket->ticket_nm : '') ?>" autocomplete="off">
+        </div> 
         <div class="form-group">
             <label class="form-label">SAP Module</label>
             <select class="form-select select2" name="module" id="sap_module">
@@ -41,11 +40,20 @@
             </select> 
         </div>
         <div class="form-group">
-            <label class="form-label">ticket Type</label>
+            <label class="form-label">Ticket Type</label>
             <select class="form-select select2" name="ticket_ty" id="ticket_ty">
                 <?php foreach($types as $key=>$value) : ?>
                 <option value="<?= $key; ?>"><?= $value; ?></option>
             <?php    endforeach; ?>
+            </select> 
+        </div>
+        <div class="form-group">
+            <label class="form-label">Team Name</label>
+            <select class="form-select select2" name="team_id" id="team_id">
+                <option value="" <?php if(isset($ticket->team_id) && $ticket->team_id = "" ){ echo 'selected';} ?>>Select team name</option>
+                <?php foreach($teams as $team) : ?>
+                <option value="<?= $team->team_id; ?>" <?php if(isset($ticket->team_id) && $ticket->team_id = $team->item_id ){ echo 'selected';} ?>><?= $team->team_nm; ?></option>
+                <?php endforeach; ?>
             </select> 
         </div>
         <div class="form-group">
