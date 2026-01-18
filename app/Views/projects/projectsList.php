@@ -11,7 +11,11 @@
                     <h5 class="card-title">List of Projects</h1>
                 </div>
                 <div class="col-sm-8">
-                    <a href="projects/create" class="btn btn-primary float-end">Create Project</a>
+                    <?php   $url = 'projects/create';
+                        $get = request()->getGet();
+                        if(!empty($get)): $url .= '?' . http_build_query($get); endif;
+                    ?>
+                    <a href="<?= $url ?>" class="btn btn-primary float-end">Create Project</a>
                 </div>
             </div>  
         </div>
