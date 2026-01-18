@@ -7,11 +7,7 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <div class="row">
-                <div class="col-sm-12">
-                    <?= $this->include('layouts/messages'); ?>
-                </div>
-            </div>  
+            <?= $this->include('layouts/messages'); ?>
             <div class="row">
                 <div class="col-sm-4">
                     <h4 class="card-title">List of Tickets</h4>
