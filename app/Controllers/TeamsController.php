@@ -6,14 +6,16 @@ use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\TeamsModel;
 use App\Models\AgentsModel;
+use App\Models\ProjectsModel;
 
 class TeamsController extends BaseController {
-    protected $TeamsModel,$AgentsModel;
+    protected $TeamsModel,$AgentsModel,$ProjectsModel;
     protected $data;
     public function __construct() {
         helper('form');
-        $this->TeamsModel = new TeamsModel();
-        $this->AgentsModel = new AgentsModel();
+        $this->TeamsModel     = new TeamsModel();
+        $this->AgentsModel    = new AgentsModel();
+        $this->ProjectsModel  = new ProjectsModel();
         $this->data['status'] = [0=>'InActive',
                                  1=>'Active'
                                 ];
@@ -26,7 +28,7 @@ class TeamsController extends BaseController {
                                                 ->join('agents','agents.agent_id = teams.agent_id','left')
                                                 ->findAll();
         $this->data['agents'] = $this->AgentsModel->select('agent_id,agent_nm')->findAll();
-        $this->data['dash']   = $this->TeamsModel->dashboard();
+        $this->data['dash']   = $this->ProjectsModel->dashboard();
 
     }
     

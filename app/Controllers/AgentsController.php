@@ -6,15 +6,17 @@ use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 
 use App\Models\AgentsModel;
+use App\Models\ProjectsModel;
 
 class AgentsController extends BaseController {
-    protected $AgentsModel;
+    protected $AgentsModel,$ProjectsModel;
     protected $data;
     public function __construct() {
         helper('form');
         $this->AgentsModel = new AgentsModel;
+        $this->ProjectsModel = new ProjectsModel;
         $this->data['agents'] = $this->AgentsModel->findAll();
-        $this->data['dash']   = $this->AgentsModel->dashboard();
+        $this->data['dash']   = $this->ProjectsModel->dashboard();
     }
     public function index() {
         return view('agents/agentsList',$this->data);

@@ -25,8 +25,8 @@ class TasksController extends BaseController {
                                     4=>'Completed',
                                     5=>'Closed',
                                 ];
-        $this->data['tasks'] = $this->TasksModel->read_data();
-        $this->data['dash']  = $this->TasksModel->dashboard();
+        $this->data['tasks']    = $this->TasksModel->read_data();
+        $this->data['dash']     = $this->ProjectsModel->dashboard();
         $this->data['agents']   = $this->AgentsModel->select("agent_id,agent_nm")->orderBy("agent_id")->findAll();
         $this->data['projects'] = $this->ProjectsModel->select("project_id,project_nm")->orderBy("project_id")->findAll();
         $this->data['issues']   = $this->IssuesModel->select("issue_id,issue_title")->orderBy("issue_id")->findAll();

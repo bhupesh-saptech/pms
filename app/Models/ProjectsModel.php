@@ -56,11 +56,14 @@ class ProjectsModel extends Model
 
     public function dashboard() {
         $db  = \Config\Database::connect(); 
-       $sql = "SELECT
+        $sql = "SELECT
+                (SELECT COUNT(*) FROM agents)   AS cnt_agents,
                 (SELECT COUNT(*) FROM clients)  AS cnt_clients,
                 (SELECT COUNT(*) FROM projects) AS cnt_projects,
-                (SELECT COUNT(*) FROM agents)   AS cnt_agents,
-                (SELECT COUNT(*) FROM tickets)   AS cnt_issues";
+                (SELECT COUNT(*) FROM tasks)    AS cnt_tasks,
+                (SELECT COUNT(*) FROM teams)    AS cnt_teams,
+                (SELECT COUNT(*) FROM tickets)  AS cnt_tickets";
+                
 
         $qry = $db->query($sql);
         

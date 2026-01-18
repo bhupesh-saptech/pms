@@ -42,7 +42,7 @@ class TicketsController extends BaseController{
                                                     ->join('projects','projects.project_id = tickets.project_id','left')
                                                     ->join('agents','agents.agent_id = tickets.agent_id','left')
                                                     ->findAll();
-         $this->data['dash']    = $this->TicketsModel->dashboard();
+         $this->data['dash']    = $this->ProjectsModel->dashboard();
         $this->data['agents']   = $this->AgentsModel->select("agent_id,agent_nm")->orderBy("agent_id")->findAll();
         $this->data['projects'] = $this->ProjectsModel->select("project_id,project_nm")->orderBy("project_id")->findAll();
     }
