@@ -28,7 +28,7 @@
                     <th>Project Type</th>
                     <th>Project Manager</th>
                     <th>Client ID</th>
-                    <th>Issues</th>
+                    <th>Tickets</th>
                     <th>Tasks</th>
                 </tr>
                 <?php foreach($projects as $project): ?>
@@ -39,7 +39,7 @@
                         <td><?= $types[$project->project_ty] ?? null; ?></td>
                         <td><?= $project->agent_nm ?></td>
                         <td><?= $project->client_nm ?></td>
-                        <td class="text-center text-danger" ><a href="issues?project_id=<?= $project->project_id ?>"><i class="fa-solid fa-fire"></a></i></td>
+                        <td class="text-center text-danger" ><a href="tickets?project_id=<?= $project->project_id ?>"><i class="fa-solid fa-fire"></a></i></td>
                         <td class="text-center text-success"><a href="tasks?project_id=<?= $project->project_id ?>"><i class="fas fa-tasks"></i></a></td>
                     </tr>
                 <?php endforeach; ?>
