@@ -14,7 +14,7 @@
               <div class="inner">
                 <h3><?php echo $dash->cnt_projects; ?></h3>
 
-                <p>Users</p>
+                <p>Projects</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
@@ -29,7 +29,7 @@
               <div class="inner">
                 <h3><?php echo $dash->cnt_clients; ?></h3>
 
-                <p>User Roles</p>
+                <p>Clients</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
@@ -42,9 +42,9 @@
             <!-- small box -->
             <div class="small-box bg-primary">
               <div class="inner">
-                <h3><?php echo $dash->cnt_projects; ?></h3>
+                <h3><?php echo $dash->cnt_agents; ?></h3>
 
-                <p>Suppliers</p>
+                <p>Agents</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -57,9 +57,9 @@
             <!-- small box -->
             <div class="small-box bg-warning ">
               <div class="inner">
-                <h3><?php echo $dash->cnt_projects; ?></h3>
+                <h3><?php echo $dash->cnt_tickets; ?></h3>
 
-                <p>Pur Groups</p>
+                <p>Tickets</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -74,7 +74,7 @@
               <div class="inner">
                 <h3><?php echo $dash->cnt_projects; ?></h3>
 
-                <p>Plants</p>
+                <p>Tasks</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
@@ -89,7 +89,7 @@
               <div class="inner">
                 <h3><?php echo $dash->cnt_projects; ?></h3>
 
-                <p>Storage Locations</p>
+                <p>Teams</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
