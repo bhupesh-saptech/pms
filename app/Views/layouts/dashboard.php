@@ -19,7 +19,7 @@
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="list_users.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="projects" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -34,7 +34,7 @@
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="list_roles.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="clients" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -49,7 +49,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="list_suppl.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="agents" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -64,7 +64,7 @@
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="list_prgrp.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="tickets" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -79,13 +79,13 @@
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="list_plants.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="tasks" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
           <div class="col-lg-2 col-6">
             <!-- small box -->
-            <div class="small-box bg-dark">
+            <div class="small-box bg-light">
               <div class="inner">
                 <h3><?php echo $dash->cnt_projects; ?></h3>
 
@@ -94,7 +94,7 @@
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="list_strloc.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="Teams" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
