@@ -86,6 +86,15 @@ class ProjectsController extends BaseController {
                 return view('projects/projectsForm', $this->data);  
             }
         } else {
+            $agent_id  = request()->getGet('agent_id') ?? null;
+            $client_id = request()->getGet('client_id') ?? null;
+            if(!empty($agent_id)) {
+                $project['agent_id'] = $agent_id;
+            }
+            if(!empty($client_id)) {
+               $project['client_id']  = $client_id;
+            }
+            $this->data['project'] = (object) $project;
             return view('projects/projectsForm',$this->data);
         }
     }

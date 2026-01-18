@@ -83,7 +83,7 @@ class TasksController extends BaseController {
             }
             if(!empty($ticket_id)) {
                $ticket = $this->TicketsModel->find($ticket_id);
-               $task['ticket_id'] = $ticket_id;
+               $task['ticket_id']  = $ticket_id;
                $task['project_id'] = $ticket->project_id;
             }
             $this->data['task'] = (object) $task;
