@@ -77,6 +77,6 @@ class AgentsController extends BaseController {
                                     ->orderBy('agent_id')
                                     ->findAll();
 
-        return $this->response->getJSON($agents);
+        return $this->response->setJSON($agents);
     }
 }
