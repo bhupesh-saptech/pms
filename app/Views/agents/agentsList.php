@@ -13,7 +13,11 @@
                     <h5 class="card-title">List of Agents</h1>
                 </div>
                 <div class="col-sm-8">
-                    <a href="agents/create" class="btn btn-primary float-end">Create Agent</a>
+                <?php   $url = 'agents/create';
+                        $get = request()->getGet();
+                        if(!empty($get)): $url .= '?' . http_build_query($get); endif;
+                ?>
+                    <a href="<?= $url ?>" class="btn btn-primary float-end">Create Agent</a>
                 </div>
             </div>  
         </div>

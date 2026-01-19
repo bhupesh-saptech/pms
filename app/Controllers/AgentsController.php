@@ -19,6 +19,18 @@ class AgentsController extends BaseController {
         $this->data['dash']   = $this->ProjectsModel->dashboard();
     }
     public function index() {
+        $builder = $this->AgentsModel;
+        $team_id = $this->request->getGet('team_id') ?? null;
+        
+        $builder->select('agents.*,teams.team_nm as team_nm')
+                ->join('teams','teams.team_id = agents.team_id')
+                ->orderBy('agent_id');
+
+        if (!empty($team_id)) {
+            $builder->where('agents.team_id',$team_id);
+        }
+       
+        $this->data['agents']  =  $builder->findAll();
         return view('agents/agentsList',$this->data);
     }
     public function create() {

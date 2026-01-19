@@ -56,8 +56,6 @@ class TicketsController extends BaseController{
         $this->data['projects'] = $this->ProjectsModel->select("project_id,project_nm")->orderBy("project_id")->findAll();
     }
     public function index() {
-        // echo "<pre>";
-        // print_r($this->data['tickets']);
         return view('tickets/ticketsList',$this->data);
     }
     public function create() {
