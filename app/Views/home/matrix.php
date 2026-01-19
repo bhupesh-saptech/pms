@@ -21,7 +21,7 @@
                     <th>Agent ID</th>
                     <th>Agent Name</th>
                     <?php foreach($status as $param=>$value) : ?>
-                        <th><?= $value ?></th>
+                        <th class="text-end"><?= $value ?></th>
                     <?php endforeach; ?>
                 </tr>
                 <?php foreach($list as $item): ?>
