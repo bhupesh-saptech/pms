@@ -14,7 +14,7 @@
                     <button type="submit" class="btn btn-success float-end me-3"><i class="fa fa-save"></i></button>
                 <?php else : ?>
                     <button type="button" class="btn btn-warning float-end me-3" onclick="btnToggle(this,event);"><i class="fa fa-edit"></i></button>
-                    <a href="teams/delete/<?= $team->team_id ?>" class="btn btn-danger float-end me-3" onclick="return confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash"></i></a>
+                    <!-- <a href="teams/delete/<?= $team->team_id ?>" class="btn btn-danger float-end me-3" onclick="return confirm('Are you sure you want to delete this record?');"><i class="fa fa-trash"></i></a> -->
                 <?php endif ?>
                 <input  type="hidden" name="team_id" id="team_id" value="<?= set_value('team_id', isset($team->team_id) ? $team->team_id : '') ?>">
             </div>
