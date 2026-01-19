@@ -81,7 +81,7 @@
         let project_id = $(obj).val();
         $('#ticket_id').html('<option value="">Loading...</option>');  
         if (project_id !== '') {
-            $.get("<?= base_url('get_tickets') ?>",{project_id: project_id },function (response) {
+            $.get("<?= base_url('/get_tickets') ?>",{project_id: project_id },function (response) {
                 console.log(response);
                 $('#ticket_id').html(response);
             });
