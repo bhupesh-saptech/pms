@@ -42,7 +42,7 @@
         </div>
         <div class="form-group">
             <label class="form-label">Project type</label>
-            <select class="form-select" name="proj_type">
+            <select class="form-select" name="project_ty">
                 <option value="" <?php if(isset($project->project_ty) && $project->project_ty == "") { echo "selected";} ?>>select Project type</option>
                 <?php foreach($types as $param=>$value): ?>
                     <option value="<?= $param ?>" <?php if(isset($project->project_ty) && $project->project_ty == $param ) { echo "selected";} ?>><?= $value; ?></option>
