@@ -27,7 +27,7 @@
                     <th>Agent ID</th>
                     <th>Agent Name</th>
                     <th>Email ID</th>
-                    <th>Emp ID</th>
+                    <th>Agent Code</th>
                     <th>Cell Number</th>
                     <th>Projects</th>
                     <th>Tickets</th>
