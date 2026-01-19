@@ -81,10 +81,12 @@
         let project_id = $(obj).val();
         $('#ticket_id').html('<option value="">Loading...</option>');  
         if (project_id !== '') {
-            $.get("<?= base_url('/get_tickets') ?>",{project_id: project_id },function (response) {
-               let data = JSON.parse(response);
-               console.log(data.ticket_nm);
-                $('#ticket_id').html(response);
+            $.get("<?= base_url('/get_tickets') ?>",{project_id: project_id },function (data) {
+               let options = '<option value="">Select Ticket</option>';
+               $.each(data, function (index, item) {
+                    options += `<option value="${item.ticket_id}">${item.ticket_nm}</option>`;
+                });
+                $('#ticket_id').html(options);
             });
         } else {
              $('#ticket_id').html('<option value="">Select ticket</option>');
