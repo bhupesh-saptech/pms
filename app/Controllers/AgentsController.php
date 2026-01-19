@@ -76,6 +76,7 @@ class AgentsController extends BaseController {
                                     ->where('team_id',$team_id)
                                     ->orderBy('agent_id')
                                     ->findAll();
+        echo "<pre>";
         print_r($agents);
         // return $this->response->getJSON($agents);
     }
