@@ -29,14 +29,14 @@
                 </tr>
                 <?php foreach($list as $item): ?>
                     <tr>
-                        <td class="text-right"><?= $item->agent_id ?></td>
-                        <td class="text-right"><?= $item->status_00 ?></td>
-                        <td class="text-right"><?= $item->status_01 ?></td>
-                        <td class="text-right"><?= $item->status_02 ?></td>
-                        <td class="text-right"><?= $item->status_03 ?></td>
-                        <td class="text-right"><?= $item->status_04 ?></td>
-                        <td class="text-right"><?= $item->status_05 ?></td>
-                        <td class="text-right"><?= $item->status_06 ?></td>
+                        <td class="text-end"><?= $item->agent_id ?></td>
+                        <td class="text-end"><?= $item->status_00 ?></td>
+                        <td class="text-end"><?= $item->status_01 ?></td>
+                        <td class="text-end"><?= $item->status_02 ?></td>
+                        <td class="text-end"><?= $item->status_03 ?></td>
+                        <td class="text-end"><?= $item->status_04 ?></td>
+                        <td class="text-end"><?= $item->status_05 ?></td>
+                        <td class="text-end"><?= $item->status_06 ?></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
