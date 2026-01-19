@@ -135,9 +135,9 @@ class TicketsController extends BaseController{
     public function getTickets() {
         $project_id = $this->request->getGet('project_id');
         $tickets = $this->TicketsModel->select('ticket_id,ticket_nm')
-                                                    ->where('project_id',$project_id)
-                                                    ->orderBy('ticket_id')
-                                                    ->findAll();
-        return $this->response->getJSON($tickets);
+                                      ->where('project_id',$project_id)
+                                      ->orderBy('ticket_id')
+                                      ->findAll();
+        return $this->response->setJSON($tickets);
     }
 }
