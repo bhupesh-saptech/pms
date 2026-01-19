@@ -80,7 +80,7 @@
         debugger;
         let project_id = $(obj).val();
         $('#ticket_id').html('<option value="">Loading...</option>');  
-        if (team_id !== '') {
+        if (project_id !== '') {
             $.get("<?= base_url('get_tickets') ?>",{project_id: project_id },function (response) {
                 $('#ticket_id').html(response);
             });
