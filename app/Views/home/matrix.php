@@ -30,13 +30,13 @@
                 <?php foreach($list as $item): ?>
                     <tr>
                         <td><?= $item->agent_id ?></td>
-                        <td><?= $task->status_00 ?></td>
-                        <td><?= $task->status_01 ?></td>
-                        <td><?= $task->status_02 ?></td>
-                        <td><?= $task->status_03 ?></td>
-                        <td><?= $task->status_04 ?></td>
-                        <td><?= $task->status_05 ?></td>
-                        <td><?= $task->status_06 ?></td>
+                        <td><?= $item->status_00 ?></td>
+                        <td><?= $item->status_01 ?></td>
+                        <td><?= $item->status_02 ?></td>
+                        <td><?= $item->status_03 ?></td>
+                        <td><?= $item->status_04 ?></td>
+                        <td><?= $item->status_05 ?></td>
+                        <td><?= $item->status_06 ?></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
