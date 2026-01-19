@@ -25,6 +25,7 @@
                     <th>Team Type</th>
                     <th>Team Lead</th>
                     <th>Status</th>
+                    <th>Agents</th>
                     <th>Tickets</th>
                     <th>Tasks</th>
                 </tr>
@@ -36,6 +37,7 @@
                         <td><?= $types[$team->team_ty] ?? null; ?></td>
                         <td><?= $team->agent_nm ?></td>
                         <td><?= $status[$team->status] ?? null; ?></td>
+                        <td class="text-center text-success"><a href="agents?team_id=<?= $team->team_id ?>"><i class="fa-solid fa-user-secret"></i></a></i></td>
                         <td class="text-center text-success"><a href="tickets?team_id=<?= $team->team_id ?>"><i class="fa-solid fa-ticket"></i></a></i></td>
                         <td class="text-center text-success"><a href="tasks?team_id=<?= $team->team_id ?>"><i class="fas fa-tasks"></i></a></td>
                         
