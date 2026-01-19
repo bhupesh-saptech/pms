@@ -17,6 +17,7 @@ class HomeController extends BaseController {
     public function index() {
         $dbs  = \Config\Database::connect(); 
         $sql = "select agents.agent_id,
+                    max(agents.agent_nm) as agent_nm,
                     sum(case when tickets.status = 0 then 1 else 0 end ) as status_00,
                     sum(case when tickets.status = 1 then 1 else 0 end ) as status_01,
                     sum(case when tickets.status = 2 then 1 else 0 end ) as status_02,

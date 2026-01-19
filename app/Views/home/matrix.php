@@ -19,6 +19,7 @@
                 <tr>
                     
                     <th>Agent ID</th>
+                    <th>Agent Name</th>
                     <th>Status-00</th>
                     <th>Status-01</th>
                     <th>Status-02</th>
@@ -29,7 +30,8 @@
                 </tr>
                 <?php foreach($list as $item): ?>
                     <tr>
-                        <td class="text-end"><?= $item->agent_id ?></td>
+                        <td class="text-start"><?= $item->agent_id ?></td>
+                        <td class="text-start"><?= $item->agent_nm ?></td>
                         <td class="text-end"><?= $item->status_00 ?></td>
                         <td class="text-end"><?= $item->status_01 ?></td>
                         <td class="text-end"><?= $item->status_02 ?></td>
