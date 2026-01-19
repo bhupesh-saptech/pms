@@ -82,7 +82,8 @@
         $('#ticket_id').html('<option value="">Loading...</option>');  
         if (project_id !== '') {
             $.get("<?= base_url('/get_tickets') ?>",{project_id: project_id },function (response) {
-                console.log(response);
+               let data = JSON.parse(response);
+               console.log(data.ticket_nm);
                 $('#ticket_id').html(response);
             });
         } else {
