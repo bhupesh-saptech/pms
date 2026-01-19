@@ -28,15 +28,15 @@
                     <th>Status-06</th>
                 </tr>
                 <?php foreach($list as $item): ?>
-                    <tr class="text-right">
-                        <td><?= $item->agent_id ?></td>
-                        <td><?= $item->status_00 ?></td>
-                        <td><?= $item->status_01 ?></td>
-                        <td><?= $item->status_02 ?></td>
-                        <td><?= $item->status_03 ?></td>
-                        <td><?= $item->status_04 ?></td>
-                        <td><?= $item->status_05 ?></td>
-                        <td><?= $item->status_06 ?></td>
+                    <tr>
+                        <td class="text-right"><?= $item->agent_id ?></td>
+                        <td class="text-right"><?= $item->status_00 ?></td>
+                        <td class="text-right"><?= $item->status_01 ?></td>
+                        <td class="text-right"><?= $item->status_02 ?></td>
+                        <td class="text-right"><?= $item->status_03 ?></td>
+                        <td class="text-right"><?= $item->status_04 ?></td>
+                        <td class="text-right"><?= $item->status_05 ?></td>
+                        <td class="text-right"><?= $item->status_06 ?></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
