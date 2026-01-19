@@ -73,9 +73,10 @@ class AgentsController extends BaseController {
     public function getAgents() {
         $team_id = $this->request->getGet('team_id');
         $agents = $this->AgentsModel->select('agent_id,agent_nm')
-                                                    ->where('team_id',$team_id)
-                                                    ->orderBy('agent_id')
-                                                    ->findAll();
-        return $this->response->getJSON($agents);
+                                    ->where('team_id',$team_id)
+                                    ->orderBy('agent_id')
+                                    ->findAll();
+        print_r($agents);
+        // return $this->response->getJSON($agents);
     }
 }
