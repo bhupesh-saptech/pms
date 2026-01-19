@@ -74,8 +74,19 @@
     
 </div>
 <?= $this->endSection(); ?>
-<?=  $this->section("side_bar"); ?>
-<div class="row">
-    <a href="users" class="">Users</a>
-</div> 
+<?=  $this->section("jscript"); ?>
+<script>
+    debugger;
+    $('#project_id').on('change', function () {
+        let project_id = $(this).val();
+        $('#ticket_id').html('<option value="">Loading...</option>');  
+        if (team_id !== '') {
+            $.get("<?= base_url('get_tickets') ?>",{project_id: project_id },function (response) {
+                $('#ticket_id').html(response);
+            });
+        } else {
+             $('#ticket_id').html('<option value="">Select ticket</option>');
+        }  
+    });
+</script>
 <?= $this->endSection(); ?>
