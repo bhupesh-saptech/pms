@@ -25,10 +25,10 @@
             <table class="table table-stripped table-bordered">
                 <tr>
                     <th>Agent ID</th>
+                    <th>Agent Code</th>
                     <th>Agent Name</th>
                     <th>Email ID</th>
-                    <th>Agent Code</th>
-                    <th>Cell Number</th>
+                    <th>Team Name</th>
                     <th>Projects</th>
                     <th>Tickets</th>
                     <th>Tasks</th>
@@ -36,10 +36,10 @@
                 <?php foreach($agents as $agent): ?>
                     <tr>
                         <td><?= $agent->agent_id ?></td>
+                        <td><?= $agent->agent_cd ?></td>
                         <td><a href="agents/update/<?= $agent->agent_id ?>"><?= $agent->agent_nm ?></a></td>
                         <td><?= $agent->email_id ?></td>
-                        <td><?= $agent->agent_cd ?></td>
-                        <td><?= $agent->mobile_no ?></td>
+                        <td><?= $agent->team_id ?></td>
                         <td class="text-center text-primary"><a href="projects?agent_id=<?= $agent->agent_id ?>"><i class="fa-solid fa-diagram-project"></a></i></td>
                         <td class="text-center text-danger"><a href="tickets?agent_id=<?= $agent->agent_id ?>"><i class="fa-solid fa-ticket"></i></a></td>
                         <td class="text-center text-success"><a href="tasks?agent_id=<?= $agent->agent_id ?>"><i class="fas fa-tasks"></a></i></td>
