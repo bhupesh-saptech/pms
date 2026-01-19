@@ -6,7 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-$routes->get("/","Home::index");
+$routes->get("/","HomeController::index");
 
 
 $routes->match(['get','post'],  "/agents",              "AgentsController::index");
