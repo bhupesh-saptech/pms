@@ -56,6 +56,26 @@ class TicketsController extends BaseController{
         $this->data['projects'] = $this->ProjectsModel->select("project_id,project_nm")->orderBy("project_id")->findAll();
     }
     public function index() {
+        $builder = $this->TicketsModel;
+        $project_id = $this->request->getGet('project_id') ?? null;
+        $team_id    = $this->request->getGet('team_id') ?? null;
+        $agent_id   = $this->request->getGet('agent_id')   ?? null;
+        
+        $builder->select('tickets.*, projects.project_nm as project_nm,agents.agent_nm as agent_nm')
+                ->join('projects', 'projects.project_id = tickets.project_Id','left')
+                ->join('agents', 'agents.agent_id = tickets.agent_id','left')
+                ->join('teams', 'team.team_id = tickets.team_id','left');
+
+        if (!empty($project_id)) {
+            $builder->where('tickets.project_id',$project_id);
+        }
+        if (!empty($agent_id)) {
+            $builder->where('tickets.agent_id',$agent_id);
+        }
+        if (!empty($team_id)) {
+            $builder->where('tickets.team_id',$team_id);
+        }
+        $this->data['tickets']  =   $builder->findAll();
         return view('tickets/ticketsList',$this->data);
     }
     public function create() {
