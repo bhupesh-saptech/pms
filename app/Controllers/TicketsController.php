@@ -64,7 +64,7 @@ class TicketsController extends BaseController{
         $builder->select('tickets.*, projects.project_nm as project_nm,agents.agent_nm as agent_nm')
                 ->join('projects', 'projects.project_id = tickets.project_Id','left')
                 ->join('agents', 'agents.agent_id = tickets.agent_id','left')
-                ->join('teams', 'team.team_id = tickets.team_id','left');
+                ->join('teams', 'teams.team_id = tickets.team_id','left');
 
         if (!empty($project_id)) {
             $builder->where('tickets.project_id',$project_id);
