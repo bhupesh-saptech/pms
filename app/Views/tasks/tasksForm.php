@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
             <label class="form-label">Project ID</label>
-            <select class="form-select select2" name="project_id" id="project_id">
+            <select class="form-select select2" name="project_id" id="project_id" onchange="get_tickets(this);">
                 <option value="" <?php if(isset($task->project_id) && $task->project_id == "") {echo 'selected';}?>></option>
                 <?php foreach($projects as $project) : ?>
                 <option value="<?= $project->project_id; ?>" <?php if(isset($task->project_id) && $task->project_id == $project->project_id) {echo 'selected';}?>><?= $project->project_nm; ?></option>
@@ -76,9 +76,9 @@
 <?= $this->endSection(); ?>
 <?=  $this->section("jscript"); ?>
 <script>
-    debugger;
-    $('#project_id').on('change', function () {
-        let project_id = $(this).val();
+    function get_tickets(obj){
+        debugger;
+        let project_id = $(obj).val();
         $('#ticket_id').html('<option value="">Loading...</option>');  
         if (team_id !== '') {
             $.get("<?= base_url('get_tickets') ?>",{project_id: project_id },function (response) {
@@ -87,6 +87,6 @@
         } else {
              $('#ticket_id').html('<option value="">Select ticket</option>');
         }  
-    });
+    }
 </script>
 <?= $this->endSection(); ?>
