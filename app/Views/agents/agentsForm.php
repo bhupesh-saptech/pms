@@ -20,6 +20,15 @@
             </div>
         </div>
         <div class="form-group">
+            <label class="form-label">Team Name</label>
+            <select class="form-select select2" name="team_id" id="team_id">
+                <option value="" <?php if(isset($agent->team_id) && $agent->team_id == "" ){ echo 'selected';} ?>>Select team name</option>
+                <?php foreach($teams as $team) : ?>
+                <option value="<?= $team->team_id; ?>" <?php if(isset($agent->team_id) && $agent->team_id == $team->team_id ){ echo 'selected';} ?>><?= $team->team_nm; ?></option>
+                <?php endforeach; ?>
+            </select> 
+        </div>
+        <div class="form-group">
             <label class="form-label">First Name</label>
             <input class="form-control" type="text" name="first_name" value="<?= set_value('first_name', isset($agent->first_name) ? $agent->first_name : '') ?>" autocomplete="off">
         </div>
