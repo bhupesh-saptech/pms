@@ -56,6 +56,6 @@ $routes->match(["get","post"],  "/users/login", "UsersController::login");
 $routes->match(["get","post"],  "/users/logout","UsersController::logout");
 
 $routes->get('/get_tickets',"TicketsController::getTickets");
-$routes->get('/get_agents',"TicketsController::getAgents");
+$routes->get('/get_agents',"AgentsController::getAgents");
 
 return $routes;
