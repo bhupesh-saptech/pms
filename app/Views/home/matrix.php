@@ -28,7 +28,7 @@
                     <th>Status-06</th>
                 </tr>
                 <?php foreach($list as $item): ?>
-                    <tr>
+                    <tr class="text-right">
                         <td><?= $item->agent_id ?></td>
                         <td><?= $item->status_00 ?></td>
                         <td><?= $item->status_01 ?></td>
