@@ -34,7 +34,6 @@
                         <td class="text-end"><?= $item->status_03 ?></td>
                         <td class="text-end"><?= $item->status_04 ?></td>
                         <td class="text-end"><?= $item->status_05 ?></td>
-                        <td class="text-end"><?= $item->status_06 ?></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
