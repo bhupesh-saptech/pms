@@ -21,7 +21,7 @@ class HomeController extends BaseController {
                 on tickets.agent_id = agents.agent_id
                 group by agents.agent_id";
         $qry = $dbs->query($sql);
-        $data =  $qry->getRowObject();
+        $data =  $qry->getResultObject();
         echo "<pre>";
         print_r($data);
 
