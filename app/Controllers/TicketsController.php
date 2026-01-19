@@ -83,8 +83,8 @@ class TicketsController extends BaseController{
             }
         } else {
             $project_id = request()->getGet('project_id') ?? null;
-            $agent_id  = request()->getGet('agent_id') ?? null;
-            $team_id  = request()->getGet('team_id') ?? null;
+            $agent_id   = request()->getGet('agent_id') ?? null;
+            $team_id    = request()->getGet('team_id') ?? null;
             if(!empty($project_id)) {
                 $ticket['project_id'] = $project_id;
             }
@@ -131,5 +131,13 @@ class TicketsController extends BaseController{
        } else {
 
        }
+    }
+    public function getTickets() {
+        $project_id = $this->request->getGet('project_id');
+        $tickets = $this->TicketsModel->select('ticket_id,ticket_nm')
+                                                    ->where('project_id',$project_id)
+                                                    ->orderBy('ticket_id')
+                                                    ->findAll();
+        return $this->response->getJSON($tickets);
     }
 }

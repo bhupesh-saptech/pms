@@ -83,8 +83,18 @@
     
 </div>
 <?= $this->endSection(); ?>
-<?=  $this->section("side_bar"); ?>
-<div class="row">
-    <a href="users" class="">Users</a>
-</div> 
+<?=  $this->section("jscript"); ?>
+<script>
+    $('#team_id').on('change', function () {
+        let team_id = $(this).val();
+        $('#agent_id').html('<option value="">Loading...</option>');  
+        if (team_id !== '') {
+            $.get("<?= base_url('get_agents') ?>",{team_id: team_id },function (response) {
+                $('#agent_id').html(response);
+            });
+        } else {
+             $('#agent_id').html('<option value="">Select agent</option>');
+        }  
+    });
+</script>
 <?= $this->endSection(); ?>
