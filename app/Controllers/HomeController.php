@@ -20,6 +20,7 @@ class HomeController extends BaseController {
                 group by agent_id";
         $qry = $dbs->query($sql);
         $data =  $qry->getRowObject();
+        echo "<pre>";
         print_r($data);
 
     }
