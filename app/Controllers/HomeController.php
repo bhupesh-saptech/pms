@@ -5,8 +5,15 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 
+use App\Models\ProjectsModel;
+
 class HomeController extends BaseController {
+    protected $ProjectModel;
     protected $data;
+    public function __construct(){
+        $this->ProjectModel = new ProjectsModel();
+    }
+       
     public function index() {
         $dbs  = \Config\Database::connect(); 
         $sql = "select agents.agent_id,
@@ -22,6 +29,7 @@ class HomeController extends BaseController {
                 on tickets.agent_id = agents.agent_id
                 group by agents.agent_id";
         $qry = $dbs->query($sql);
+        $this->data['dash'] = $this->ProjectModel->dashboard();
         $this->data['list'] =  $qry->getResultObject();
         return view('home/matrix',$this->data);
     }
