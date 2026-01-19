@@ -57,7 +57,7 @@ class TeamsController extends BaseController {
     }
     public function update($team_id) {
         $this->data['mode']  = 'view';
-        $this->data['agent'] = $this->TeamsModel->find($team_id);
+        $this->data['team'] = $this->TeamsModel->find($team_id);
         if ($this->request->is('post')) {
             $form = [
                 'team_cd'  => $this->request->getPost('team_cd'),
