@@ -20,13 +20,9 @@
                     
                     <th>Agent ID</th>
                     <th>Agent Name</th>
-                    <th>Status-00</th>
-                    <th>Status-01</th>
-                    <th>Status-02</th>
-                    <th>Status-03</th>
-                    <th>Status-04</th>
-                    <th>Status-05</th>
-                    <th>Status-06</th>
+                    <?php foreach($status as $param=>$value) : ?>
+                        <th><?= $value ?></th>
+                    <?php endforeach; ?>
                 </tr>
                 <?php foreach($list as $item): ?>
                     <tr>
