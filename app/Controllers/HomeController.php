@@ -17,8 +17,8 @@ class HomeController extends BaseController {
                     sum(case when tickets.status = 5 then 1 else 0 end ) as status_5,
                     sum(case when tickets.status = 6 then 1 else 0 end ) as status_6
                 from agents 
-                outer join tickets
-                on tickets.agent_id = agents.agent_id
+                left outer join tickets
+                on agents.agent_id = tickets.agent_id
                 group by agents.agent_id";
         $qry = $dbs->query($sql);
         $data =  $qry->getRowObject();
