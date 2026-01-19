@@ -16,6 +16,7 @@ class AgentsController extends BaseController {
         helper('form');
         $this->AgentsModel = new AgentsModel;
         $this->ProjectsModel = new ProjectsModel;
+        $this->TeamsModel = new TeamsModel();
         $this->data['agents'] = $this->AgentsModel->findAll();
         $this->data['teams'] = $this->TeamsModel->findAll();
         $this->data['dash']   = $this->ProjectsModel->dashboard();
