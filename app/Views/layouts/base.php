@@ -71,9 +71,6 @@
     <!--begin::App Wrapper-->
     <div class="app-wrapper">
       <?= $this->include('layouts/header'); ?>
-       <?= $this->include('layouts/sidebar'); ?>
-      
-
       <!--begin::App Main-->
       <main class="app-main">
         <!--begin::App Content Header-->
