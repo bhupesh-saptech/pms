@@ -58,8 +58,9 @@ class TicketsController extends BaseController{
     public function index() {
         $builder = $this->TicketsModel;
         $project_id = $this->request->getGet('project_id') ?? null;
-        $team_id    = $this->request->getGet('team_id') ?? null;
+        $team_id    = $this->request->getGet('team_id')    ?? null;
         $agent_id   = $this->request->getGet('agent_id')   ?? null;
+        $status     = $this->request->getGet('status')     ?? null;
         
         $builder->select('tickets.*, projects.project_nm as project_nm,agents.agent_nm as agent_nm')
                 ->join('projects', 'projects.project_id = tickets.project_Id','left')
@@ -74,6 +75,9 @@ class TicketsController extends BaseController{
         }
         if (!empty($team_id)) {
             $builder->where('tickets.team_id',$team_id);
+        }
+        if (!empty($status)) {
+            $builder->where('tickets.status',$status);
         }
         $this->data['tickets']  =   $builder->findAll();
         return view('tickets/ticketsList',$this->data);
