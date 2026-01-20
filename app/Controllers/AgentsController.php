@@ -57,8 +57,9 @@ class AgentsController extends BaseController {
             $team_id = $this->request->getGet('team_id') ?? null;
             if(!empty($team_id)) {
                 $agent['team_id'] = $team_id;
+                $this->data['agent'] = (object) $agent;
             }
-            $this->data['agent'] = (object) $agent;
+            
             return view('agents/agentsForm',$this->data);
         }
     }
