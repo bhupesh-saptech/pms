@@ -12,10 +12,10 @@ class UsersModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [ "user_id",
+    protected $allowedFields    = [ "user_nm",
                                     "mail_id",
                                     "pass_wd",
-                                    "user_nm",
+                                    "real_nm",
                                     "cell_no",
                                     "is_active",
                                     "is_verified",
