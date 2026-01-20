@@ -82,10 +82,10 @@ class UsersController extends BaseController {
                 'cell_no' => $this->request->getPost('cell_no'),
             ];
             if($this->UsersModel->update($user_id,$form,false)) {
+                return redirect()->to('/users')->with('message',"Data Inserted Succefully");
+            } else {
                 $data['errors'] = $this->UsersModel->errors();
                 return view('users/usersForm', $data);
-            } else {
-                return redirect()->to('/users')->with('message',"Data Inserted Succefully");
             }
         }
         return view('users/usersForm',$data);
