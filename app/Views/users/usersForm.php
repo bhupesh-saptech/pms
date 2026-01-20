@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">
             <label class="form-label">Real name</label>
-            <input class="form-control" type="text" name="real_name"value="<?= set_value('real_name', isset($user->real_name) ? $user->real_name : '') ?>" autocomplete="off">               
+            <input class="form-control" type="text" name="real_nm"value="<?= set_value('real_nm', isset($user->real_nm) ? $user->real_nm : '') ?>" autocomplete="off">               
         </div>
         <div class="form-group">
             <label class="form-label">Email ID</label>
