@@ -19,14 +19,14 @@
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="tab-a-tab" data-bs-toggle="tab"
                         data-bs-target="#tab-a" type="button" role="tab">
-                        Table A
+                        Tickets
                     </button>
                 </li>
 
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="tab-b-tab" data-bs-toggle="tab"
                         data-bs-target="#tab-b" type="button" role="tab">
-                        Table B
+                        Tasks
                     </button>
                 </li>
             </ul>
