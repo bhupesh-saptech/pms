@@ -30,7 +30,7 @@
                         <td><?= $user->user_id ?></td>
                         <td><a href="users/update/<?= $user->user_id ?>"><?= $user->user_nm ?></a></td>
                         <td><?= $user->mail_id ?></td>
-                        <td><?= $user->real_name ?></td>
+                        <td><?= $user->real_nm ?></td>
                         <td><?= $user->cell_no ?></td>
                         <td><?= $user->created_at ?></td>
                     </tr>
