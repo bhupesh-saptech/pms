@@ -28,12 +28,12 @@
                     <tr>
                         <td class="text-start"><?= $item->agent_id ?></td>
                         <td class="text-start"><?= $item->agent_nm ?></td>
-                        <td class="text-end"><?= $item->status_00 ?></td>
-                        <td class="text-end"><?= $item->status_01 ?></td>
-                        <td class="text-end"><?= $item->status_02 ?></td>
-                        <td class="text-end"><?= $item->status_03 ?></td>
-                        <td class="text-end"><?= $item->status_04 ?></td>
-                        <td class="text-end"><?= $item->status_05 ?></td>
+                        <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=0"><?= $item->status_00 ?></a></td>
+                        <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=1"><?= $item->status_00 ?></a></td>
+                        <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=2"><?= $item->status_00 ?></a></td>
+                        <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=3"><?= $item->status_00 ?></a></td>
+                        <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=4"><?= $item->status_00 ?></a></td>
+                        <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=5"><?= $item->status_00 ?></a></td>        
                     </tr>
                 <?php endforeach; ?>
             </table>
