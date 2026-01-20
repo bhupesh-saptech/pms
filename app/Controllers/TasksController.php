@@ -37,7 +37,7 @@ class TasksController extends BaseController {
     public function index() {
         $builder = $this->TasksModel;
         $project_id = $this->request->getGet('project_id') ?? null;
-        $ticket_id = $this->request->getGet('ticket_id') ?? null;
+        $ticket_id  = $this->request->getGet('ticket_id') ?? null;
         $agent_id   = $this->request->getGet('agent_id')   ?? null;
         
         $builder->select('tasks.*, projects.project_nm as project_nm,agents.agent_nm as agent_nm')
