@@ -60,7 +60,7 @@
                     <?php endforeach; ?>
                 </table>
             </div>
-             <div class="tab-pane fade show active" id="tab-b" role="tabpanel">
+            <div class="tab-pane fade" id="tab-b" role="tabpanel">
                 <table class="table table-stripped table-bordered">
                     <tr>
                         <th>TaskID</th>
