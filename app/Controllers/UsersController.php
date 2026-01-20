@@ -53,9 +53,9 @@ class UsersController extends BaseController {
         $data['mode'] = 'create';
         if ($this->request->is('post')) {
             $form = [
-                'user_id' => $this->request->getPost('user_id'),
-                'mail_id' => $this->request->getPost('mail_id'),
                 'user_nm' => $this->request->getPost('user_nm'),
+                'mail_id' => $this->request->getPost('mail_id'),
+                'real_nm' => $this->request->getPost('real_nm'),
                 'cell_no' => $this->request->getPost('cell_no'),
                 'pass_wd' => password_hash($this->request->getPost('pass_wd'), PASSWORD_DEFAULT),
                 'is_active' => true,
@@ -76,9 +76,9 @@ class UsersController extends BaseController {
         $data['user'] = $this->UsersModel->find($user_id);
         if ($this->request->is('post')) {
             $form = [
-                'user_id' => $this->request->getPost('user_id'),
-                'mail_id' => $this->request->getPost('mail_id'),
                 'user_nm' => $this->request->getPost('user_nm'),
+                'mail_id' => $this->request->getPost('mail_id'),
+                'real_nm' => $this->request->getPost('real_nm'),
                 'cell_no' => $this->request->getPost('cell_no'),
             ];
             if($this->UsersModel->update($form,false)) {
