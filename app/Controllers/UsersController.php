@@ -81,7 +81,7 @@ class UsersController extends BaseController {
                 'real_nm' => $this->request->getPost('real_nm'),
                 'cell_no' => $this->request->getPost('cell_no'),
             ];
-            if($this->UsersModel->update($form,false)) {
+            if($this->UsersModel->update($user_id,$form,false)) {
                 $data['errors'] = $this->UsersModel->errors();
                 return view('users/usersForm', $data);
             } else {
