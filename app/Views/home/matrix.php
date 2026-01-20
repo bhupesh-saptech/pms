@@ -23,6 +23,7 @@
                     <?php foreach($status as $param=>$value) : ?>
                         <th class="text-end"><?= $value ?></th>
                     <?php endforeach; ?>
+                    <th>Open Tickets</th>
                 </tr>
                 <?php foreach($list as $item): ?>
                     <tr>
@@ -33,6 +34,7 @@
                         <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=2"><?= $item->status_02 ?></a></td>
                         <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=3"><?= $item->status_03 ?></a></td>
                         <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=4"><?= $item->status_04 ?></a></td>
+                        <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=5"><?= $item->status_05 ?></a></td>
                         <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=5"><?= $item->status_05 ?></a></td>        
                     </tr>
                 <?php endforeach; ?>
