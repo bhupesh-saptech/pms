@@ -30,34 +30,66 @@
                     </button>
                 </li>
             </ul>
-            <table class="table table-stripped table-bordered">
-                <tr>
-                    <th>Agent ID</th>
-                    <th>Agent Name</th>
-                    <?php foreach($status as $param=>$value) : ?>
-                        <th class="text-end"><?= $value ?></th>
-                    <?php endforeach; ?>
-                    <th>Open Tickets</th>
-                </tr>
-                <?php foreach($list as $item): ?>
+            <div class="tab-pane fade show active" id="tab-a" role="tabpanel">
+                <table class="table table-stripped table-bordered">
                     <tr>
-                        <td class="text-start"><?= $item->agent_id ?></td>
-                        <td class="text-start"><?= $item->agent_nm ?></td>
-                        <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=0"><?= $item->status_00 ?></a></td>
-                        <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=1"><?= $item->status_01 ?></a></td>
-                        <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=2"><?= $item->status_02 ?></a></td>
-                        <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=3"><?= $item->status_03 ?></a></td>
-                        <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=4"><?= $item->status_04 ?></a></td>
-                        <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=5"><?= $item->status_05 ?></a></td>
-                        <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=5"><?= $item->status_00 +
-                                                                                                            $item->status_01 +
-                                                                                                            $item->status_02 +
-                                                                                                            $item->status_03 +
-                                                                                                            $item->status_04 +
-                                                                                                            $item->status_05?></a></td>        
+                        <th>Agent ID</th>
+                        <th>Agent Name</th>
+                        <?php foreach($status as $param=>$value) : ?>
+                            <th class="text-end"><?= $value ?></th>
+                        <?php endforeach; ?>
+                        <th>Open Tickets</th>
                     </tr>
-                <?php endforeach; ?>
-            </table>
+                    <?php foreach($list as $item): ?>
+                        <tr>
+                            <td class="text-start"><?= $item->agent_id ?></td>
+                            <td class="text-start"><?= $item->agent_nm ?></td>
+                            <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=0"><?= $item->status_00 ?></a></td>
+                            <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=1"><?= $item->status_01 ?></a></td>
+                            <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=2"><?= $item->status_02 ?></a></td>
+                            <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=3"><?= $item->status_03 ?></a></td>
+                            <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=4"><?= $item->status_04 ?></a></td>
+                            <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=5"><?= $item->status_05 ?></a></td>
+                            <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=5"><?= $item->status_00 +
+                                                                                                                $item->status_01 +
+                                                                                                                $item->status_02 +
+                                                                                                                $item->status_03 +
+                                                                                                                $item->status_04 +
+                                                                                                                $item->status_05?></a></td>        
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+            </div>
+             <div class="tab-pane fade show active" id="tab-b" role="tabpanel">
+                <table class="table table-stripped table-bordered">
+                    <tr>
+                        <th>TaskID</th>
+                        <th>Agent Name</th>
+                        <?php foreach($status as $param=>$value) : ?>
+                            <th class="text-end"><?= $value ?></th>
+                        <?php endforeach; ?>
+                        <th>Open Tickets</th>
+                    </tr>
+                    <?php foreach($list as $item): ?>
+                        <tr>
+                            <td class="text-start"><?= $item->agent_id ?></td>
+                            <td class="text-start"><?= $item->agent_nm ?></td>
+                            <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=0"><?= $item->status_00 ?></a></td>
+                            <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=1"><?= $item->status_01 ?></a></td>
+                            <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=2"><?= $item->status_02 ?></a></td>
+                            <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=3"><?= $item->status_03 ?></a></td>
+                            <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=4"><?= $item->status_04 ?></a></td>
+                            <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=5"><?= $item->status_05 ?></a></td>
+                            <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=5"><?= $item->status_00 +
+                                                                                                                $item->status_01 +
+                                                                                                                $item->status_02 +
+                                                                                                                $item->status_03 +
+                                                                                                                $item->status_04 +
+                                                                                                                $item->status_05?></a></td>        
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+            </div>
         </div>
     </div>
 </div>
