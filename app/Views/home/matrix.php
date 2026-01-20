@@ -35,7 +35,12 @@
                         <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=3"><?= $item->status_03 ?></a></td>
                         <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=4"><?= $item->status_04 ?></a></td>
                         <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=5"><?= $item->status_05 ?></a></td>
-                        <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=5"><?= $item->status_05 ?></a></td>        
+                        <td class="text-end"><a href="tickets?agent_id=<?= $item->agent_id ?>&status=5"><?= $item->status_00 +
+                                                                                                            $item->status_01 +
+                                                                                                            $item->status_02 +
+                                                                                                            $item->status_03 +
+                                                                                                            $item->status_04 +
+                                                                                                            $item->status_05?></a></td>        
                     </tr>
                 <?php endforeach; ?>
             </table>
