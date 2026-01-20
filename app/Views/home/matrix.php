@@ -15,9 +15,23 @@
             </div>  
         </div>
         <div class="card-body">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="tab-a-tab" data-bs-toggle="tab"
+                        data-bs-target="#tab-a" type="button" role="tab">
+                        Table A
+                    </button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab-b-tab" data-bs-toggle="tab"
+                        data-bs-target="#tab-b" type="button" role="tab">
+                        Table B
+                    </button>
+                </li>
+            </ul>
             <table class="table table-stripped table-bordered">
                 <tr>
-                    
                     <th>Agent ID</th>
                     <th>Agent Name</th>
                     <?php foreach($status as $param=>$value) : ?>
