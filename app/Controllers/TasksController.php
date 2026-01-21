@@ -55,7 +55,10 @@ class TasksController extends BaseController {
             $builder->where('tasks.ticket_id',$ticket_id);
         }
         if (!empty($status)) {
-            $builder->where('tasks.status',$status);
+            if ($status == 'o') {
+                $builder->where('tickets.status between 0 and 5'); 
+            } else {
+                $builder->where('tickets.status',$status); }
         }
         $this->data['tasks']  =   $builder->findAll();
         $this->data['dash']   = $this->ProjectsModel->dashboard();
