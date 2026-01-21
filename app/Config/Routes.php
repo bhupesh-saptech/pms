@@ -9,7 +9,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get("/","HomeController::index");
 
 
-$routes->match(['get','post'],  "/agents",              "AgentsController::index");
+$routes->match(['get','post'],  "/agents",              "AgentsController::index", ['filter' => 'auth']);
 $routes->match(['get','post'],  "/agents/create",       "AgentsController::create");
 $routes->match(['get','post'],  "/agents/update/(:num)","AgentsController::update/$1");
 $routes->match(['get','post'],  "/agents/delete/(:num)","AgentsController::delete/$1");
