@@ -62,7 +62,7 @@
                         <?php foreach($status as $param=>$value) : ?>
                             <th class="text-end"><?= $value ?></th>
                         <?php endforeach; ?>
-                        <th>Open Tickets</th>
+                        <th>Open Tasks</th>
                     </tr>
                     <?php foreach($tasks as $task): ?>
                         <tr>
