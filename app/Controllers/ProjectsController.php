@@ -93,8 +93,9 @@ class ProjectsController extends BaseController {
             }
             if(!empty($client_id)) {
                $project['client_id']  = $client_id;
+               $this->data['project'] = (object) $project;
             }
-            $this->data['project'] = (object) $project;
+            
             return view('projects/projectsForm',$this->data);
         }
     }
