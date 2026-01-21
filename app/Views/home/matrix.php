@@ -4,6 +4,19 @@
 <?=  $this->endSection(); ?>
 <?=  $this->section("content"); ?>
 <div class="container">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-a">
+                Tickets
+            </button>
+        </li>
+
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-b">
+                Tasks
+            </button>
+        </li>
+    </ul>
     <div class="card">
         <div class="card-header">
             <div class="row">
@@ -15,19 +28,7 @@
             </div>  
         </div>
         <div class="card-body">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-a">
-                        Tickets
-                    </button>
-                </li>
-
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-b">
-                        Tasks
-                    </button>
-                </li>
-            </ul>
+          
             <div class="tab-pane active" id="tab-a">
                 <table class="table table-stripped table-bordered">
 
