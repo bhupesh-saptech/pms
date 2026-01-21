@@ -68,13 +68,13 @@
                         <tr>
                             <td class="text-start"><?= $task->agent_id ?></td>
                             <td class="text-start"><?= $task->agent_nm ?></td>
-                            <td class="text-end"><a href="tickets?agent_id=<?= $task->agent_id ?>&status=0"><?= $task->status_00 ?></a></td>
-                            <td class="text-end"><a href="tickets?agent_id=<?= $task->agent_id ?>&status=1"><?= $task->status_01 ?></a></td>
-                            <td class="text-end"><a href="tickets?agent_id=<?= $task->agent_id ?>&status=2"><?= $task->status_02 ?></a></td>
-                            <td class="text-end"><a href="tickets?agent_id=<?= $task->agent_id ?>&status=3"><?= $task->status_03 ?></a></td>
-                            <td class="text-end"><a href="tickets?agent_id=<?= $task->agent_id ?>&status=4"><?= $task->status_04 ?></a></td>
-                            <td class="text-end"><a href="tickets?agent_id=<?= $task->agent_id ?>&status=5"><?= $task->status_05 ?></a></td>
-                            <td class="text-end"><a href="tickets?agent_id=<?= $task->agent_id ?>&status=5"><?= $task->status_00 +
+                            <td class="text-end"><a href="tasks?agent_id=<?= $task->agent_id ?>&status=0"><?= $task->status_00 ?></a></td>
+                            <td class="text-end"><a href="tasks?agent_id=<?= $task->agent_id ?>&status=1"><?= $task->status_01 ?></a></td>
+                            <td class="text-end"><a href="tasks?agent_id=<?= $task->agent_id ?>&status=2"><?= $task->status_02 ?></a></td>
+                            <td class="text-end"><a href="tasks?agent_id=<?= $task->agent_id ?>&status=3"><?= $task->status_03 ?></a></td>
+                            <td class="text-end"><a href="tasks?agent_id=<?= $task->agent_id ?>&status=4"><?= $task->status_04 ?></a></td>
+                            <td class="text-end"><a href="tasks?agent_id=<?= $task->agent_id ?>&status=5"><?= $task->status_05 ?></a></td>
+                            <td class="text-end"><a href="tasks?agent_id=<?= $task->agent_id ?>&status=5"><?= $task->status_00 +
                                                                                                                 $task->status_01 +
                                                                                                                 $task->status_02 +
                                                                                                                 $task->status_03 +
