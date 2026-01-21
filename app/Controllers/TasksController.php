@@ -72,6 +72,7 @@ class TasksController extends BaseController {
                 'team_id'    => $this->request->getPost('team_id'),
                 'agent_id'   => $this->request->getPost('agent_id'),
                 'status'     => $this->request->getPost('status'),
+                'created_by' => session()->get('user_nm')
             ];
             if($this->TasksModel->insert($form,false)) {
                 return redirect()->to('tasks')->with('message',"Data Inserted Succefully");
