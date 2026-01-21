@@ -28,8 +28,8 @@
                 <table class="table table-stripped table-bordered">
 
                     <tr>
-                        <th style="width:10%;">Agent ID</th>
-                        <th style="width:20%;">Agent Name</th>
+                        <th style="width:05%;">Agent ID</th>
+                        <th style="width:25%;">Agent Name</th>
                         <?php foreach($status as $param=>$value) : ?>
                             <th style="width:10%;" class="text-end"><?= $value ?></th>
                         <?php endforeach; ?>
@@ -58,8 +58,8 @@
             <div class="tab-pane" id="tab-b" >
                 <table class="table table-stripped table-bordered">
                     <tr>
-                        <th style="width:10%;">Agent ID</th>
-                        <th style="width:20%;">Agent Name</th>
+                        <th style="width:05%;">Agent ID</th>
+                        <th style="width:25%;">Agent Name</th>
                         <?php foreach($status as $param=>$value) : ?>
                             <th style="width:10%;"class="text-end"><?= $value ?></th>
                         <?php endforeach; ?>
