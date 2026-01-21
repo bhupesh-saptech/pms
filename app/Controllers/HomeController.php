@@ -22,6 +22,7 @@ class HomeController extends BaseController {
     }
        
     public function index() {
+        $this->data['dash'] = $this->ProjectModel->dashboard();
         $dbs  = \Config\Database::connect(); 
         $sql = "select agents.agent_id,
                     max(agents.agent_nm) as agent_nm,
@@ -37,8 +38,24 @@ class HomeController extends BaseController {
                 on tickets.agent_id = agents.agent_id
                 group by agents.agent_id";
         $qry = $dbs->query($sql);
-        $this->data['dash'] = $this->ProjectModel->dashboard();
-        $this->data['list'] =  $qry->getResultObject();
+        
+        $this->data['tickets'] =  $qry->getResultObject();
+
+        $sql = "select agents.agent_id,
+                    max(agents.agent_nm) as agent_nm,
+                    sum(case when tasks.status = 0 then 1 else 0 end ) as status_00,
+                    sum(case when tasks.status = 1 then 1 else 0 end ) as status_01,
+                    sum(case when tasks.status = 2 then 1 else 0 end ) as status_02,
+                    sum(case when tasks.status = 3 then 1 else 0 end ) as status_03,
+                    sum(case when tasks.status = 4 then 1 else 0 end ) as status_04,
+                    sum(case when tasks.status = 5 then 1 else 0 end ) as status_05,
+                    sum(case when tasks.status = 6 then 1 else 0 end ) as status_06
+                from agents 
+                left outer join tasks
+                on tasks.agent_id = agents.agent_id
+                group by agents.agent_id";
+        $qry = $dbs->query($sql);
+        $this->data['tasks'] =  $qry->getResultObject();
         return view('home/matrix',$this->data);
     }
 }
