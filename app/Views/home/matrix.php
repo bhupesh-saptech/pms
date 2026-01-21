@@ -17,11 +17,15 @@
         <div class="card-body">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="tab-a-tab" data-bs-toggle="tab" href="#tab-a"> Tickets</a>
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-a">
+                        Tickets
+                    </button>
                 </li>
 
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="tab-b" data-bs-toggle="tab" href="#tab-b" >Tasks</a>
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-b">
+                        Tasks
+                    </button>
                 </li>
             </ul>
             <div class="tab-pane active" id="tab-a">
