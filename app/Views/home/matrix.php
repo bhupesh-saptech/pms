@@ -80,7 +80,7 @@
                             <td class="text-end"><a href="tasks?agent_id=<?= $task->agent_id ?>&status=3"><?= $task->status_03 ?></a></td>
                             <td class="text-end"><a href="tasks?agent_id=<?= $task->agent_id ?>&status=4"><?= $task->status_04 ?></a></td>
                             <td class="text-end"><a href="tasks?agent_id=<?= $task->agent_id ?>&status=5"><?= $task->status_05 ?></a></td>
-                            <td class="text-end"><a href="tasks?agent_id=<?= $task->agent_id ?>&status=5"><?= $task->status_00 +
+                            <td class="text-end"><a href="tasks?agent_id=<?= $task->agent_id ?>&status=o"><?= $task->status_00 +
                                                                                                                 $task->status_01 +
                                                                                                                 $task->status_02 +
                                                                                                                 $task->status_03 +
