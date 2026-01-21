@@ -29,7 +29,7 @@
 
                     <tr>
                         <th style="width:10%;">Agent ID</th>
-                        <th style="width:30%;">Agent Name</th>
+                        <th style="width:25%;">Agent Name</th>
                         <?php foreach($status as $param=>$value) : ?>
                             <th style="width:10%;" class="text-end"><?= $value ?></th>
                         <?php endforeach; ?>
