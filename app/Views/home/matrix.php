@@ -44,7 +44,7 @@
                             <td class="text-end"><a href="tickets?agent_id=<?= $ticket->agent_id ?>&status=3"><?= $ticket->status_03 ?></a></td>
                             <td class="text-end"><a href="tickets?agent_id=<?= $ticket->agent_id ?>&status=4"><?= $ticket->status_04 ?></a></td>
                             <td class="text-end"><a href="tickets?agent_id=<?= $ticket->agent_id ?>&status=5"><?= $ticket->status_05 ?></a></td>
-                            <td class="text-end"><a href="tickets?agent_id=<?= $ticket->agent_id ?>&status=5"><?= $ticket->status_00 +
+                            <td class="text-end"><a href="tickets?agent_id=<?= $ticket->agent_id ?>&status=o"><?= $ticket->status_00 +
                                                                                                                 $ticket->status_01 +
                                                                                                                 $ticket->status_02 +
                                                                                                                 $ticket->status_03 +
