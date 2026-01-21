@@ -39,6 +39,7 @@ class TasksController extends BaseController {
         $project_id = $this->request->getGet('project_id') ?? null;
         $ticket_id  = $this->request->getGet('ticket_id') ?? null;
         $agent_id   = $this->request->getGet('agent_id')   ?? null;
+        $status     = $this->request->getGet('status')   ?? null;
         
         $builder->select('tasks.*, projects.project_nm as project_nm,agents.agent_nm as agent_nm')
                 ->join('projects', 'projects.project_id = tasks.project_Id','left')
@@ -52,6 +53,9 @@ class TasksController extends BaseController {
         }
         if (!empty($ticket_id)) {
             $builder->where('tasks.ticket_id',$ticket_id);
+        }
+        if (!empty($status)) {
+            $builder->where('tasks.status',$status);
         }
         $this->data['tasks']  =   $builder->findAll();
         $this->data['dash']   = $this->ProjectsModel->dashboard();
