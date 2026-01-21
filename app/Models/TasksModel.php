@@ -18,7 +18,8 @@ class TasksModel extends Model
                                     "ticket_id",
                                     "team_id",
                                     "agent_id",
-                                    "status"
+                                    "status",
+                                    "created_by"
                                   ];
 
     protected bool $allowEmptyInserts = false;

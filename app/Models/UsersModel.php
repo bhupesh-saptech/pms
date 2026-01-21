@@ -19,6 +19,7 @@ class UsersModel extends Model
                                     "cell_no",
                                     "is_active",
                                     "is_verified",
+                                    "created_by"
                                   ];
 
     protected bool $allowEmptyInserts = false;

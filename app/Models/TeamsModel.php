@@ -16,7 +16,8 @@ class TeamsModel extends Model
                                     'team_nm', 
                                     'team_ty', 
                                     'agent_id',
-                                    'status'  ];
+                                    'status',
+                                    'created_by'  ];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

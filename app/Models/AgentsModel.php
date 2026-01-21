@@ -17,7 +17,8 @@ class AgentsModel extends Model
                                     'last_name',
                                     'email_id', 
                                     'mobile_no',
-                                    'team_id'
+                                    'team_id',
+                                    'created_by'
                                   ];
 
     protected bool $allowEmptyInserts = false;

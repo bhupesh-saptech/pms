@@ -21,7 +21,8 @@ class TicketsModel extends Model
                                     "start_dt",
                                     "due_dt",
                                     "module",
-                                    "status"
+                                    "status",
+                                    "created_by"
                                   ];
 
     protected bool $allowEmptyInserts = false;

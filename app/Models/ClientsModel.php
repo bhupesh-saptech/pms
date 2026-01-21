@@ -20,7 +20,8 @@ class ClientsModel extends Model
                                     'client_ty',  
                                     'industry', 
                                     'status',   
-                                    'client_cd'
+                                    'client_cd',
+                                    "created_by"
                                   ];
 
     protected bool $allowEmptyInserts = false;

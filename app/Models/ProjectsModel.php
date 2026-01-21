@@ -21,7 +21,8 @@ class ProjectsModel extends Model
                                     "agent_id",
                                     "start_dt",
                                     "finish_dt",
-                                    "status"
+                                    "status",
+                                    "created_by"
                                   ];
 
     protected bool $allowEmptyInserts = false;
