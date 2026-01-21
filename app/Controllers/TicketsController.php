@@ -77,7 +77,10 @@ class TicketsController extends BaseController{
             $builder->where('tickets.team_id',$team_id);
         }
         if (!empty($status)) {
-            $builder->where('tickets.status',$status);
+            if ($status == 'o') {
+                $builder->where('tickets.status betweeen 0 and 5'); 
+            } else {
+                $builder->where('tickets.status',$status); }
         }
         $this->data['tickets']  =   $builder->findAll();
         return view('tickets/ticketsList',$this->data);
