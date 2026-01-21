@@ -78,7 +78,7 @@ class TicketsController extends BaseController{
         }
         if (!empty($status)) {
             if ($status == 'o') {
-                $builder->where('tickets.status betweeen 0 and 5'); 
+                $builder->where('tickets.status between 0 and 5'); 
             } else {
                 $builder->where('tickets.status',$status); }
         }
