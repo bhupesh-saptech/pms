@@ -26,11 +26,12 @@
             </ul>
             <div class="tab-pane active" id="tab-a">
                 <table class="table table-stripped table-bordered">
+
                     <tr>
-                        <th>Agent ID</th>
-                        <th>Agent Name</th>
+                        <th style="width:10%;">Agent ID</th>
+                        <th style="width:10%;">Agent Name</th>
                         <?php foreach($status as $param=>$value) : ?>
-                            <th class="text-end"><?= $value ?></th>
+                            <th style="width:10%;" class="text-end"><?= $value ?></th>
                         <?php endforeach; ?>
                         <th>Open Tickets</th>
                     </tr>
