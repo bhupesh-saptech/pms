@@ -44,7 +44,8 @@ class TicketsController extends BaseController{
                                   5=>'SAP WM',
                                   6=>'SAP PM',
                                   7=>'SAP PS',
-                                  9=>'ABAP'
+                                  9=>'ABAP',
+                                  10=>'PHP'
                                 ];
         $this->data['tickets'] = $this->TicketsModel->select('tickets.*,projects.project_nm as project_nm,agents.agent_nm as agent_nm')
                                                     ->join('projects','projects.project_id = tickets.project_id','left')
