@@ -8,16 +8,19 @@ use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\AgentsModel;
 use App\Models\ProjectsModel;
 use App\Models\TeamsModel;
+use App\Models\UsersModel;
 
 class AgentsController extends BaseController {
-    protected $AgentsModel,$ProjectsModel,$TeamsModel;
+    protected $AgentsModel,$ProjectsModel,$TeamsModel,$UsersModel;
     protected $data;
     public function __construct() {
         helper('form');
         $this->AgentsModel = new AgentsModel;
         $this->ProjectsModel = new ProjectsModel;
         $this->TeamsModel = new TeamsModel();
+        $this->UsersModel = new UsersModel();
         $this->data['agents'] = $this->AgentsModel->findAll();
+        $this->data['users'] = $this->UsersModel->findAll();
         $this->data['teams'] = $this->TeamsModel->findAll();
         $this->data['dash']   = $this->ProjectsModel->dashboard();
     }
