@@ -31,7 +31,7 @@
         <div class="form-group">
             <label class="form-label">User ID</label>
             <select class="form-select select2" name="user_id" id="user_id">
-                <option value="" <?php if(isset($agent->user_id) && $agent->user_id == "" ){ echo 'selected';} ?>>Select team name</option>
+                <option value="" <?php if(isset($agent->user_id) && $agent->user_id == "" ){ echo 'selected';} ?>>Select user</option>
                 <?php foreach($users as $user) : ?>
                 <option value="<?= $user->user_id; ?>" <?php if(isset($agent->user_id) && $agent->user_id == $user->user_id ){ echo 'selected';} ?>><?= $user->user_nm; ?></option>
                 <?php endforeach; ?>

@@ -7,6 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
     $routes->match(["get","post"],  "/users/login", "UsersController::login");
     $routes->match(["get","post"],  "/users/logout","UsersController::logout");
+
     $routes->group('', ['filter' => 'auth'], function ($routes) {
 
         $routes->get("/","HomeController::index");
