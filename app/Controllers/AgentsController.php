@@ -48,7 +48,9 @@ class AgentsController extends BaseController {
                 'last_name'  => $this->request->getPost('last_name'),
                 'email_id'   => $this->request->getPost('email_id'),
                 'mobile_no'  => $this->request->getPost('mobile_no'),
-                'team_id'    => $this->request->getPost('team_id')
+                'team_id'    => $this->request->getPost('team_id'),
+                'user_id'    => $this->request->getPost('user_id'),
+                'created_by' => session()->get('user_nm')
             ];
             if($this->AgentsModel->insert($form,false)) {
                 return redirect()->to('/agents')->with('message',"Data Inserted Succefully");
@@ -77,7 +79,8 @@ class AgentsController extends BaseController {
                 'last_name'  => $this->request->getPost('last_name'),
                 'email_id'   => $this->request->getPost('email_id'),
                 'mobile_no'  => $this->request->getPost('mobile_no'),
-                'team_id'    => $this->request->getPost('team_id')
+                'team_id'    => $this->request->getPost('team_id'),
+                'user_id'    => $this->request->getPost('user_id')
             ];
             if($this->AgentsModel->update($id,$form)) {
                 return redirect()->to('/agents')->with('message',"Data Inserted Succefully");

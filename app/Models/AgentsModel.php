@@ -18,6 +18,7 @@ class AgentsModel extends Model
                                     'email_id', 
                                     'mobile_no',
                                     'team_id',
+                                    'user_id',
                                     'created_by'
                                   ];
 
